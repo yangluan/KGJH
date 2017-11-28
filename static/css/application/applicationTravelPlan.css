@@ -1,0 +1,173 @@
+body {
+  background-color: #EFEFEF; }
+
+.application-header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 3rem; }
+
+/* input的边框*/
+input{
+  border: none;
+}
+/*   after 边框 before边框*/
+.mui-input-group:before{
+  background-color: transparent;
+}
+.mui-input-group:after{
+  background-color: transparent;
+}
+/*   .mui-input-group .mui-input-row:after   */
+/*#yuSuanBorDer .mui-input-group .mui-input-row:after{*/
+  /*background-color: transparent;*/
+/*}*/
+
+/*    */
+ #applicationTravelPlan .applicationTravelPlanFooter button {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+  /* font-weight: bold; */
+}
+
+/*   ...*/
+#applicationTravelPlan .application-header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 3rem; }
+/*    标题 出差申请 */
+#applicationTravelPlan .mui-title{
+  font-size: 1.3rem;
+}
+
+/*    返回箭头 */
+#applicationTravelPlan .goHome{
+  font-size: 1.9rem;
+  float: left;
+  line-height: 3rem;
+  color: white;
+}
+
+.costCenterHeader {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1.83467rem;
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 1.83467rem; }
+  .costCenterHeader .iconParent {
+    position: relative; }
+  .costCenterHeader #icon-arrow {
+    position: absolute;
+    left: 0.42667rem;
+    font-size: 0.768rem; }
+
+.applicationFieldHeader {
+  margin-top: 3.5rem;
+  width: 100%;
+  
+  background-color: white; }
+  .applicationFieldHeader .theTrafficTools {
+    padding: 0.21333rem;
+    position: relative;
+    width: 100%;
+    height: 1.92rem;
+    border: 1px solid transparent; }
+    .applicationFieldHeader .theTrafficTools .theTrafficToolsTitle {
+      position: absolute;
+      top: 0.42667rem;
+      left: 0.42667rem;
+      font-size: 0.64rem; }
+    .applicationFieldHeader .theTrafficTools .theTrafficToolsBtnBox {
+      position: absolute;
+      left: 4.26667rem; }
+      .applicationFieldHeader .theTrafficTools .theTrafficToolsBtnBox button {
+        display: inline-block;
+        margin-left: 0.42667rem; }
+  .applicationFieldHeader .applicationTravelPeople {
+    padding: 0.21333rem;
+    position: relative;
+    width: 100%;
+    height: 1.92rem;
+    border: 1px solid transparent; }
+    .applicationFieldHeader .applicationTravelPeople .applicationTravelPeopleText {
+      position: absolute;
+      top: 0.42667rem;
+      left: 0.42667rem;
+      font-size: 0.64rem; }
+    .applicationFieldHeader .applicationTravelPeople .selectColleague {
+      position: absolute;
+      margin-top: 0.21333rem;
+      left: 4.26667rem;
+      line-height: 1.49333rem;
+      color: black; }
+    .applicationFieldHeader .applicationTravelPeople .marginLf {
+      margin-left: -4.26667rem; }
+    .applicationFieldHeader .applicationTravelPeople .rightArrows {
+      position: absolute;
+      right: 0.42667rem;
+      line-height: 1.49333rem; }
+    .applicationFieldHeader .applicationTravelPeople .rightText {
+      color: orange; }
+
+.applicationCantent {
+  margin-top: 0.42667rem;
+  width: 100%;
+  background-color: white;
+  padding: 0.42667rem; }
+  .applicationCantent .applicationCityLists {
+    width: 100%;
+    height: 1.06667rem;
+    border: 1px solid transparent; }
+    .applicationCantent .applicationCityLists .city {
+      float: left; }
+      .applicationCantent .applicationCityLists .city .logo {
+        float: left;
+        width: 0.64rem;
+        height: 0.64rem; }
+        .applicationCantent .applicationCityLists .city .logo img {
+          width: 100%; }
+    .applicationCantent .applicationCityLists .yuSuan {
+      float: right; }
+  .applicationCantent .applicationTimeShow {
+    margin-top: 0.42667rem;
+    width: 100%;
+    background-color: white;
+    height: 1.06667rem;
+    border: 1px solid transparent; }
+  .applicationCantent .applicationTimeShow {
+    margin-top: 0.42667rem;
+    width: 100%;
+    background-color: white;
+    height: 1.06667rem;
+    border: 1px solid transparent; }
+  .applicationCantent .applicationPlane {
+    margin-top: 0.42667rem;
+    width: 100%;
+    background-color: white;
+    height: 1.06667rem;
+    border: 1px solid transparent; }
+
+.applicationTravelPlanFooter {
+  width: 100%;
+  position: fixed;
+  bottom: 0rem;
+  height: 3rem;
+  border: 1px solid transparent; }
+  .applicationTravelPlanFooter button {
+    width: 100%;
+    height: 100%;  }
+
+/*# sourceMappingURL=applicationTravelPlan.css.map */

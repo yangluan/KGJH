@@ -1,0 +1,151 @@
+/*航班列表头部*/
+.padT07{
+	padding-top: 5px;
+}
+.pad4{
+	padding: 4px;
+}
+.border-none{
+	border:none ;
+}
+.b-ltb05{
+	border-top-left-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+}
+.b-rtb05{
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+.htRem24{
+	height: 1.4rem;
+}
+.l-h-3{
+	line-height: 3;
+}
+/*列表*/
+.mui-table-view {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    background-color: transparent;
+}
+.mui-table-view:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+     background-color: transparent; 
+}
+.mui-table-view:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+     background-color: transparent; 
+}
+.mui-table-view-cell:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 15px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: transparent;
+}
+/*ul*/
+.hbullist{
+	padding: 0.2rem 0;
+}
+/*li*/
+.hblist{
+	background-color: #FFFFFF;
+	margin: 0.4rem 0.5rem;
+	border-radius: 0.5rem;
+}
+
+
+.font18{
+	font-size: 1.8rem;
+}
+.font12{
+	font-size: 1.2rem;
+}
+/*违背*/
+.wei{
+	padding: 3px 4px;
+    border-radius: 5px;
+}
+.font14px{
+	font-size: 14px;
+}
+/*黑色*/
+.black{
+	color: #323232;
+}
+/*去程*/
+.qucheng{
+	background-color: #31B4F1;
+    color: #ffffff;
+    padding: 4px 5px;
+    border-radius: 3px;
+}
+/*订*/
+.ding{
+	background-color: #FEC240;
+    padding: 2px 6px;
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    font-size: 16px;
+    border-left: 1px solid #FEC240;
+    border-top: 1px solid #FEC240;
+}
+.yu{
+	padding: 0px 1px;
+    border: 2px solid #FEC240;
+}
+.l-h-2{
+	line-height: 2;
+}
+.l-h-init{
+	line-height: initial;
+}
+.padT10{
+	padding-top: 10px;
+}
+/*蓝色按钮*/
+/*input[type='submit'], .mui-btn-primary, .mui-btn-blue {
+    color: #FFFFFF !important;
+    border: 1px solid #0099e0;
+    background-color: #4fb3ec;
+}*/
+/*橙色按钮*/
+.mui-btn.mui-btn-warning{
+	background-color: #FEC240;
+	border: 1px solid #e59f00;
+	color: #FFFFFF !important;
+}
+h4{
+  /*font-family:SimSun;*/
+	
+}
+.long{
+    display:inline-block;/*让span变为块状元素，只有块状元素可以缩放*/
+    transform:scale(3,1);/*缩放属性；两个参数：(水平缩放比例,垂直缩放比例)；1表示原比例*/
+    /*私有缩放属性，为了兼容各浏览器；注：不兼容IE8以下浏览器*/
+    -ms-transform:scale(3,1);
+    -webkit-transform:scale(3,1);
+    -moz-transform:scale(3,1);
+    -o-transform:scale(3,1);
+}

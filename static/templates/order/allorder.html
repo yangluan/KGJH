@@ -1,0 +1,109 @@
+<div class="allOrder">
+	<header class="mui-bar mui-bar-nav">
+		<a class="iconfont icon-icon07" @click="goback"></a>
+		<h1 class="mui-title">
+			<span :class="isPersonOrder?'activeTitle':''" @click="toPersonOrder">个人订单</span>
+            <span :class="isAllOrder?'activeTitle':''" @click="toAllOrder">全部订单</span>
+		</h1>
+		<span class="shaiXuan " @click="toOrderFilter">筛选</span>
+	</header>
+<!--  内容   -->
+	<div class="mui-content">
+
+		<div class="orderTab">
+			<ul>
+				<li :class="isActiveTabItem==0?'activeTab':''" @click="toAllTab"><span>全部</span><span>({{zongCount}})</span></li>
+				<li :class="isActiveTabItem==1?'activeTab':''" @click="toNoPay"><span>待支付</span><span>({{willPayCount}})</span></li>
+				<li :class="isActiveTabItem==2?'activeTab':''" @click="toNoTravel"><span>未出行</span><span>({{noTravelCount}})</span></li>
+				<li :class="isActiveTabItem==3?'activeTab':''" @click="toExitOrAlter"><span>退/改签</span><span>({{exitOrAlterCount}})</span></li>
+			</ul>
+		</div>
+		<div class="orderContent" id="orderContent">
+			<div class="orderItem" v-for="item in orderList" v-show="!isShowErr">
+				<!--   正常订单模板    -->
+				<div class="orderItemTop" @click="toOrderDetail(item.id)" v-if="item.orderType==11001">
+				
+					<div class="orderCity">
+						<span class="iconfont icon-feiji" v-if="item.productImage ==1"></span>
+						<span class="iconfont icon-jiudian" v-if="item.productImage ==2"></span>
+						<span class="iconfont icon-huoche" v-if="item.productImage ==3"></span>
+						<span>{{item.voyageZh}}</span>
+						<span class="money fontJin">￥<big>{{item.subtotal}}</big></span>
+						
+					</div>
+					<div class="orderTime">
+					<span class="tripItem" v-if="item.tripType==2">{{item.tripType |gongOrSiChuLi}}</span>
+						
+						<span>{{item.departTime}} | {{item.flightNo}}</span>
+						<span class="piaoZhuangTai">{{item.orderStatusRemark}}</span>
+					</div>
+					<div class="orderPass">
+						{{item.psgName}} 
+					</div>
+				</div>
+				<!--   退票模板     -->
+				<div class="orderItemTop" @click="toOrderDetail(item.id)" v-if="item.orderType==11002">
+				
+					<div class="orderCity">
+						<span class="iconfont icon-feiji" v-if="item.productImage ==1"></span>
+						<span class="iconfont icon-jiudian" v-if="item.productImage ==2"></span>
+						<span class="iconfont icon-huoche" v-if="item.productImage ==3"></span>
+						<span>{{item.voyageZh}}</span>
+						<span class="money fontJin">应退：￥<big>{{item.subtotal}}</big></span>
+						
+					</div>
+					<div class="orderTime">
+					<span class="tripItem" v-if="item.tripType==2">{{item.tripType |gongOrSiChuLi}}</span>
+						
+						<span>{{item.departTime }} | {{item.flightNo}}</span>
+						<span class="piaoZhuangTai">{{item.orderStatusRemark}}</span>
+					</div>
+					<div class="orderPass">
+						{{item.psgName}} 
+					</div>
+				</div>
+				<!--  改签单模板-->
+				<div class="orderItemTop" @click="toOrderDetail(item.id)" v-if="item.orderType==11003">
+				
+					<div class="orderCity">
+						<span class="iconfont icon-feiji" v-if="item.productImage ==1"></span>
+						<span class="iconfont icon-jiudian" v-if="item.productImage ==2"></span>
+						<span class="iconfont icon-huoche" v-if="item.productImage ==3"></span>
+						<span>{{item.voyageZh}}</span>
+						<span class="money fontJin">改签费用：￥<big>{{item.subtotal}}</big></span>
+						
+					</div>
+				<div class="orderTime">
+					<span class="tripItem" v-if="item.tripType==2">{{item.tripType |gongOrSiChuLi}}</span>
+						<span class="">改签后：</span>
+						<span>{{item.nDepartTime |chuliDate}}&nbsp;|&nbsp;</span>
+						<span>{{item.nFlightNo}}</span>
+						<span class="piaoZhuangTai">{{item.orderStatusRemark}}</span>
+					</div>
+					<div class="orderTime">
+						<span class="">原航班：</span>
+						<span>{{item.departTime}} | {{item.flightNo}}</span>
+					</div>
+					<div class="orderPass">
+						{{item.psgName}}
+					</div>
+				</div>
+				
+				
+				
+				<!--底部操作-->
+				<div class="orderItemBottom">
+					<span v-show="item['isShowEndorse']" @click="toAlterTicket(item.id)">改签</span>
+					<span v-show="item['isShowRefund']" @click="toExitTicket(item.id)">退票</span>
+					<span v-show="item['isShowCancelChange']" @click="cancleAlter(item.id)">取消改签</span>
+					<span v-show="item['isShowCancelRefund']" @click="cancleRefund(item.id)">取消退票</span>
+					<span v-show="item['isShowCancel']" @click="cancleOrder(item.id)">取消</span>
+					<span v-show="item['isShowApproval']" @click="toSendApply(item.id,item.orderType)">送审</span>
+					<span v-show="item['isShowPay']" @click="toPay(item.id,item.orderType)">支付</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

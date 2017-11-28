@@ -1,0 +1,153 @@
+
+/*申请退票*/
+ .applyRefundTicket{
+ 	width: 100%;
+ 	background-color: #efefef;
+ 	padding-top:2.8rem;
+ 	padding-bottom: 3.5rem;
+ }
+ .applyRefundTicket *{
+ 	box-sizing: border-box;
+ }
+ .pass-item,
+ .flight-detail-item{
+ 	/*width: calc(100% - 1rem );*/
+ 	width: 100%;
+ 	padding:0.5rem 1rem;
+ 	margin:0.6rem 0rem;
+ 	background-color: #fff;
+ 	/*border-radius: 6px;*/
+ }
+.flight-detail-middle ,
+.flight-detail-bottom{
+	/*width: calc(100% - 1rem);*/
+	width: 100%;
+     margin: 0 auto;
+}
+.flight-detail-bottom,
+.flight-detail-top{
+	font-size: 0.9rem;
+     color: #808080;
+}
+.flight-detail-top{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	padding-left: 0.8rem;
+}
+.flight-detail-bottom{
+	/*display: flex;*/
+	text-align: center;
+	/*align-content: center;*/
+}
+.flight-detail-middle{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.flight-detail-middle div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.flight-detail-middle  .arrow{
+	font-size: 2.5rem;
+}
+
+.flight-detail-middle
+.flight-item-common{
+	width: 45%;
+}	
+.flight-detail-middle .time{
+		font-size: 1.3rem;
+}
+.flight-detail-middle .airport{
+	font-size: 0.9rem;
+}
+
+/*乘机人*/
+.pass-item{
+	font-size:0.8rem;
+	color: #808080;
+}
+.pass-item .pass-name{
+	font-size: 1rem;
+	color: #000000;
+}
+.pass-item-middle{
+	display: flex;
+	justify-content: space-between;
+}
+/* 企业退票原因*/
+.companyChooseReason{
+	background-color: white;
+	width: 100%;
+	font-size:1rem;
+	margin-top: 0.6rem;
+}
+.company-reason-top{
+	padding: 0.5rem 1em;
+	border-bottom: 1px solid #D7D7D7;
+}
+
+.company-reason-bottom{
+	padding: 0.5rem 1rem; 
+    display: flex;
+    justify-content: space-between;
+	color: #d7d7d7;
+}
+/* 非自愿退票 tip 提示 */
+.noExitTip{
+	padding: 0.3rem;
+	font-size: 0.8rem;
+	width: 100%;
+	background-color: #949494;
+	color:white;
+	margin-top: 0.6rem;
+}
+.tanTipGao{
+	  display: inline-block;
+     width: 0.8rem;
+     height: 0.8rem;
+     border-radius: 50%;
+     background-color: #fff;
+     color: #7A8895;
+     text-align: center;
+     line-height:0.8rem;
+     font-weight: 800;
+}
+.toNoZiYuan{
+	color:#f5a337;
+}
+/*-------申请退票----------*/
+.toApply{
+	/*margin-bottom: ;*/
+	height: 2.8rem;
+	line-height: 2.8rem;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+     /*padding: 0.5rem;*/
+     text-align: center;
+     background: #F5A337;
+     color: white;
+     font-size: 1.2rem;
+}
+.right-reason{
+	color: black;
+}
+
+/*   duihao*/
+.applyRefundTicket .icon-chenggong{
+	color: #d7d7d7;
+	font-size: 1.4rem;
+} 	
+ .applyRefundTicket .icon-jiantou{
+ 	font-size: 1.7rem;
+ 	color: #d7d7d7;
+ }
+.active{
+	color: #F5A337 !important;
+}

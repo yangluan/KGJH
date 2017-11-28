@@ -1,0 +1,192 @@
+<div id='userInfo'>
+	<header class="mui-bar mui-bar-nav">
+		<a class=" mui-icon  mui-pull-left iconfont icon-icon07" @click="goback"></a>
+		<h1 class="mui-title">个人信息</h1>
+	</header>
+	<div class="mui-content">
+		
+		
+		<div class="userMiddleHeader">
+			<div class="userDefaultDiv" @click="lookDept(1)" :class="isShowDept?'activeUserDiv':''">基本资料</div>
+			<div class="userDefaultDiv" @click="lookDept(2)" :class="!isShowDept?'activeUserDiv':''">差旅信息</div>
+		</div>
+		
+		<ul class="mui-table-view" v-show="isShowDept">
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>工号</span>
+					</div>
+					<div class="infoRight">
+						<span>{{empNo}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft"><span>真实姓名</span></div>
+					<div class="infoRight"><span>{{empName}}</span></div>
+				</a>
+			</li>
+				<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>所在部门</span>
+					</div>
+					<div class="infoRight">
+						<span>{{deptName}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>员工职级</span>
+					</div>
+					<div class="infoRight">
+						<span>{{empRankName }}</span>
+					</div>
+				</a>
+			</li>
+			
+			
+			<li class="mui-table-view-cell">
+				<router-link :to="{path:'/editUserInfo',query:{editIdx : 1}}">
+					<a class="mui-navigate-right">
+						<div class="infoLeft"><span>身份证号</span></div>
+						<div class="infoRight"><span>{{idNumber}}</span></div>
+					</a>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell">
+				<router-link :to="{path:'/editUserInfo',query:{editIdx : 2}}">
+					<a class="mui-navigate-right">
+						<div class="infoLeft"><span>护照</span></div>
+						<div class="infoRight"><span>{{passport}}</span></div>
+					</a>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell">
+				<router-link :to="{path:'/editUserInfo',query:{editIdx : 3}}">
+					<a class="mui-navigate-right">
+						<div class="infoLeft">
+							<span>绑定手机号</span></div>
+						<div class="infoRight"><span class="yanSmall" v-if="verifyPhone == 1">已验证</span>
+							<span>{{phoneNumber}}</span></div>
+					</a>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell">
+				<!--<router-link :to="{path:'/editUserInfo',query:{editIdx : 4}}">-->
+				<a class="mui-navigate-right">
+					<div class="infoLeft"><span>邮箱</span></div>
+					<div class="infoRight"><span>{{email}}</span></div>
+				</a>
+				<!--		    </router-link>-->
+			</li>
+			<li class="mui-table-view-cell">
+				<router-link :to="{path:'/editUserInfo',query:{editIdx : 5}}">
+					<a class="mui-navigate-right">
+						<div class="infoLeft"><span>个人偏好</span></div>
+						<div class="infoRight"><span>{{preference}}</span></div>
+					</a>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell">
+				<router-link :to="{path:'/editUserInfo',query:{editIdx : 6}}">
+					<a class="mui-navigate-right">
+						<div class="infoLeft"><span>修改密码</span></div>
+					</a>
+				</router-link>
+			</li>
+		</ul>
+<!--   差旅信息  -->
+		<ul class="mui-table-view" v-show="!isShowDept">
+			<li class="mui-table-view-cell">
+				<a>
+					<div class="infoLeft">
+						<span>审批规则</span>
+					</div>
+					<div class="infoRight">
+						<span>暂无参数</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>成本中心</span>
+					</div>
+					<div class="infoRight">
+						<span>{{costCenterName}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>待定范围</span>
+					</div>
+					<div class="infoRight">
+						<span>{{bookRange | rangeFilter}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>为外来人预定</span>
+					</div>
+					<div class="infoRight">
+						<span>{{bookOutside | waiFilter}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a>
+					<div class="infoLeft">
+						<span>是否审批人</span>
+					</div>
+					<div class="infoRight">
+						<span>{{ifApprover | shenFilter}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>作为预订人审批属性</span>
+					</div>
+					<div class="infoRight">
+						<span>{{appBook |mianshen}}</span>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a >
+					<div class="infoLeft">
+						<span>作为出行人审批属性</span>
+					</div>
+					<div class="infoRight">
+						<span>{{appTravel|mianshen}}</span>
+					</div>
+				</a>
+			</li>
+			
+		
+		</ul>
+		
+	</div>
+
+	<div class="loginIndex-btn" @click="logOut()">
+		退出登录
+	</div>
+	
+		
+	</div>
+	<!--<router-link :to="{path:'/yjIndexedList',query:{urlPath : '/userInfo',pathType : 'cityAirport',showName : 'airportName' ,showName1 :'cityName'}}">
+		<div class="loginIndex-btn">
+				123123
+		</div>
+	</router-link>-->
+</div>

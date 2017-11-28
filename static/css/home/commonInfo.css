@@ -1,0 +1,82 @@
+.commonInfo{
+	height: 100%;
+}
+.commonInfo .mui-content .mui-segmented-control{
+	
+	background-color: white;
+	margin-bottom:0.5rem;
+}
+.commonInfo .mui-table-view{
+	width:calc(100% - 1rem);
+	margin: 0 0.5rem;
+	background-color: transparent;
+	border: none;
+}
+.commonInfo .mui-content .commonAddr li{
+	background-color: white;
+	margin-top: 0.5rem;
+	border-radius: 6px;
+	display:flex;
+    flex-direction:column;
+    border: none;
+}
+.commonInfo .mui-content .commonAddr li .left{
+	display:flex;
+	flex-direction:column;
+	color:gray;
+	font-size:1rem;
+}
+.commonInfo  li .item {
+	display:flex;
+	justify-content:space-between;
+}
+.commonInfo .mui-content .commonAddr li .left span{
+	line-height:1.5rem;
+	height:1.5rem;
+}
+.commonInfo .mui-content .commonAddr li .left .xingming{
+	color:black !important;
+	font-weight:400;
+	padding-right:1rem;
+	box-sizing:border-box;
+}
+.commonInfo .mui-content .addAddress{
+	width:100%;
+	height:3rem;
+	line-height:3rem;
+	background-color:orange;
+	text-align: center;
+	color:white;
+	font-size:1rem;
+	position:fixed;
+	bottom:0;
+}
+.commonInfo .mui-content .addAddress .icon-jia{
+	padding-right:0.5rem;
+	box-sizing:border-box;
+}
+/*----删除按钮----*/
+.commonInfo .del{
+	padding: 0rem 0.5rem;
+	color: #31b4f1;
+	font-size: 0.9rem;
+	border-radius: 4px;
+	border: 1px solid #31b4f1;
+	margin-top: -2.5rem;
+	display: inline-block;
+}
+.commonInfo .mui-content .right{
+	/*width: 30%;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items:flex-end  ;
+}
+.commonInfo .mui-content .right span{
+		margin-top: 0.3rem;
+}
+/*-----------*/
+.commonInfo .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	color: #31b4f1;
+	border-color:#31b4f1 ;
+}

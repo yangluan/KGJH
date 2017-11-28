@@ -1,0 +1,151 @@
+@function rem($px) {
+  @return $px / 46.875 + rem;
+}
+body{
+  background-color: #EFEFEF;
+}
+.costCenterHeader{
+  position: fixed;
+  top:0;
+  z-index: 3;
+  width: 100%;
+  height: rem(86);
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: rem(36);
+  line-height: rem(86);
+  .iconParent{
+    position: relative;
+  }
+  #icon-arrow{
+    //margin-left: rem(20);
+    position: absolute;
+    left: rem(20);
+    font-size: rem(36);
+  }
+}
+.applicationAccommodationSection{
+  width: 100%;
+  margin-top: rem(106);
+  background-color: white;
+  .HotelStaffBox{
+    width: 100%;
+    padding: rem(20);
+    border: 1px solid transparent;
+    .HotelStaff{
+      width: 100%;
+      height: rem(40);
+      border: 1px solid transparent;
+      position: relative;
+      div{
+        float: left;
+      }
+      .HotelStaffTitle{
+        position: absolute;
+      }
+      .HotelStaffText{
+        position: absolute;
+        left: rem(200);
+        color: #d7d7d7;
+      }
+      .HotelStaffRight{
+        position: absolute;
+        right: rem(0);
+      }
+    }
+  }
+  .hotelDateBox{
+    width: 100%;
+    height: rem(76);
+    padding: rem(20);
+    border: 1px solid transparent;
+    div{
+      float: left;
+    }
+    .hotelDateText{
+      height: rem(40);
+      width: 40%;
+      border-right: 1px solid #D7D7D7;
+      margin-right: rem(20);
+    }
+  }
+  .hotelRooms{
+    padding: rem(0) rem(20) rem(20) rem(20);
+    position: relative;
+    width: 100%;
+    height:rem(90);
+    line-height: rem(90);
+    .hotelRoomsLastSpan{
+      position: absolute;
+      right:rem(20);
+    }
+  }
+
+
+}
+.show{
+  margin-top: rem(20);
+  width: 100%;
+  height:rem(150);
+  border-bottom: 1px dashed #D7D7D7;
+  background-color: white;
+  .accommodationFirstList{
+    width: 100%;
+    padding: rem(20);
+    .left1{
+      float: left;
+    }
+    .right1{
+      float: right;
+    }
+  }
+  .accommodationSecondList{
+    width: 100%;
+    padding: rem(20);
+    border: 1px solid transparent;
+    div{
+      float: left;
+    }
+  }
+  .accommodationThreeList{
+    width: 100%;
+    padding: rem(20);
+    div{
+      float: left;
+    }
+  }
+}
+.Breach{
+  padding: rem(20);
+  width: 100%;
+  height:rem(76);
+  background-color: white;
+  div{
+    float: left;
+    display: inline-block;
+    width: rem(28);
+    height: rem(28);
+    background-color: red;
+    font-size: rem(20);
+    text-align: center;
+    line-height: rem(28);
+    margin-right: rem(30);
+    color: white;
+  }
+  span{
+    color: red;
+  }
+}
+.applicationAccommodationFooter{
+  width: 100%;
+  position: fixed;
+  bottom: rem(0);
+  button{
+    width: 100%;
+    font-size: rem(32);
+    font-weight: bold;
+    text-align: center;
+    height: rem(80);
+  }
+}

@@ -1,0 +1,121 @@
+
+
+.applyListFilter{
+	padding-top: 3.5rem;
+}
+/*--------------*/
+.applyListFilter .mui-bar a{
+	font-size: 2rem;
+}
+
+/*-------------*/
+
+.applyListFilter .mui-content {
+	width: calc(100% - 1rem);
+	margin: 0 0.5rem;
+	padding: 0 0.8rem;
+	border-radius: 6px;
+	background-color: white;
+}
+
+.applyListFilter .mui-content-item {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 0.5rem 0;
+}
+
+.applyListFilter .mui-content-item .filter-left {
+	width: 25%;
+	text-align: left;
+	padding-right: 0.6rem;
+}
+
+.applyListFilter .mui-content-item.method .filter-left {
+	/*margin-top: -0.5rem;*/
+}
+
+.applyListFilter .mui-content-item.status .filter-left {
+	display: flex;
+	align-self: flex-start;
+	margin-top: 0.3rem;
+}
+
+.applyListFilter .mui-content-item .filter-right {
+	width: 75%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.applyListFilter .mui-content-item.datetype .filter-right {
+	justify-content: flex-start;
+}
+
+.applyListFilter .mui-content-item .filter-right span {
+	background-color: white;
+	color: #4FB2ED;
+	border: 1px solid #4FB2ED;
+	border-radius: 4px;
+	width: 5rem;
+	font-size: 0.9rem;
+	text-align: center;
+	padding: 0.1rem 0;
+	margin-bottom: 0.5rem;
+}
+
+.applyListFilter .mui-content-item input {
+	padding: 0;
+}
+.applyListFilter .mui-content-item.pass,
+.applyListFilter .mui-content-item.date {
+	padding: 0.1rem 0;
+}
+
+.applyListFilter .mui-content-item.method .filter-right span {
+	margin-bottom: 0;
+}
+
+.applyListFilter .mui-content-item.datetype .filter-right span {
+	margin-right: 0.9rem;
+	margin-bottom: 0;
+}
+
+
+/*    -----被选中状态----*/
+
+.applyListFilter .mui-content-item .filter-right .active {
+	background-color: #4FB2ED;
+	color: white;
+}
+
+.applyListFilter .mui-content-item .filter-right input {
+	width: 8rem;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.applyListFilter .mui-content-item .filter-right i {
+	font-size: 1.2rem;
+	color: #4FB2ED;
+}
+
+.applyListFilter .mui-content-item .filter-right.search input {
+	width: 100%;
+}
+
+.confirmFilterButton {
+	/*position: fixed;*/
+	/*bottom: 0;*/
+	/*left: 0;*/
+	width: 80%;
+	padding: 0.8rem 0;
+	text-align: center;
+	background: #F5A337;
+	color: white;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+	border-radius: 6px;
+}

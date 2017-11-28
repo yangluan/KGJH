@@ -1,0 +1,67 @@
+
+.addCommonContacts{
+	padding-top:2.8rem;
+}
+.addCommonContacts .mui-input-row{
+	width: 100%;
+	background-color: white;
+	padding-top:0.5rem ;
+}
+.addCommonContacts .mui-input-row div{
+	width: calc(100% - 1rem);
+	margin:0 0.5rem;
+	
+	height:2.8rem;
+	border-bottom:1px solid #DCDCDC;
+	background-color: white;
+}
+.addCommonContacts .mui-input-row div.phone{
+	border-bottom:none ;
+}
+.addCommonContacts .mui-input-row label{
+	font-size:1rem;
+	text-align: right;
+	width: 30%;
+}
+.addCommonContacts .mui-input-row input{
+	font-size:1rem;
+}
+
+.addCommonContacts .content  span{
+	font-size:1rem;
+}
+
+.addCommonContacts .save{
+	width:100%;
+	height:3rem;
+	line-height:3rem;
+	background-color:orange;
+	text-align: center;
+	color:white;
+	font-size:1rem;
+	position:fixed;
+	bottom:0;
+	/*margin-top: 1.5rem;*/
+}
+.addCommonContacts p{
+	padding:0.5rem 0 0 1rem;
+}
+.huzhao{
+	/*display: flex;*/
+	align-items: center;
+}
+.huzhao input{
+	width: 2.5rem;
+	background-color: white;
+}
+/*----------*/
+.addCommonContacts .mui-input-row div.huzhao{
+	position: relative;
+}
+.addCommonContacts .mui-input-row div .right-arrow{
+	position: absolute;
+	top: 0.7rem;
+	right: 0.5rem;
+	color: #d7d7d7;
+	font-size: 1.5rem;
+}

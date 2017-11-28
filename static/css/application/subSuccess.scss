@@ -1,0 +1,61 @@
+@function rem($px) {
+  @return $px / 46.875 + rem;
+}
+body{
+  background-color: #EFEFEF;
+}
+.application-header{
+  position: fixed;
+  top:0;
+  z-index: 3;
+  width: 100%;
+  height: rem(86);
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: rem(36);
+  line-height: rem(86);
+  .iconParent{
+    position: relative;
+  }
+  #icon-arrow{
+    //margin-left: rem(20);
+    position: absolute;
+    left: rem(20);
+    font-size: rem(36);
+  }
+}
+.subSuccessSection{
+  margin-top: rem(86);
+  width: 100%;
+  height:rem(365);
+  background-color: #fff;
+  .centerLoading{
+    padding: rem(20);
+    width: 100%;
+    text-align: center;
+    color: orange;
+    .soBig{
+      font-size: rem(40);
+    }
+    .fontSoBig{
+      font-size: rem(32);
+    }
+
+  }
+  .textContent{
+    width: 100%;
+    padding-left: rem(30);
+    margin-top: rem(-80);
+    ul li{
+      list-style: none;
+      font-size: rem(30);
+      .fontBluebot{
+        color: deepskyblue;
+      }
+      .fontOrange{
+        color: orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<div id="applicationTravelPlan">
+
+
+    <header class="application-header mui-bar mui-bar-nav">
+        <h1 class="mui-title">编辑行程</h1>
+        <div class="iconParent"><i class="icon iconfont icon-icon07 goHome" id="icon-arrow" @click="ReturnSuperior"></i></div>
+        <div style="float: right;font-size: .9rem" @click="btnQueDing">确定</div>
+    </header>
+
+
+
+
+    <section class="applicationFieldHeader">
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right"><span style="position: absolute; top: 1.3rem;">交通工具</span><span style="margin-left: 7rem">
+                    <button type="button" class="mui-btn mui-btn-primary">飞机</button>
+                    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">火车</button>
+                    <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">其他</button>
+                </span></a>
+            </li>
+            <li class="mui-table-view-cell" @click="editTripCxr">
+                <a class="mui-navigate-right">出行人<span style="margin-left: 4rem">{{cxRtxRNameData.cxrName}}、{{cxRtxRNameData.sxr}}</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">出差日期<span style="margin-left: 2.9rem"><input type="" readonly="readonly" class="mui-col-xs-6" placeholder="出发日期" v-on:click="getDate1()" v-model="date1" /></span></a>
+            </li>
+
+
+            <div class="mui-table-view-cell">
+                <div class="selectColleague marginLf">
+                    <div class="clear mui-row">
+                        <input type="" readonly="readonly" class="  tkQinput mui-col-xs-3" placeholder="出发城市" v-on:click="getCity()" v-model="dep" />
+                        <div class=" height56 text-center mui-col-xs-1" v-on:click="deparr()">
+                            <i class="icon iconfont icon-wangfan font26" ></i>
+                        </div>
+                        <input type="" readonly="readonly" class=" text-right tkQinput 	mui-col-xs-3" placeholder="到达城市" v-on:click="getCity2()" v-model="arr" />
+                    </div>
+                </div>
+                <div class="" @click="search" style="float: right;margin-top: -1.5rem;color: orange">查询<i class="icon iconfont icon-jiantou" ></i></div>
+            </div>
+
+        </ul>
+
+
+
+
+        <form class="mui-input-group" v-show="yusuanShow">
+            <div class="mui-input-row" id="yuSuanBorDer">
+                <label>预算</label>
+                <input type="text" class="mui-input-clear" placeholder="请输入预算" v-model="yuSuan">
+            </div>
+        </form>
+
+
+
+
+        <!--<div class="theTrafficTools">-->
+            <!--<div class="theTrafficToolsTitle">交通工具</div>-->
+            <!--<div class="theTrafficToolsBtnBox">-->
+                <!--<button type="button" class="mui-btn mui-btn-primary">飞机</button>-->
+                <!--<button type="button" class="mui-btn mui-btn-primary" disabled>火车</button>-->
+                <!--<button type="button" class="mui-btn mui-btn-primary" disabled>其他</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="applicationTravelPeople">-->
+            <!--<div class="applicationTravelPeopleText">出行人</div>-->
+            <!--<div class="selectColleague"><span>{{cxRtxRNameData.cxrName}}、{{cxRtxRNameData.sxr}}</span></div>-->
+            <!--&lt;!&ndash;  同行人员页  &ndash;&gt;-->
+            <!--<router-link to="/editTripCxr">-->
+            <!--<div class="rightArrows"><i class="icon iconfont icon-jiantou" ></i></div>-->
+            <!--</router-link>-->
+        <!--</div>-->
+
+        <!--<div class="applicationTravelPeople">-->
+            <!--<div class="applicationTravelPeopleText">出差日期</div>-->
+            <!--<div class="selectColleague">-->
+                <!--<div v-if="dc" class="mui-row">-->
+                    <!--<input type="" readonly="readonly" class="  tkQinput mui-col-xs-12" placeholder="出发日期" v-on:click="getDate1()" v-model="date1" />-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="rightArrows"><i class="icon iconfont icon-jiantou" ></i></div>-->
+        <!--</div>-->
+
+        <!--<div class="applicationTravelPeople">-->
+            <!--<div class="selectColleague marginLf">-->
+                <!--<div class="clear mui-row">-->
+                    <!--<input type="" readonly="readonly" class="  tkQinput mui-col-xs-3" placeholder="出发城市" v-on:click="getCity()" v-model="dep" />-->
+                    <!--<div class=" height56 text-center mui-col-xs-1" v-on:click="deparr()">-->
+                        <!--<i class="icon iconfont icon-wangfan font26" ></i>-->
+                    <!--</div>-->
+                    <!--<input type="" readonly="readonly" class=" text-right tkQinput 	mui-col-xs-3" placeholder="到达城市" v-on:click="getCity2()" v-model="arr" />-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="rightArrows rightText" @click="search">查询<i class="icon iconfont icon-jiantou" ></i></div>-->
+        <!--</div>-->
+    </section>
+
+
+    <!--  查询展示  -->
+    <div class="applicationCantent" style="display: none" v-show="isshow">
+        <div class="applicationCityLists">
+            <div class="city">{{departAirportName}}→{{arriveAirportName}}</div><div class="yuSuan">预算 <span style="color: orange">￥{{price}}</span></div>
+        </div>
+        <div class="applicationTimeShow">
+            <div><span>{{arriveDate}}</span>&nbsp;&nbsp;&nbsp;<span>{{arriveTime}}</span><span>出发</span></div>
+        </div>
+        <div class="applicationPlane">
+            {{airlineName}}{{flightNo}}/{{cangWei}}
+        </div>
+    </div>
+
+    <!--<div v-show="yusuanShow"><span>预算(￥)：</span><input type="number" placeholder="0" v-model="yuSuan"></div>-->
+
+
+
+
+    <!--<footer class="applicationTravelPlanFooter">-->
+        <!--<button type="button" class="mui-btn mui-btn-warning" @click="btnQueDing">确定</button>-->
+    <!--</footer>-->
+</div>

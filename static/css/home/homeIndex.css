@@ -1,0 +1,69 @@
+.footer {
+	width: 100%;
+	display: flex;
+	background: white;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 0.8rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	box-shadow: 10px 0px 18px #c7c7c7;
+}
+
+.footer .footer-common {
+	display: flex;
+	flex-grow:1;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	padding: 0.3rem 0;
+	color:#646464;
+	font-weight: 800;
+}
+.footer .footer-common span{
+	margin-top: -0.2rem;
+}
+.footer .footer-application .icon-jia {
+	font-size: 2.2rem;
+	
+}
+.footer .footer-application{
+	width: 3.4rem;
+	height: 3.4rem;
+	/*border*/
+	position: absolute;
+	bottom: 0.3rem;
+	color: #31B4F1;
+	left: calc(50% - 1.5rem);
+}
+.footer .quanDiv{
+	width: 100%;height: 100%;
+	text-align: center;
+	line-height: 3.5rem;
+	border-radius:50% ;
+	background-color: white;
+	box-shadow: 0 0 18px #c7c7c7;
+}
+/*----------------*/
+.footer .icon-shouye1{
+	display: none;
+}
+.footer .icon-icon-test{
+	display: none;
+}
+.footer .mui-active {
+	color:#31b4f1;
+}
+.footer .mui-active .icon-shouye{
+	display: none;
+}
+.footer .mui-active .icon-shouye1{
+	display: inline-block;
+}
+.footer .mui-active .icon-gerenzhongxinxia{
+	display: none;
+}
+.footer .mui-active .icon-icon-test{
+	display: inline-block;
+}

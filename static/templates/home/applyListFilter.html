@@ -1,0 +1,52 @@
+<div class="applyListFilter">
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click="goback"></a>
+		<h1 class="mui-title">筛选</h1>
+		<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" @click="cancelFilter">恢复默认</button>
+	</header>
+	<div class="mui-content">
+		<!--<div class="mui-content-item method">
+				<div class="filter-left" >出差方式</div>
+				<div class="filter-right">
+					<span v-for="(item,index) in wayArr" @click="chooseApplyWay(index)" :class="index==indexWay?'active':''"> {{item}}</span>	
+				</div>
+			</div>-->
+		<div class="mui-content-item status">
+			<div class="filter-left ">单据状态</div>
+			<div class="filter-right">
+				<span v-for="(item,index) in applyStatusArr" @click="chooseApplyStatus(index)" :class="index==indexStatus?'active':''">{{item}}</span>
+			</div>
+		</div>
+		<div class="mui-content-item datetype">
+			<div class="filter-left">日期类型</div>
+			<div class="filter-right">
+				<span v-for="(item,index) in dateType" @click="chooseDateType(index)" :class="index==indexDateType - 1?'active':''">{{item}}</span>
+			</div>
+		</div>
+		<div class="mui-content-item date">
+			<div class="filter-left">日期始</div>
+			<div class="filter-right date-item">
+				<input type="text" v-model="startDate" />
+				<i class="iconfont icon-rili" @click="getDate(1)"></i>
+			</div>
+		</div>
+		<div class="mui-content-item date">
+			<div class="filter-left">日期止</div>
+			<div class="filter-right date-item">
+				<input type="text" v-model="endDate" />
+				<i class="iconfont icon-rili" @click="getDate(2)"></i>
+			</div>
+		</div>
+
+		<div class="mui-content-item pass">
+			<div class="filter-left">出行人</div>
+			<div class="filter-right search">
+				<input type="text" placeholder="请输入出行人/目的地" />
+			</div>
+		</div>
+	</div>
+	<div class="confirmFilterButton" @click="confirmFilter">
+		查询
+	</div>
+
+</div>

@@ -1,0 +1,85 @@
+<div id="cxr">
+	<header class="mui-bar mui-bar-nav">
+		<div class="mui-row">
+			<div class="mui-col-xs-2">
+				<a class=" mui-icon icon iconfont icon-icon07 mui-pull-left white" v-on:click="back()"></a>
+			</div>
+				<div class="mui-col-xs-8 pad5">
+					<span class="mui-icon mui-icon-search " style="	font-size: 15px;
+    position: absolute;
+    left: 15px;top: 8px;
+    color: #aaa;"></span>
+					<input type="search" placeholder="姓名/编号/手机号" class=" searchinput" style="background-color: #FFFFFF;" v-model="searchcxr" >
+				</div>
+				<div class="mui-col-xs-2">
+					<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right white" v-on:click="complete()">完成</button>
+				</div>
+		</div>
+		</header>
+
+	<div class="mui-content mui-row mui-fullscreen">
+			<div class="pad10" v-show="isempty">
+				<span v-for=" ename in enames " class="tkxcsted" v-on:click="splicecxr(ename)">{{ename}}</span>
+			</div>
+			<div class="mui-col-xs-3 "  v-if="ts">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<a class="mui-control-item mui-active" href="#content1">同  &nbsp;事</a>
+					<a class="mui-control-item" href="#content2" v-if="outerSize||isYs">外来人员</a>
+				</div>
+			</div>
+					<ul class="mui-table-view" v-if="!ts">
+						<li class="cxrmui-table-view-cell" v-for="info in colleague">
+							<div class="mui-input-row mui-checkbox mui-row">
+								<label class="mui-row">									
+									<span class="mui-col-xs-3 fon16">{{info.empNo}}</span>
+									<span class="mui-col-xs-4 fon16 mui-ellipsis">{{info.empName}}</span>
+									<span class="mui-col-xs-5 fon16 mui-ellipsis">{{info.deptName}}</span>
+								</label>
+								<input name="checkbox1" value="" type="checkbox" v-model="info.checked" v-on:click="selectCxr(info.checked,info.empId);" >
+							</div>
+						</li>
+					</ul>
+			<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+				<div id="content1" class="mui-control-content mui-active" v-if="ts">
+					<ul class="mui-table-view">
+						<li class="cxrmui-table-view-cell" v-for="info in colleague">
+							<div class="mui-input-row mui-checkbox mui-row">
+								<label class="mui-row">									
+									<span class="mui-col-xs-3 fon16">{{info.empNo}}</span>
+									<span class="mui-col-xs-4 fon16 mui-ellipsis">{{info.empName}}</span>
+									<span class="mui-col-xs-5 fon16 mui-ellipsis">{{info.deptName}}</span>
+								</label>
+								<input name="checkbox1" value="" type="checkbox" v-model="info.checked" v-on:click="selectCxr(info.checked,info.empId);" >
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="content2" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="cxrmui-table-view-cell" v-for="info in linker">
+							<div class="mui-input-row mui-checkbox mui-row">
+								<label class="mui-row">									
+									<span class="mui-col-xs-4">{{info.chName}}</span>
+									<span class="mui-col-xs-8">{{info.phoneNumber}}</span>
+								</label>
+								<input name="checkbox1" value="" type="checkbox" checked >
+							</div>
+						</li>
+					</ul>
+					<nav class="mui-bar mui-bar-tab bg-orange text-center" style="z-index: 2;line-height: 44px;" v-on:click="addLinker()">
+						<!--<span class="mui-tab-item" >
+							<span class=""></span>
+						</span>-->
+						<span class="" >
+							<i class="icon iconfont icon-jia white"></i>  &nbsp;
+							<span class="white">添  &nbsp; 加</span>
+						</span>
+						<!--<span class="mui-tab-item" >
+							<span class=""></span>
+						</span>-->
+					</nav>
+				</div>
+			</div>
+		</div>
+	
+</div>

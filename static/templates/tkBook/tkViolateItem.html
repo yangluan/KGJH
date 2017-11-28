@@ -1,0 +1,45 @@
+<div id="tkViolateItem">
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left white"></a>
+			<h1 class="mui-title">违背差旅政策</h1>
+		</header>
+	<div class="mui-content mui-row mui-fullscreen">
+		<div class="mui-card-content-inner bg-white">
+			<h5>根据贵公司差旅政策规定，您当前选择的舱位违背了</h5>
+			<h5 class="red">{{wbsx}}</h5>
+		</div>
+		<ul class="mui-table-view mui-table-view-radio">
+				<li class=" " >
+					<form class="mui-input-group">
+						<div class="mui-input-row mui-radio" v-for="info in reason" v-on:click="getReason(info.reasonCode,info.reasonDesc)">
+							<label>{{info.reasonDesc}}</label>
+							<input name="radio1" type="radio">
+						</div>
+					</form>
+
+				</li>
+				<li >
+					<div class="mui-input-row" >
+						<input type="text" class="mui-input-clear border-none" v-model="writeReason" placeholder="请输入原因" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" style="height: 46px;">
+					<button type="button" class="mui-btn mui-btn-warning right" v-on:click="save(0)">确 定</button>
+				</li>
+				<li class="mui-table-view-cell" v-if="ishow">
+					<h5>我们为您推荐以下航班</h5>
+					<div class="mui-card">
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<h4>{{recomFlight.flight.airlineName}}{{recomFlight.flight.flightNo}}{{recomFlight.cabin.cabinName}}</h4>
+								<h5>{{recomFlight.flight.departDate}}{{recomFlight.flight.departTime}}起飞,飞行时长{{recomFlight.flight.flyTimeStr}}</h5>
+								<p class="orange">￥{{recomFlight.flight.minPrice}}</p>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" v-on:click="save(1)">预订推荐航班</button>
+				</li>
+			</ul>
+		</div>
+	
+</div>

@@ -1,0 +1,201 @@
+
+#refundTicketDetail{
+	padding-top: 2.2rem;
+}
+/*退票详情 top 操作*/
+/*.exitOrderTop{
+	background-color: white;
+	padding: 0.5rem;
+}*/
+/*非自愿退票操作*/
+.exitOrderTop,
+.noExitReason,
+.passExitDetail{
+	margin-top: 0.5rem;
+	background-color: white;
+	position:relative;
+}
+.exitOrderTop,
+.passExitDetail{
+	padding: 0.5rem 0.8rem;
+}
+.noExitReason{
+	padding:  0;
+	padding-top: 1.2rem;
+
+	/*padding-bottom: 0.5rem;*/
+}
+.NoExitTip{
+	position: absolute;
+	top:0;
+	left:0;font-size: 0.5rem;
+	background:#4FB2ED ;
+	color: white;
+	padding: 0 0.5rem;
+}
+
+/* 退票 航班详情*/
+.flight-detail-item{
+ 	width: calc(100% - 1rem );
+ 	padding: 0.5rem;
+ 	margin:0.6rem 0.5rem;
+ 	background-color: #fff;
+ 	border-radius: 6px;
+ }
+.flight-detail-middle ,
+.flight-detail-bottom{
+	width: calc(100% - 1rem);
+     margin: 0 auto;
+}
+.flight-detail-bottom,
+.flight-detail-top{
+	font-size: 0.6rem;
+     color: #808080;
+}
+.flight-detail-top{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	padding-left: 0.8rem;
+}
+.flight-detail-bottom{
+	/*display: flex;*/
+	text-align: center;
+	/*align-content: center;*/
+}
+.flight-detail-middle{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.flight-detail-middle div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.flight-detail-middle  .arrow{
+	font-size: 2.5rem;
+}
+
+.flight-detail-middle
+.flight-item-common{
+	width: 45%;
+}	
+.flight-detail-middle .time{
+		font-size: 1.2rem;
+}
+.flight-detail-middle .airport{
+	font-size: 0.8rem;
+}
+
+
+/*退票进度*/
+.exitProgress{
+	background-color: white;
+	padding: 0.6rem;
+	margin: 0.6rem 0;
+	display: flex;
+}
+.exitProgressRight {
+    padding-top: 0.6rem;
+    margin-left: 2rem;
+    display: flex;
+}
+
+.exitProgressRight .progressImg {
+    width: 1.5rem;
+    padding-top: 0.4rem;
+}
+
+.progressImg .woQ {
+    height: 2.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.progressMiao .MiaoItem {
+    height: 1.6rem;
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.woQ span {
+    display: inline-block;
+}
+
+.bigQ {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: #4FB3EE;
+}
+
+.smallQ {
+    width: 0.1rem;
+    height: 1.5rem;
+    background: #4FB3EE;
+    margin-left: 0.25rem;
+}
+
+span.taiColorGray {
+    background: #d7d7d7;
+}
+
+span.taiBgcGray {
+    background: #d7d7d7;
+}
+
+.colorBianGray {
+    color: #d7d7d7;
+}
+
+
+
+/*审批进度*/
+.applyProgress .mui-navigate-right{
+	display: flex !important;
+	justify-content: space-between !important;
+}
+
+#refundTicketDetail .mui-table-view:before,
+#refundTicketDetail .mui-table-view:after{
+	background-color: white ;
+}
+
+/*-------------*/
+.cancleExitTicket {
+    border: 1px solid #4FB2EB;
+    padding: 0.15rem 0.3rem;
+    color: #4FB2EB;
+}
+
+.sendAppply {
+    background: #4FB2EB;
+    color: white;
+    padding: 0.15rem 0.4rem;
+}
+
+.caoZuoDiv {
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 0.9rem;
+    text-align: right;
+    border-top: 1px solid #EFEFEF;
+}
+
+.caoZuoDiv span {
+    margin: 0.4rem;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/*-----*/
+.blueColor{
+	color: #4FB2EB;
+}
+.lookRefundDetail{
+	text-align: right;
+	font-size: 0.9rem;
+	color: #4FB2EB;
+}
+/*-------*/

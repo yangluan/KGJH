@@ -1,0 +1,147 @@
+<div id="tkOrderDetails">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class=" mui-icon  icon iconfont icon-icon07 mui-pull-left" v-on:click="back()"></a>
+		<h1 class="mui-title">订单详情</h1>
+	</header>
+	<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="">
+						<h5>
+								{{hbInfo.orderNo}} <span class="red">{{hbInfo.orderStatusRemark}}</span> {{hbInfo.changeStatusRemark}}
+							订单合计：<span class="orange">{{hbInfo.totalPrice}}</span>
+						</h5>
+						<h5>已使用<span class="orange">{{hbInfo.paySubjectName}}</span>支付（{{hbInfo.payDate}}）</h5>
+					</a>
+				</li>
+			</ul>
+
+				<div  class="mui-card-content-inner"  style="background-color: #FFFFFF;" >
+					<div v-for="Info in hbInfo.orderRangeBeanList">
+						<div class=" mui-row" >
+			                	<p class="mui-h6 mui-ellipsis">
+			                		{{Info.airlineName}}|{{Info.flightNo}}  {{Info.departDate}}   ({{Info.week}})
+			                		<span v-show="hbInfo.voyageType==1">单程</span>
+			                		<span v-show="hbInfo.voyageType==2">往返</span>
+			                	</p>
+			                <div class="mui-table-cell mui-col-xs-4">
+			                    	<span>{{Info.departTime}}</span>
+			                    <h5>{{Info.departAirportName}}{{Info.departTerminal}}</h5>
+			                	
+			                </div>
+			                <div class="mui-table-cell mui-col-xs-4 text-center">
+			                	<p class="mui-h6" style="color: #FFFFFF;"> 0</p>
+			                	
+			                	<i class="icon iconfont icon-eg font26 "></i>
+			                    <p class="mui-h6 mui-ellipsis">
+
+			                    	
+			                    </p>
+			                	
+			                </div>
+			                <div class="mui-table-cell mui-col-xs-4 text-right">
+
+			                	<span>{{Info.arriveTime}}</span>
+			                		<sup class="mui-h6" v-show="Info.departDate!=Info.arriveDate" >+1天</sup>
+			                    <h5>{{Info.arriveAirportName}}{{Info.arriveTerminal}}</h5>
+			                </div>
+						</div>
+			                <h5 class="clear text-center mui-row">
+			                	舱位  {{Info.cabinName}}
+			                		<span v-show="Info.hasFood==1">有餐食</span>
+			                    	<span v-show="Info.hasFood==0">无餐食</span>|
+			                    	<span>机型{{Info.plane}}</span>
+			                </h5>
+			                <h5 class="clear  mui-row">
+			                	<span class="blue undeline" v-on:click="refundTips(Info.refundRule,Info.changeRule)">退/改签</span>
+			                </h5>
+					</div>
+					<div class="text-right"> 
+						<button type="button" class="mui-btn mui-btn-warning" v-show="hbInfo.isShowPay==1" v-on:click="btnClick(0)">支付</button>
+						<button type="button" class="mui-btn mui-btn-primary" v-show="hbInfo.isShowApproval==1">送审</button>
+						<button type="button" class="mui-btn mui-btn-warning" v-show="hbInfo.isShowEndorse==1">改签</button>
+						<button type="button" class="mui-btn mui-btn-danger" v-show="hbInfo.isShowRefund==1">退票</button>
+						<button type="button" class="mui-btn mui-btn-danger" v-show="hbInfo.isShowCancel==1">取消</button>
+					</div>
+				</div>
+
+				<ul class="mui-table-view" >
+					<li class="mui-table-view-cell">
+						<div class="title">乘机人信息
+
+						</div>
+					</li>
+					<li class="mui-table-view-cell " v-for="empinfo in hbInfo.orderPsgBeanList" >
+
+						<a class="mui-navigate-right" href="javascript:;" >{{empinfo.empName}}({{empinfo.idNo}}) 
+							<span class="orange right">￥{{empinfo.salePrice+empinfo.airportFee+empinfo.tax+empinfo.serviceFee}}</span>
+						</a>
+						<div class="mui-collapse-content">
+							<h5>手机号 {{empinfo.phoneNumber}}</h5>
+							<h5>票号 {{empinfo.tkno}}</h5>
+							<h5>机票 {{empinfo.salePrice}} 机建{{empinfo.airportFee}} 燃油{{empinfo.tax}} 服务费{{empinfo.serviceFee}}</h5>
+						</div>
+					</li>
+				</ul>
+				<div class="mui-table-view">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							服务费
+						</div>
+					</div>
+				</div>
+				<ul class="mui-table-view">
+					<li class=" mui-collapse mui-active" v-if="hbInfo.tripType==1">
+						<div class="mui-card-content-inner" >差旅信息</div>
+						<div class="mui-card-content">
+							<div class="mui-input-row" >
+								<label>成本中心</label>
+								<input type="text" class="mui-input-clear" v-model="hbInfo.costCenterName" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+							<div class="mui-input-row" >
+								<label>项目名称</label>
+								<input type="text" class="mui-input-clear"  v-model="hbInfo.projectName" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+
+							<div class="mui-input-row">
+								<label>违背事项</label>
+								<input type="text" class="mui-input-clear"  placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>违背原因</label>
+								<input type="text" class="mui-input-clear"  placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class=" mui-collapse mui-active" >
+						<div class="mui-card-content-inner">联系人</div>
+							<div class="mui-card-content mui-row">
+								<div class="mui-col-xs-6">			
+									<div class="mui-input-row ">
+										<input type="text" class="tkOrderInput" v-model="hbInfo.linkman" placeholder="请输入姓名" ><span class="mui-icon mui-icon-clear mui-hidden"></span>
+									</div>
+								</div>
+								<div class="mui-col-xs-6">			
+									<div class="mui-input-row ">
+		
+										<input type="text" class="tkOrderInput" v-model="hbInfo.linkTel" placeholder="请输入手机号" ><span class="mui-icon mui-icon-clear mui-hidden"></span>
+									</div>
+								</div>
+								<div class="mui-input-row">
+		
+									<input type="text" class="tkOrderInput" v-model="hbInfo.linkEmail" placeholder="请输入邮箱(非必填)" ><span class="mui-icon mui-icon-clear mui-hidden"></span>
+								</div>
+							</div>
+
+					</li>
+				</ul>
+				<ul class="mui-table-view" >
+					<li class="mui-table-view-cell"  >
+						<a class="mui-navigate-right" href="javascript:;" ><label>审批状态</label>查看进度</a>
+					</li>
+				</ul>
+				
+	</div>
+</div>

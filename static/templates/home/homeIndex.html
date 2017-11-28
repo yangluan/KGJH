@@ -1,0 +1,20 @@
+<div class="footer">
+	<!--底部导航-->
+	<router-link tag="div" class="footer-common footer-home" to="/home">
+		<i class="iconfont icon-shouye"> </i>
+		<i class="iconfont icon-shouye1"></i>
+		<span>首页</span>
+	</router-link>
+	 
+	<router-link tag="div" class=" footer-application" to="/application" v-show="bookStyle==2">
+		<div class="quanDiv">
+				<i class="iconfont icon-jia"></i>
+		</div>
+	</router-link>
+	<router-link tag="div" class="footer-common footer-userCenter" to="/userCenter">
+		<i class="iconfont icon-gerenzhongxinxia"></i>
+		<i class="iconfont icon-icon-test"></i>
+		<span>个人中心</span>
+	</router-link>
+
+</div>

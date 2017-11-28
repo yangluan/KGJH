@@ -1,0 +1,39 @@
+<div class="refundTicketCompelete">
+
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click.once="goback"><a class="to-home">返回首页</a></a>
+	     <h1 class="mui-title">申请退票完成</h1>
+
+    </header>
+
+    <div class="exitcompeleteContent">
+        <div class="exitItem" v-for="item in exitDataList">
+            <div class="exitItemHeader">
+                <i class="iconfont icon-chenggong"></i>
+                <span class="huangColor">已成功提交退票申请</span>
+            </div>
+            <div class="exitTrip">
+                <div class="exitTripLeft">
+                    退票行程:
+                </div>
+                <div class="exitTripRight" v-for="rangeItem in item.refundRangeList">
+                    <div><span>{{rangeItem.departDate}}</span><span>{{rangeItem.departTime}}</span></div>
+                    <div><span>{{rangeItem.flightNo}}</span><span>{{rangeItem.departCityName}}-{{rangeItem.arriveCityName}}</span></div>
+                </div>
+            </div>
+            <div class="exitTrip">
+                <div class="exitTripLeft">
+                    退票人:
+                </div>
+                <div class="exitTripRight">
+                    {{item.tkOrderPsgBean.psgName}}
+                </div>
+            </div>
+            <div class="caoZuoDiv">
+                <span class="lookExitDetail" @click="lookRefundTicketDetail(item.refundId)">查看退票详情</span>
+                <span class="sendAppply" @click="sendApply" v-show="item.isShowApproval==1">送审</span>
+                <span class="cancleExitTicket" @click="cancleRefundTicket(item.refundId)" v-show="item.isShowCancleRefund==1">取消退票</span>
+            </div>
+        </div>
+    </div>
+</div>

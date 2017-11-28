@@ -1,0 +1,158 @@
+<div class="alterTicketDetail">
+
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click.once="goback"></a>
+		<h1 class="mui-title">改签详情</h1>
+	</header>
+	<div class="exitOrderTop">
+		<div class="exitOrderTopOne"><span class="greenColor fontBig">{{alterDataDetail.orderStatus }}</span><span class="exitFloatRight">应退合计: <span class="huangColor">￥ <big>{{alterDataDetail.changeAmount}}</big></span></span>
+		</div>
+		<div v-show="payWay!=''&&payWay!=undefined">已使用<span class="huangColor">{{payWay}}</span>支付</div>
+		<div>申请时间: <span>{{alterDataDetail.applyDate }}</span></div>
+		<div>企业改签原因: <span>{{alterDataDetail.changeReasonVip }}</span></div>
+		<div>原订单号: <span>{{alterDataDetail.orderNo }}</span>&#x3000;<span class="blueColor">查看原订单</span></div>
+	</div>
+	<!--非自愿  改签原因-->
+	<div class="exitReason noExitReason">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					改签原因
+				</a>
+
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					改签证明 <span class="look">查看附件</span>
+				</a>
+
+			</li>
+		</ul>
+
+		<span class="NoExitTip">非自愿退票</span>
+	</div>
+	<!--航程信息-->
+	<template v-for="(flightItem,index) in alterDataDetail.rangeList">
+		<!-- 改签原航程 -->
+
+		<div class="oldFlight">
+			<span class="oldname">原</span>
+			<span>{{flightItem.oDepartDate | DateYueOrRi}}</span><span>{{flightItem.oArriveTime | filterArriveTime}}</span>
+			<span>{{flightItem.oDepartCityName}}-{{flightItem.oArriveCityName}}</span>
+			<span>{{flightItem.oFlightNo }}</span>
+			<span>{{flightItem.oCabinName }}</span>
+		</div>
+
+		<!--改签  航班详情-->
+		<div class="flight-detail-item">
+			<span class="newname">改</span>
+			<div class="flight-detail-top">
+				<div class="left-img"><img src="" alt="img" /><span>{{flightItem.nAirlineName}}{{flightItem.nFlightNo}}</span></div>
+				<span>{{flightItem.nDepartDate}}({{flightItem.nDepartWeek }})</span>
+				<!--<i class="iconfont icon-chenggong" :class="flightItem.isChoosed?'active':''" @click="chooseFLightItem(flightItem,index)"></i>-->
+			</div>
+			<div class="flight-detail-middle">
+				<div class="flight-item-common">
+					<div class="time">{{flightItem.nDepartTime}}</div>
+					<div class="airport">{{flightItem.nDepartAirportName }} <span v-show="flightItem.nDepartTerminal!=undefined && flightItem.nDepartTerminal!=''">-</span>{{flightItem.nDepartTerminal }}</div>
+				</div>
+				<div class="arrow"><i class="iconfont icon-eg"></i></div>
+				<div class="flight-item-common">
+					<div class="time">{{flightItem.nArriveTime | filterArriveTime }}</div>
+					<div class="airport">{{flightItem.nArriveAirportName }}<span v-show="flightItem.nArriveTerminal!=undefined && flightItem.nArriveTerminal !=''">-</span>{{flightItem.nArriveTerminal}}</div>
+				</div>
+			</div>
+			<div class="flight-detail-bottom">
+				<span>舱位：{{flightItem.nCabinName}}&nbsp;|&nbsp;</span>
+				<span>有餐饮&nbsp;|&nbsp;</span>
+				<span>机型:{{flightItem.nModel}}</span>
+			</div>
+		</div>
+	</template>
+	<!--是否显示 支付  取消   送审-->
+	<div class="alter-button">
+		<span v-show="alterDataDetail.showPayButton == 1" @click="toPay(alterDataDetail.changeId )">支付</span>
+		<span v-show="alterDataDetail.showSendCkButton ==1" @click="toSend(alterDataDetail.changeId)">送审</span>
+		<span v-show="alterDataDetail.showCancelButton==1" @click="cancleAlter(alterDataDetail.changeId))">取消改签</span>
+	</div>
+	<!--乘机人信息-->
+	<div class="passExitDetail">
+		<div>
+			<span>乘机人:</span><span class="grayColor">{{alterDataDetail.psgName}}</span><span>({{alterDataDetail.idNo}})</span>
+		</div>
+		<div>
+			<span>票号:</span><span>{{alterDataDetail.oTkno}}</span>
+		</div>
+	</div>
+
+	<!-- 改签进度  -->
+	<div class="exitProgress">
+		<div>改签进度</div>
+		<div class="exitProgressRight">
+			<div class="progressImg">
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai1?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai1?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ" v-show="isShowApproval==1">
+					<span class="bigQ" :class="isShowTai2?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai3?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai4?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai4?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai5?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai5?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai5?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai5?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai6?'':'taiColorGray'"></span>
+					<!--<span class="smallQ" :class="zhuangTai==1?'':'taiColorGray'"></span>-->
+				</div>
+			</div>
+			<div class="progressMiao">
+				<div class="MiaoItem" :class="isShowTai1?'':'colorBianGray'">
+					<div>申请已提交</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+				<div class="MiaoItem" :class="isShowTai3?'':'colorBianGray'">
+					<div>服务商审核</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+
+				<div class="MiaoItem" :class="isShowTai4?'':'colorBianGray'">
+					<div>付款&#x3000;已使用<span class="huangColor">支付宝</span>支付</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+				<div class="MiaoItem" :class="isShowTai5?'':'colorBianGray'">
+					<div>办理改签中</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+
+				<div class="MiaoItem" :class="isShowTai6?'':'colorBianGray'">
+					<div>改签办理完成</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 审批状态     当审批  appid 为空时，不显示查看审批装进度-->
+	<div class="applyProgress" v-show="alterDataDetail.appId !=''">
+        	<ul class="mui-table-view">
+	        <li class="mui-table-view-cell">
+		        <router-link class="mui-navigate-right" :to="'/approvalProgress?orderId=' + $route.query.changeId  + '&orderType=11003'" >
+					<span>审批状态</span>
+					<span>审批完成</span>
+					<span>查看进度(3/3)<i class="iconfont icon-jiantou"></i></span>			                          
+		        </router-link>
+	        </li>
+        </ul>
+    </div>
+
+</div>

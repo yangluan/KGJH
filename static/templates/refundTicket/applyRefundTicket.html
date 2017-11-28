@@ -1,0 +1,71 @@
+
+<div class="applyRefundTicket">
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click="goback"></a>
+	     <h1 class="mui-title">申请退票</h1>
+    </header>
+	<!--航段展示-->
+	<div class="flight-detail-item"  v-for="(flightItem,index) in tkOrderRangeBeanList" >
+		
+		<div class="flight-detail-top">
+			<!--<img :src="flightItem." alt="" />-->
+			<span>{{flightItem.airlineName}}{{flightItem.flightNo}}</span>&nbsp;&nbsp;
+			<span>{{flightItem.departDate}}({{flightItem.week}})</span>
+			<i class="iconfont icon-chenggong" :class="flightItem.isChoosed?'active':''" @click="chooseFLightItem(flightItem,index)"></i>
+		</div>
+		<div class="flight-detail-middle">
+			<div class="flight-item-common">
+				<div class="time">{{flightItem.departTime}}</div>
+				<div class="airport">{{flightItem.departAirportName }}-{{flightItem.departTerminal }}</div>
+			</div>
+			<div class="arrow"><i class="iconfont icon-eg"></i></div>
+			<div class="flight-item-common">
+				<div class="time">{{flightItem.arriveTime}}</div>
+				<div class="airport">{{flightItem.arriveAirportName }}-{{flightItem.arriveTerminal}}</div>
+			</div>
+		</div>
+		<div class="flight-detail-bottom">
+			<span>舱位：{{flightItem.cabinName}}&nbsp;|&nbsp;</span>
+		    <span>有餐饮&nbsp;|&nbsp;</span>
+		    <span>机型:{{flightItem.model}}</span>
+		</div>
+	</div>
+	<!--乘机人展示-->
+	 <div class="pass-item" v-for="(passItem,index) in tkOrderPsgBeanList" >
+	 	<div>
+	 		<span class="pass-name">{{passItem.psgName}}</span>&nbsp;&nbsp;&nbsp;<span>({{passItem.idNo}})</span>
+	 	</div>
+	 	<div class="pass-item-middle">
+	 		<span>手机号:{{passItem.phoneNumber}}</span>
+	 		<i class="iconfont icon-chenggong" :class="passItem.isChoosed?'active':''" @click="choosePassItem(passItem,index)"></i>
+	 	</div>
+	 	<div><span>票号:{{passItem.tkno}}</span></div>
+	 </div>
+	 <!--企业选择原因-->
+	 <div class="companyChooseReason">
+	 	<div class="company-reason-top">企业退票原因 <span>(必填)</span></div>
+	 	<router-link tag="div"  class="company-reason-bottom" to="/chooseCompanyReason?type=applyRefundTicket&refundType=1">
+	 		<span v-show="refundReasonVip==''">选择企业退票原因</span>
+	 		<span class="right-reason">{{refundReasonVip}}</span>
+	 		<i class="iconfont icon-jiantou"></i>
+	 	</router-link>
+	 </div>
+	 
+	 <div class="companyChooseReason" v-show="isShowNoRefundReason">
+	 	<div class="company-reason-top">非自愿退票原因 <span>(非必填)</span></div>
+	 	<router-link tag="div"  class="company-reason-bottom" to="/chooseCompanyReason?type=applyRefundTicket&refundType=2">
+	 		<span v-show="refundResaon==''">选择非自愿退票原因</span>
+	 		<span class="right-reason">{{refundResaon}}</span>
+	 		<i class="iconfont icon-jiantou"></i>
+	 	</router-link>
+	 </div>
+	 
+	  <div class="noExitTip" v-show="!isShowNoRefundReason">
+                <span class="tanTipGao">!</span> 由于航班取消、提前、延误、航程改变或其他突发状况，造成您不能正常乘机，您可申请
+                <span class="toNoZiYuan" @click="toChooseNoReason">
+                	非自愿改签»</span>
+      </div>
+       <!--提交申请-->
+	<div class="toApply" @click="toSubmitApply">提交申请</div>
+	 
+</div>

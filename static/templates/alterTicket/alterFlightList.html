@@ -1,0 +1,67 @@
+<div class="alterFlightList">
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click.once="goback"></a>
+		<h1 class="mui-title">航班列表</h1>
+	</header>
+
+	<div class="flight_list">
+		<template v-for="(item,key) in flightMap">
+			<!--航班列表-->
+			<div class="flight_list_item" @click="chooseFlightItem(item,key)">
+				<!-- 航班     -->
+				<div class="item_top">
+
+					<div class="item_time">
+						<div class="flight_left">
+							<span class="da_font">{{item.departTime}}</span>
+							<span class="small_font">{{item.departAirportName}}-{{item.departTerminal}}</span>
+						</div>
+						<div class="flight_middle">
+							<i class="iconfont icon-eg"></i>
+						</div>
+						<div class="flight_right">
+							<span class="da_font right_time"> {{item.arriveTime}}<span class="sup small_font">+1天</span></span>
+							<span class="small_font">{{item.arriveAirportName}}-{{item.arriveTerminal}}</span>
+						</div>
+					</div>
+
+					<div class="wei">违</div>
+
+					<div class="price_item">
+						<span class="huang da_font">￥{{item.minPrice}}</span>
+						<span class="small_font">{{item.minPriceCabin}}{{item.minPriceId}}</span>
+					</div>
+
+				</div>
+				<div class="item_bottom small_font">
+					<img :src="item.airlineImg" alt="">
+					<span>{{item.flightNo}}</span> |
+					<span>{{item.plane}}</span>&#x3000;
+					<span>{{item.hasFood}}</span>
+				</div>
+			</div>
+			<!--航班详情-->
+			<div class="cang" v-for="cangType in item.cabinTypeList" v-show="item.isChoosed">
+				<div class="cang-item">
+					<span>{{cangType.cabinTypeName}}</span>
+					<span>{{cangType.cabinType}}</span>
+					<span>{{cangType.cabinList[0]}}</span>
+					<span></span>
+					<span>
+						订
+					</span>
+				</div>
+				<div class="cang-item" v-for="cang in cangType.cabinList" @click="chooseCang(cang,item.flightNo)">
+					<span>{{cang}}</span>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+		</template>
+
+	</div>
+	
+</div>

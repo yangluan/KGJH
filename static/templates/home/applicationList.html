@@ -1,0 +1,70 @@
+<div class="applicationList">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class=" mui-icon mui-pull-left iconfont icon-icon07 " @click="goback"></a>
+		<h1 class="mui-title">我的出差申请单</h1>
+		<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" @click="toFilter">筛选</button>
+	</header>
+	<div class="mui-content">
+		<v-scroll :on-refresh="onRefresh" :on-infinite="onInfinite">
+		<div class="mui-content">
+			<div class="applylist" v-for="(applyItem,index) in applyList">
+				<router-link :to="{path:'DetailsApplications',query:{orderId:applyItem.ccsqdId}}" class="content">
+					<div class="left">
+						<div class="destination">{{applyItem.mdd}}</div>
+						<div class="date">{{applyItem.dateBegin}}--{{applyItem.dateEnd}}</div>
+						<div class="person">{{applyItem.ccrAndSxr}}</div>
+						<div class="research">{{applyItem.ccsy}}</div>
+					</div>
+					<div class="middle">
+						
+						<span>{{applyItem.projectName}}</span>
+					</div>
+					<!--判断订单状态-->
+					<div class="right">
+						<span>预算&nbsp;<a >￥<big>{{applyItem.zys}}</big></a></span>
+						<span class="status">{{applyItem.status | orderListStatus }}</span></div>
+				</router-link>
+
+				<div class="bottom">
+					<span class="submit" v-show="applyItem.status==0">编辑</span>
+					<span class="binageng" v-show="applyItem.isChange==1">变更</span>
+					<span class="del" v-show="applyItem.status==0" @click="toDelApplication(applyItem.ccsqdId,index)">删除</span>
+					<span class="binageng" v-show="applyItem.isChange==2">报销</span>
+				</div>
+			</div>
+
+			<div class="applylist" v-for="(applyItem,index) in downdata" v-show="downdata.length!=0">
+				<router-link :to="{path:'DetailsApplications',query:{orderId:applyItem.ccsqdId}}" class="content">
+					<div class="left">
+						<div class="destination">{{applyItem.mdd}}</div>
+						<div class="date">{{applyItem.dateBegin}}--{{applyItem.dateEnd}}</div>
+						<div class="person">{{applyItem.ccrAndSxr}}</div>
+						<div class="research">{{applyItem.ccsy}}</div>
+					</div>
+					<div class="middle" v-show="downdata.length!=0">
+						
+						<span>{{applyItem.projectName}}</span>
+					</div>
+					<!--判断订单状态-->
+					<div class="right">
+						<span>预算&nbsp;<a >￥<big>{{applyItem.zys}}</big></a></span>
+						<span class="status">{{applyItem.status | orderListStatus }}</span>
+					</div>
+				</router-link>
+
+				<div class="bottom">
+					<router-link tag="span" class="submit" v-show="applyItem.status==0" :to="{path:'DetailsApplications',query:{ccsqdId:applyItem.ccsqdId}}">编辑</router-link>
+					<span class="binageng" v-show="applyItem.isChange==1">变更</span>
+					<span class="del" v-show="applyItem.status==0" @click="toDelApplication(applyItem.ccsqdId,index)">删除</span>
+					<span class="binageng" v-show="applyItem.isChange==2">报销</span>
+				</div>
+			</div>
+		</div>
+
+	</v-scroll>
+	</div>
+	<div class="newApply" @click="addApply">
+		<i class="iconfont icon-jia"></i>新增
+	</div>
+	
+</div>

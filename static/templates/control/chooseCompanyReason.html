@@ -1,0 +1,14 @@
+<div class="companyChoose">
+	<header class="mui-bar mui-bar-nav ">
+		<a class=" iconfont icon-icon07 mui-pull-left" @click.once="goback"></a>
+		<h1 class="mui-title">{{title}}</h1>
+	</header>
+	<div class="mui-content">
+		<div class="reason-list">
+			<div class="reason-item" v-for="(item,index) in reasonList" @click="chooseReason(item,index)">
+				<span><span>{{index + 1}}.</span>{{item.cName}}</span> <i class="iconfont icon-chenggong"></i>
+			</div>
+		</div>
+	</div>
+
+</div>

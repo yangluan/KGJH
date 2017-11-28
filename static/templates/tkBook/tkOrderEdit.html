@@ -1,0 +1,159 @@
+<div id="tkorderEdit">
+	<header class="mui-bar mui-bar-nav">
+			<a class=" mui-icon icon iconfont icon-icon07 mui-pull-left" v-on:click="back()"></a>
+			<h1 class="mui-title">{{tkSearchInfo.dep}} <i class="icon iconfont icon-jiantou1-copy"></i> {{tkSearchInfo.arr}}</h1>
+		</header>
+	<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="mui-row">
+							<div class="mui-col-xs-8">
+								<h4>
+									<span v-if="tkSearchInfo.dc">单程</span>
+									<span v-if="!tkSearchInfo.dc">往返</span>
+									{{tkVoyage1.info.departDate}}  {{tkVoyage1.info.departTime}}
+								</h4>
+								<h5> <i class="icon iconfont icon-dengdai"></i> 支付成功后预计180分钟出票</h5>
+							</div>
+							<div class="mui-col-xs-3 ">
+								<div class=" blue text-right" style="line-height: 3;" >
+									<a href="#hbxq">航班详情</a>	
+								</div>
+
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+
+				<ul class="mui-table-view" >
+					<li class="mui-table-view-cell">
+						<div class="title">乘机人信息
+							<span v-show="tkSearchInfo.tripType==2||tkSearchInfo.outerSize" v-on:click="addEmp(0)">
+								<i class="icon iconfont icon-jia"></i>
+							</span>
+						</div>
+					</li>
+					<li class="mui-table-view-cell  mui-active" v-for="empinfo in tkcxrlist" :key="empinfo.empId">
+						<i  v-show="tkSearchInfo.tripType==2||tkSearchInfo.outerSize" class="icon iconfont icon-jian-copy-copy left" v-on:click="subtract(empinfo.empId)"></i>
+						<a class="mui-navigate-right" href="javascript:;" v-on:click="addEmp(1,empinfo.empId)">{{empinfo.empName}}({{empinfo.idNumber}})</a>
+						<div class="mui-collapse-content">
+							<h5>手机号 {{empinfo.phoneNumber}}</h5>
+						</div>
+					</li>
+				</ul>
+				<div class="mui-table-view">
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							服务费
+						</div>
+					</div>
+				</div>
+				<ul class="mui-table-view" v-if="tkSearchInfo.tripType!=2">
+					<li class=" mui-collapse mui-active" >
+						<div class="mui-card-content-inner">差旅信息</div>
+						<div class="mui-card-content">
+							<div class="mui-input-row" v-if="tkSearchInfo.tkQStatus==1&&!tkSearchInfo.outerSize">
+								<label>成本中心</label>
+								<input type="text" class="mui-input-clear" v-model="tkccsqd.costCenterName" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+							<div class="mui-input-row" v-if="tkSearchInfo.tkQStatus==1&&!tkSearchInfo.outerSize" >
+								<label>项目名称</label>
+								<input type="text" class="mui-input-clear"  v-model="tkccsqd.projectName" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+
+							<div class="mui-input-row">
+								<label>违背事项</label>
+								<input type="text" class="mui-input-clear" v-model="wbsx" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>违背原因</label>
+								<input type="text" class="mui-input-clear" v-model="reasonDesc" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class=" mui-collapse mui-active" >
+						<div class="mui-card-content-inner">联系人</div>
+							<div class="mui-card-content mui-row">
+								<div class="mui-col-xs-6">			
+									<div class="mui-input-row ">
+										<input type="text" class="tkOrderInput" v-model="empName" placeholder="请输入姓名" ><span class="mui-icon mui-icon-clear mui-hidden"></span>
+									</div>
+								</div>
+								<div class="mui-col-xs-6">			
+									<div class="mui-input-row ">
+		
+										<input type="text" class="tkOrderInput" v-model="phoneNumber" placeholder="请输入手机号" ><span class="mui-icon mui-icon-clear mui-hidden"></span>
+									</div>
+								</div>
+								<div class="mui-input-row">
+		
+									<input type="text" class="tkOrderInput" v-model="email" placeholder="请输入邮箱(非必填)" ><span class="mui-icon mui-icon-clear mui-hidden"></span>
+								</div>
+							</div>
+
+					</li>
+				</ul>
+				
+				<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item" href="javascript:;">
+						<span class="orange">￥{{price}}</span>
+					</a>
+					<a class="mui-tab-item" href="javascript:;">
+						<span v-if="empInfo.useAccount" class="left">公司支付</span>
+						<span v-else class="left">公司支付</span>
+					</a>
+					<a class="mui-tab-item" href="#sd" >
+						<span>明细 <i></i> </span>
+					</a>
+					<a class="mui-tab-item" href="javascript:;" style="line-height: 3;">
+						<button type="button" class="mui-btn mui-btn-warning" v-on:click="bookOrder(0)">提交订单</button>
+					</a>
+				</nav>
+				
+				<div id="sd" class="box mui-popover mui-popover-action mui-popover-bottom">
+					<div style="height: 200px;background-color: #FFFFFF;margin-bottom: 50px;">
+						<div  class="mui-card-content-inner">	
+							<p class="clear"><span class="left">成人</span><span class="orange right">￥{{salePrice+airportFee+tax}}X{{cxrlength}}人</span></p>
+							<p class="clear"><span class="left">机票价</span><span class="orange right">￥{{salePrice}}/人</span></p>
+							<p class="clear"><span class="left">民航基金</span><span class="orange right">￥{{airportFee}}/人</span></p>
+							<p class="clear"><span class="left">燃油税</span><span class="orange right">￥{{tax}}/人</span></p>
+						</div>
+					</div>
+				</div>
+				
+				<div id="hbxq" class="box mui-popover mui-popover-action mui-popover-bottom" style="margin-bottom: 90%;">
+					<div class="mui-card" style="height: 100px;background-color: #FFFFFF;">
+						<div class="mui-card-content-inner mui-row">
+			                <div class="mui-table-cell mui-col-xs-4">
+			                	<p class="mui-h6 mui-ellipsis">{{tkVoyage1.info.airlineName}}|{{tkVoyage1.info.flightNo}}</p>
+			                    	<span>{{tkVoyage1.info.departTime}}</span>
+			                    <h5>{{tkVoyage1.info.departAirportName}}{{tkVoyage1.info.departTerminal}}</h5>
+			                	
+			                </div>
+			                <div class="mui-table-cell mui-col-xs-4 text-center">
+			                	<p class="mui-h6" style="color: #FFFFFF;"> 0</p>
+			                	
+			                	<i class="icon iconfont icon-eg font26 "></i>
+			                    <p class="mui-h6 mui-ellipsis">
+			                    	<span v-show="tkVoyage1.info.hasFood==1">有餐食</span>
+			                    	<span v-show="tkVoyage1.info.hasFood==0">无餐食</span>|
+			                    	<span>机型{{tkVoyage1.info.plane}}</span>
+			                    </p>
+			                	
+			                </div>
+			                <div class="mui-table-cell mui-col-xs-4 text-right">
+			                	<p class="mui-h6" style="color: #FFFFFF;"> 0</p>
+			                	<span>{{tkVoyage1.info.arriveTime}}</span>
+			                		<sup class="mui-h6" v-show="tkVoyage1.info.departDate!=tkVoyage1.info.arriveDate" >+1天</sup>
+			                    <h5>{{tkVoyage1.info.arriveAirportName}}{{tkVoyage1.info.arriveTerminal}}</h5>
+			                </div>
+						</div>
+					</div>
+				</div>
+	
+		</div>
+</div>

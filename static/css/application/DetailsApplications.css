@@ -1,0 +1,453 @@
+body {
+  background-color: #EFEFEF; }
+/*    #DetailsApplications   */
+
+
+.detailsSection .travel {
+  background-color: #EFEFEF;
+}
+/*费用*/
+.moneys{
+  font-size: .9rem;
+}
+
+#DetailsApplications .application-header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 3rem; }
+
+/*    标题 出差申请 */
+#DetailsApplications .mui-title{
+  font-size: 1.3rem;
+}
+/*   费用预算的布局*/
+#DetailsApplications .application-section .cost-budget {
+  padding-left: 1rem;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid transparent;
+  line-height: 2rem;
+  font-size: 1rem;
+  color: #323232;
+}
+
+/*    费用预算 合成一行 交通和住宿费用 */
+#DetailsApplications #iptRight {
+  float: left;
+  width: 3.5rem;
+  margin-left: -3rem;
+}
+/*  住宿费*/
+#labelRight1{
+  margin-left: 1rem;
+}
+#DetailsApplications #iptRight1{
+  float: right;
+  width: 3.5rem;
+  margin-right: 1rem;
+}
+/*    费用预算下其他费用 */
+#iptLeftQt{
+  width: 3.5rem;
+  float: left;
+  margin-left: -2rem;
+}
+
+/*  字体大小  */
+#DetailsApplications .mui-navigate-right{
+  font-size: .9rem;
+}
+
+#DetailsApplications .noBorDer{
+  border: none;
+  width: 10rem;
+  text-align: center;
+}
+
+/*  输入框的边框取消*/
+#DetailsApplications .mui-input-group:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+   background-color: transparent;
+}
+#DetailsApplications .mui-input-group:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+   background-color:transparent;
+}
+
+/*    返回箭头 */
+#DetailsApplications .goHome{
+  font-size: 1.9rem;
+  float: left;
+  line-height: 3rem;
+  color: white;
+}
+
+/*  详情页总费用展示  */
+#DetailsApplications .mui-badge.mui-badge-inverted{
+  line-height: 3rem;
+  color: #323232;
+}
+.marGinRight{
+  float: right;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #323232;
+  margin-right: 1rem;
+}
+#iptRight{
+  width: 3.5rem;
+}
+
+
+
+.application-header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1.83467rem;
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 1.83467rem; }
+  .application-header .iconParent {
+    position: relative; }
+  .application-header #icon-arrow {
+    position: absolute;
+    left: 0.42667rem;
+    font-size: 0.768rem;
+  }
+
+.detailsSection {
+  margin-top: 3rem;
+  width: 100%; }
+  .detailsSection .bgdh {
+    padding: 0.21333rem 0.42667rem;
+    font-size: 0.9rem;
+    width: 100%;
+    height: 3.2rem;
+    background-color: #fff; }
+    .detailsSection .bgdh .firstBgdh {
+      float: left;
+      margin-left: 1rem;
+       }
+    .detailsSection .bgdh .bgDh {
+      color: deepskyblue; }
+    .detailsSection .bgdh .spjj {
+      float: right;
+      margin-right: 1rem;
+      color: red; }
+    .detailsSection .bgdh .yusuan {
+      color: #646464; }
+    .detailsSection .bgdh .yusuanPrice {
+      color: orange; }
+    .detailsSection .bgdh .ccsqd .ccsqdh {
+      float: left;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      color: #646464; }
+    .detailsSection .bgdh .ccsqd .ccsqdSize {
+      float: left;
+      color: #646464;
+      font-size: 0.9rem; }
+    .detailsSection .bgdh .ccsqd .sptg {
+      color: #D7D7D7; }
+    .detailsSection .bgdh .ccsqd .yusuan2 {
+      float: right;
+      margin-right: 1rem;
+      font-size: 0.59733rem; }
+    .detailsSection .bgdh .ccsqd .yusuanJg {
+      /*float: left;*/
+      font-size: 0.9rem;
+      color: #646464; }
+  .detailsSection .marT {
+    margin-top: 0.42667rem; }
+  .detailsSection .dataShow {
+    width: 100%;
+    height: 1.92rem;
+    border-bottom: 1px dashed #D7D7D7;
+    background-color: #fff; }
+    .detailsSection .dataShow .title {
+      float: left;
+      margin-left: 0.42667rem;
+      margin-right: 0.42667rem;
+      width: 2.77333rem;
+      height: 1.92rem;
+      border: 1px solid transparent;
+      line-height: 1.92rem;
+      font-size: 0.61867rem;
+      font-weight: bold; }
+    .detailsSection .dataShow .data {
+      line-height: 1.92rem;
+      font-size: 0.61867rem;
+      font-weight: bold; }
+  .detailsSection .date {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.42667rem;
+    margin-bottom: 0.42667rem;
+    width: 100%;
+    height: 2rem;
+    background-color: white; }
+
+    .detailsSection .date .data-ccxcS {
+      float: left;
+      line-height: 1.83467rem;
+      font-size: 0.68267rem;
+      width: 50%;
+      height: 1.83467rem;
+      border: 1px solid transparent;
+      color: #323232;
+      text-align: center; }
+    .detailsSection .date .data-ccxcZ {
+      float: right;
+      line-height: 1.83467rem;
+      text-align: center;
+      font-size: 0.68267rem;
+      color: #323232;
+      width: 50%;
+      height: 1.83467rem;
+      border: 1px solid transparent; }
+  .detailsSection .travel {
+    margin-top: 0.42667rem;
+    width: 100%;
+    height: 1.83467rem;
+    border-bottom: 1px solid #d7d7d7}
+    .detailsSection .travel .cxjh-text {
+      float: left;
+      margin-left: 1rem;
+      font-size: .9rem;
+      color: #323232;
+      line-height: 1.7rem;
+       }
+    .detailsSection .travel .xcjh-center-text {
+      float: left;
+      margin-left: 0.42667rem;
+      font-size: 0.59733rem;
+      color: black;
+      line-height: 1.83467rem; }
+    .detailsSection .travel .right-jia {
+      font-size: 0.68267rem;
+      color: #4FB2ED;
+      line-height: 1.83467rem; }
+  .detailsSection .travelBoxShow {
+    width: 100%;
+    height: 4.48rem;
+    background-color: white; }
+    .detailsSection .travelBoxShow .contentBox {
+      margin-left: 1rem;
+      padding: 0.42667rem;
+      width: 100%;
+      height: 4.48rem;
+      /*border-bottom: 1px dashed #D7D7D7; */
+    }
+      .detailsSection .travelBoxShow .contentBox .removeBtnBox {
+        float: left;
+        line-height: 3.2rem;
+        color: red;
+        margin-right: 0.42667rem; }
+      .detailsSection .travelBoxShow .contentBox .dataContent {
+        float: left; }
+        .detailsSection .travelBoxShow .contentBox .dataContent .fontBoldTitle {
+          font-size: .9rem;
+          font-weight: 700; }
+          .detailsSection .travelBoxShow .contentBox .dataContent .fontBoldTitle .fontBoldTitleYuSuan {
+            margin-left: 1.06667rem;
+            font-size: 0.9rem;
+            color: #7F7F7F;
+          font-weight: normal}
+            .detailsSection .travelBoxShow .contentBox .dataContent .fontBoldTitle .fontBoldTitleYuSuan .colorFontPrice {
+              color: orange; }
+        .detailsSection .travelBoxShow .contentBox .dataContent .fontBoxSpan {
+          font-size: 0.8rem;
+          color: #7F7F7F; }
+          .detailsSection .travelBoxShow .contentBox .dataContent .fontBoxSpan .fontBoxFirstSpan {
+            display: inline-block;
+            width: 0.576rem;
+            height: 0.576rem;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            line-height: 0.576rem;
+            font-size: 0.46933rem;
+            font-weight: bold;
+            margin-right: 0.21333rem; }
+          .detailsSection .travelBoxShow .contentBox .dataContent .fontBoxSpan .bgc {
+            background-color: #50B3EE; }
+      .detailsSection .travelBoxShow .contentBox .returnBtnArrow {
+        float: right;
+        line-height: 3.2rem; }
+    .detailsSection .travelBoxShow .weiTextBox {
+      padding: 0.42667rem;
+      width: 100%;
+      height: 2.98667rem; }
+      .detailsSection .travelBoxShow .weiTextBox .weiTboX {
+        float: left;
+        margin-top: 0.64rem;
+        width: 0.704rem;
+        height: 0.704rem;
+        background-color: #FD5354;
+        text-align: center;
+        font-size: 0.42667rem;
+        font-weight: bold;
+        line-height: 0.704rem;
+        color: white;
+        margin-right: 0.64rem; }
+      .detailsSection .travelBoxShow .weiTextBox .wbsxs {
+        float: left;
+        position: relative; }
+        .detailsSection .travelBoxShow .weiTextBox .wbsxs .fontRed {
+          color: red; }
+        .detailsSection .travelBoxShow .weiTextBox .wbsxs .yysrWbyy {
+          position: absolute;
+          left: -0.59733rem; }
+          .detailsSection .travelBoxShow .weiTextBox .wbsxs .yysrWbyy input {
+            width: 8.53333rem;
+            border: none; }
+  .detailsSection .cost-budget {
+    margin-left: 1rem;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid transparent;
+    line-height: 2rem;
+    font-size: 0.9rem; }
+  .detailsSection .costBudgetBox {
+    margin-bottom: 0.42667rem;
+    width: 100%;
+    background-color: white; }
+    .detailsSection .costBudgetBox .smbox {
+      width: 100%; }
+      .detailsSection .costBudgetBox .smbox .transportation {
+        width: 100%;
+        height: 1.83467rem;
+        border: 1px solid transparent; }
+        .detailsSection .costBudgetBox .smbox .transportation .zhuSuF {
+          float: left;
+          font-size: 0.68267rem;
+          margin-left: 0.42667rem;
+          font-weight: 600;
+          line-height: 1.83467rem; }
+        .detailsSection .costBudgetBox .smbox .transportation .zhuSuInput {
+          float: right;
+          width: 3.2rem;
+          height: 1.792rem; }
+          .detailsSection .costBudgetBox .smbox .transportation .zhuSuInput input {
+            outline: none;
+            border: none;
+            width: 100%;
+            height: 1.70667rem;
+            font-size: 0.68267rem; }
+    .detailsSection .costBudgetBox .bottom-box {
+      width: 100%;
+      height: 1.83467rem;
+      background-color: white;
+      border: 1px solid transparent; }
+      .detailsSection .costBudgetBox .bottom-box .allMoney {
+        float: left;
+        margin-left: 0.42667rem;
+        line-height: 1.83467rem;
+        font-weight: 600;
+        font-size: 0.68267rem; }
+      .detailsSection .costBudgetBox .bottom-box .allMoneyNum {
+        float: right;
+        margin-right: 0.42667rem;
+        width: 4.26667rem;
+        text-align: center;
+        line-height: 1.83467rem;
+        font-size: 0.68267rem;
+        color: #F7A235;
+        height: 1.83467rem;
+        border: 1px solid transparent; }
+  .detailsSection .examination, .detailsSection .examination1 {
+    width: 100%;
+    height: 1.83467rem;
+    background-color: white;
+    border-bottom: 1px dashed #D6D6D6; }
+    .detailsSection .examination .spgz-title, .detailsSection .examination1 .spgz-title {
+      float: left;
+      font-size: 0.68267rem;
+      line-height: 1.83467rem;
+      margin-left: 0.42667rem;
+      font-weight: 600; }
+    .detailsSection .examination .spgz-name, .detailsSection .examination1 .spgz-name {
+      float: left;
+      margin-left: 0.85333rem;
+      font-size: 0.68267rem;
+      font-weight: 600;
+      color: black;
+      line-height: 1.83467rem; }
+      .detailsSection .examination .spgz-name input, .detailsSection .examination1 .spgz-name input {
+        margin-left: -0.21333rem;
+        width: 10.66667rem;
+        height: 1.83467rem;
+        font-size: 0.64rem;
+        border: none;
+        outline: none; }
+    .detailsSection .examination #arrow-spgz, .detailsSection .examination1 #arrow-spgz {
+      float: right;
+      margin-right: 0.42667rem;
+      font-size: 0.68267rem;
+      line-height: 1.83467rem;
+      color: #D7D7D7; }
+  .detailsSection .examination1 {
+    margin-bottom: 0.53333rem; }
+  .detailsSection .bgjl {
+    float: left;
+    padding-left: 0.42667rem;
+    width: 100%;
+    height: 1.344rem;
+    font-size: 0.64rem;
+    line-height: 1.344rem;
+    background-color: #fff;
+    color: #808080;
+    border-bottom: 1px dashed #D7D7D7; }
+  .detailsSection .bgjlShow {
+    margin-top: 1.96267rem;
+    position: relative;
+    width: 100%;
+    height: 3.49867rem;
+    background-color: #fff; }
+    .detailsSection .bgjlShow .numlogo {
+      position: absolute;
+      top: 0.42667rem;
+      width: 0.49067rem;
+      height: 0.576rem;
+      background-color: red;
+      color: white;
+      text-align: center;
+      line-height: 0.576rem;
+      font-size: 0.53333rem; }
+    .detailsSection .bgjlShow .yuanyin {
+      padding-left: 0.42667rem;
+      padding-top: 0.85333rem; }
+    .detailsSection .bgjlShow .shenpiZhong {
+      position: absolute;
+      top: 1.06667rem;
+      right: 1.70667rem; }
+    .detailsSection .bgjlShow .rightArr {
+      position: absolute;
+      top: 1.49333rem;
+      right: 0.42667rem;
+      font-size: 0.64rem;
+      color: #D7D7D7; }
+
+/*# sourceMappingURL=DetailsApplications.css.map */

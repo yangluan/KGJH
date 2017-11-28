@@ -1,0 +1,47 @@
+<div class="addCommonAddress">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class="mui-pull-left iconfont icon-icon07" @click="toCommonInfo()"></a>
+		<h1 class="mui-title">新增常用地址</h1>
+	</header>
+	<div class="mui-input-row">
+		<div class="name">
+			<label>收件人</label>
+			<input type="text" v-model="recipient" class="mui-input-clear" data-input-clear="5" placeholder="请输入收件人">
+			<span class="mui-icon mui-icon-clear mui-hidden"></span>
+		</div>
+		<div class="phonenumber">
+			<label>联系电话</label>
+			<input type="text" v-model="phoneNumber" class="mui-input-clear" placeholder="请输入手机号" data-input-clear="5">
+			<span class="mui-icon mui-icon-clear mui-hidden"></span>
+		</div>
+		<div class="area">
+			<label>所在地区</label>
+			<input type="text" v-model="cityName" placeholder="请输入城市" />
+			<input type="text" v-model="provinceName" @click="showCity()" placeholder="请输入省份" />
+			
+		</div>
+		<div class="address">
+			<label>详细地址</label>
+			<input type="text" v-model="addr" class="mui-input-clear" placeholder="请输入详细地址" data-input-clear="5">
+			<span class="mui-icon mui-icon-clear mui-hidden"></span>
+		</div>
+		<div class="post">
+			<label>邮政编码</label>
+			<input type="text" v-model="post" class="mui-input-clear" placeholder="非必填" data-input-clear="5">
+			<span class="mui-icon mui-icon-clear mui-hidden"></span>
+		</div>
+	</div>
+	<div class="content">
+		</ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<span class="mo-text">设为默认</span>
+				<div class="mui-switch mui-switch-blue" v-bind:class="{'mui-active' : isDefault==1}" @click="defSwt()">
+					<div class="mui-switch-handle"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="save" @click="saveCommonInfo">
+		<div>保存</div>
+	</div>
+</div>

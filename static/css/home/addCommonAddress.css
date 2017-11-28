@@ -1,0 +1,73 @@
+.addCommonAddress{
+	padding-top:2.8rem;
+}
+.addCommonAddress .mui-input-row{
+	padding:0 0.5rem;
+	padding-top: 0.5rem;
+	background-color:white;
+}
+.addCommonAddress .mui-input-row div{
+	width: calc(100% - 1rem);
+	margin: 0.5rem auto;
+	margin: 0 0.5rem;
+	height:2.8rem;
+	border-bottom:1px solid #DCDCDC;
+	background-color: white;
+	/*padding: 0.5rem;*/
+}
+.addCommonAddress .mui-input-row label{
+	font-size:1rem;
+	text-align: right;
+	width: 30%;
+}
+.addCommonAddress .mui-input-row input{
+	width: 65%;
+	font-size:1rem;
+	display: inline-block;
+
+}
+.addCommonAddress .mui-input-row .area  input{
+		width: 7.5rem;
+		
+}
+.addCommonAddress .content  span{
+	font-size:1rem;
+}
+
+.addCommonAddress .save{
+	width:100%;
+	height:3rem;
+	line-height:3rem;
+	background-color:orange;
+	text-align: center;
+	color:white;
+	font-size:1rem;
+	position:fixed;
+	bottom:0;
+}
+.addCommonAddress .area{
+	/*display: flex;*/
+	/*align-items: center;*/
+}
+.addCommonAddress .area input{
+	/*width: 2.5rem;
+	background-color: white;*/
+}
+
+/* 开关  */
+.addCommonAddress .mui-switch-blue.mui-active {
+	background-color: #41bd3e;
+	border-color: #41bd3e;
+}
+ .addCommonAddress .mui-table-view-cell{
+ 	background-color: white;
+ }
+.addCommonAddress li{
+	list-style: none;
+}
+.addCommonAddress li .mo-text{
+	display: inline-block;
+	width: 30%;
+	padding-right: 15px;
+	text-align: right;
+}

@@ -1,0 +1,391 @@
+@function rem($px) {
+  @return $px / 46.875 + rem;
+}
+body{
+  background-color: #EFEFEF;
+}
+.application-header{
+  position: fixed;
+  top:0;
+  z-index: 3;
+  width: 100%;
+  height: rem(86);
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: rem(36);
+  line-height: rem(86);
+  .iconParent{
+    position: relative;
+  }
+  #icon-arrow{
+    //margin-left: rem(20);
+    position: absolute;
+    left: rem(20);
+    font-size: rem(36);
+  }
+}
+.detailsSection{
+  margin-top: rem(106);
+  width: 100%;
+  .bgdh{
+    padding: rem(10) rem(20);
+    font-size: rem(30);
+    width: 100%;
+    height:rem(98);
+    background-color: #fff;
+    .firstBgdh{
+      font-weight: 700;
+    }
+    .bgDh{
+      color: deepskyblue;
+    }
+    .spjj{
+      color: red;
+    }
+    .yusuan{
+      color: #646464;
+    }
+    .yusuanPrice{
+      color: orange;
+    }
+    .ccsqd{
+      .ccsqdh{
+        font-size: rem(28);
+        color: #646464;
+      }
+      .ccsqdSize{
+        font-size: rem(28);
+      }
+      .sptg{
+        color: #D7D7D7;
+      }
+      .yusuan2{
+        font-size: rem(28);
+      }
+      .yusuanJg{
+        font-size: rem(28);
+        color: #646464;
+      }
+    }
+  }
+  .marT{
+    margin-top: rem(20);
+  }
+  .dataShow{
+    width: 100%;
+    height:rem(90);
+    border-bottom: 1px dashed #D7D7D7;
+    background-color: #fff;
+    .title{
+      float: left;
+      margin-left: rem(20);
+      margin-right: rem(20);
+      width: rem(130);
+      height:rem(90);
+      border: 1px solid transparent;
+      line-height: rem(90);
+      font-size: rem(29);
+      font-weight: bold;
+    }
+    .data{
+      line-height: rem(90);
+      font-size: rem(29);
+      font-weight: bold;
+    }
+
+
+  }
+  .date{
+    margin-top: rem(20);
+    margin-bottom: rem(20);
+    width: 100%;
+    height: rem(86);
+    background-color: white;
+    .data-ccxcS{
+      float: left;
+      line-height: rem(86);
+      font-size: rem(32);
+      width: 50%;
+      height:rem(86);
+      border: 1px solid transparent;
+      color: black;
+      text-align: center;
+    }
+    .data-ccxcZ{
+      float: right;
+      line-height: rem(86);
+      text-align: center;
+      font-size: rem(32);
+      color: black;
+      width: 50%;
+      height:rem(86);
+      border: 1px solid transparent;
+    }
+  }
+  .travel{
+    margin-top: rem(20);
+    width: 100%;
+    height: rem(86);
+    background-color: white;
+    .cxjh-text{
+      float: left;
+      margin-left: rem(20);
+      font-size: rem(32);
+      color: #323232;
+      line-height: rem(86);
+      font-weight: 600;
+    }
+    .xcjh-center-text{
+      float: left;
+      margin-left: rem(20);
+      font-size: rem(28);
+      color: black;
+      line-height: rem(86);
+    }
+    .right-jia{
+      font-size: rem(32);
+      color: #4FB2ED;
+      line-height: rem(86);
+    }
+  }
+  .travelBoxShow{
+    width: 100%;
+    height: rem(210);
+    background-color: white;
+    .contentBox{
+      padding: rem(20);
+      width: 100%;
+      height: rem(210);
+      border-bottom: 1px dashed #D7D7D7;
+      .removeBtnBox{
+        float: left;
+        line-height: rem(150);
+        color: red;
+        margin-right: rem(20);
+      }
+      .dataContent{
+        float: left;
+        .fontBoldTitle{
+          font-size: rem(30);
+          font-weight: 700;
+          .fontBoldTitleYuSuan{
+            margin-left: rem(50);
+            font-size: rem(28);
+            color: #7F7F7F;
+            .colorFontPrice{
+              color: orange;
+            }
+          }
+        }
+        .fontBoxSpan{
+          font-size: rem(28);
+          color: #7F7F7F;
+          .fontBoxFirstSpan{
+            display: inline-block;
+            width: rem(27);
+            height:rem(27);
+            background-color: orange;
+            color: white;
+            text-align: center;
+            line-height: rem(27);
+            font-size: rem(22);
+            font-weight: bold;
+            margin-right: rem(10);
+          }
+          .bgc{
+            background-color: #50B3EE;
+          }
+        }
+      }
+      .returnBtnArrow{
+        float: right;
+        line-height: rem(150);
+      }
+    }
+    .weiTextBox{
+      padding: rem(20);
+      width: 100%;
+      height:rem(140);
+      .weiTboX{
+        float: left;
+        margin-top: rem(30);
+        width: rem(33);
+        height:rem(33);
+        background-color: #FD5354;
+        text-align: center;
+        font-size: rem(20);
+        font-weight: bold;
+        line-height: rem(33);
+        color: white;
+        margin-right: rem(30);
+      }
+      .wbsxs{
+        float: left;
+        position: relative;
+        .fontRed{
+          color: red;
+        }
+        .yysrWbyy{
+          position: absolute;
+          left: rem(-28);
+          input{
+            width: rem(400);
+            border: none;
+          }
+        }
+      }
+    }
+
+  }
+  .cost-budget{
+    padding-left: rem(20);
+    width: 100%;
+    height: rem(60);
+    border: 1px solid transparent;
+    line-height: rem(60);
+    font-size: rem(28);
+  }
+  .costBudgetBox{
+    margin-bottom: rem(20);
+    width: 100%;
+    background-color: white;
+    .smbox{
+      width: 100%;
+      .transportation{
+        width: 100%;
+        height:rem(86);
+        border: 1px solid transparent;
+        .zhuSuF{
+          float: left;
+          font-size: rem(32);
+          margin-left: rem(20);
+          font-weight: 600;
+          line-height: rem(86);
+        }
+        .zhuSuInput{
+          float: right;
+          width: rem(150);
+          height: rem(84);
+          input{
+            outline: none;
+            border: none;
+            width: 100%;
+            height: rem(80);
+            font-size: rem(32);
+          }
+        }
+      }
+    }
+    .bottom-box{
+      width: 100%;
+      height: rem(86);
+      background-color: white;
+      border: 1px solid transparent;
+      .allMoney{
+        float: left;
+        margin-left: rem(20);
+        line-height: rem(86);
+        font-weight: 600;
+        font-size: rem(32);
+      }
+      .allMoneyNum{
+        float: right;
+        margin-right: rem(20);
+        width: rem(200);
+        text-align: center;
+        line-height: rem(86);
+        font-size: rem(32);
+        color: #F7A235;
+        height: rem(86);
+        border: 1px solid transparent;
+      }
+    }
+  }
+  .examination,.examination1{
+    width: 100%;
+    height: rem(86);
+    background-color: white;
+    border-bottom: 1px dashed #D6D6D6;
+    .spgz-title{
+      float: left;
+      font-size: rem(32);
+      line-height: rem(86);
+      margin-left: rem(20);
+      font-weight: 600;
+    }
+    .spgz-name{
+      float: left;
+      margin-left: rem(40);
+      font-size: rem(32);
+      font-weight: 600;
+      color: black;
+      line-height: rem(86);
+      input{
+        margin-left: rem(-10);
+        width: rem(500);
+        height: rem(86);
+        font-size: rem(30);
+        border: none;
+        outline: none;
+
+      }
+    }
+    #arrow-spgz{
+      float: right;
+      margin-right: rem(20);
+      font-size: rem(32);
+      line-height: rem(86);
+      color: #D7D7D7;
+    }
+  }
+  .examination1{
+    margin-bottom: rem(25);
+  }
+  .bgjl{
+    float: left;
+    padding-left: rem(20);
+    width: 100%;
+    height: rem(63);
+    font-size: rem(30);
+    line-height: rem(63);
+    background-color: #fff;
+    color: #808080;
+    border-bottom: 1px dashed #D7D7D7;
+  }
+  .bgjlShow{
+    margin-top: rem(92);
+    position: relative;
+    width: 100%;
+    height:rem(164);
+    background-color: #fff;
+    .numlogo{
+      position: absolute;
+      top:rem(20);
+      width: rem(23);
+      height:rem(27);
+      background-color: red;
+      color: white;
+      text-align: center;
+      line-height: rem(27);
+      font-size: rem(25);
+    }
+    .yuanyin{
+      padding-left: rem(20);
+      padding-top: rem(40);
+    }
+    .shenpiZhong{
+      position: absolute;
+      top:rem(50);
+      right:rem(80);
+    }
+    .rightArr{
+      position: absolute;
+      top:rem(70);
+      right:rem(20);
+      font-size: rem(30);
+      color: #D7D7D7;
+    }
+  }
+}
+// 163

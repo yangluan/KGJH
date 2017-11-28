@@ -1,0 +1,22 @@
+<div class="applicationList">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class=" mui-icon  icon iconfont icon-icon07 mui-pull-left" v-on:click="back()"></a>
+		<h1 class="mui-title">选择出差申请单</h1>
+	</header>
+	<div class="applylist" v-for="(chooseApplyItem,index) in chooseApplyList" @click="chooseRightApply(chooseApplyItem,index)">
+		<div class="content">
+			<div class="left">
+			<div class="destination">{{chooseApplyItem.mdd}}</div>
+			<div class="date">{{chooseApplyItem.dateBegin}}--{{chooseApplyItem.dateEnd}}</div>
+			<div class="person">{{chooseApplyItem.ccrAndSxr}}</div>
+			<div class="research">{{chooseApplyItem.ccsy}}</div>
+		</div>
+		<div class="middle">
+			<span>预算<i>￥</i><b>{{chooseApplyItem.zys}}</b></span>
+			<span>{{chooseApplyItem.projectName}}</span>
+		</div>
+		<div class="right" :class="chooseApplyItem.isChoosed?'active':''"><i class="iconfont icon-renzhengtongguo"></i></div>
+		</div>
+		
+	</div>
+</div>

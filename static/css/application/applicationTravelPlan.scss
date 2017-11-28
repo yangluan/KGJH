@@ -1,0 +1,145 @@
+@function rem($px) {
+  @return $px / 46.875 + rem;
+}
+body{
+  background-color: #EFEFEF;
+}
+.costCenterHeader{
+  position: fixed;
+  top:0;
+  z-index: 3;
+  width: 100%;
+  height: rem(86);
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: rem(36);
+  line-height: rem(86);
+  .iconParent{
+    position: relative;
+  }
+  #icon-arrow{
+    //margin-left: rem(20);
+    position: absolute;
+    left: rem(20);
+    font-size: rem(36);
+  }
+}
+.applicationFieldHeader{
+  margin-top: rem(106);
+  width:100%;
+  height: rem(360);
+  background-color: white;
+  .theTrafficTools{
+    padding: rem(10);
+    position: relative;
+    width: 100%;
+    height:rem(90);
+    border: 1px solid transparent;
+    .theTrafficToolsTitle{
+      position: absolute;
+      top: rem(20);
+      left: rem(20);
+      font-size: rem(30);
+    }
+    .theTrafficToolsBtnBox{
+      position: absolute;
+      left: rem(200);
+      button{
+        display: inline-block;
+        margin-left: rem(20);
+      }
+    }
+  }
+  .applicationTravelPeople{
+    padding: rem(10);
+    position: relative;
+    width: 100%;
+    height:rem(90);
+    border: 1px solid transparent;
+    .applicationTravelPeopleText{
+      position: absolute;
+      top: rem(20);
+      left: rem(20);
+      font-size: rem(30);
+    }
+    .selectColleague{
+      position: absolute;
+      margin-top: rem(10);
+      left: rem(200);
+      line-height: rem(70);
+      color: black;
+    }
+    .marginLf{
+      margin-left: rem(-200);
+    }
+    .rightArrows{
+      position: absolute;
+      right: rem(20);
+      line-height: rem(70);
+    }
+    .rightText{
+      color: orange;
+    }
+  }
+  }
+
+.applicationCantent{
+  margin-top: rem(20);
+  width: 100%;
+  background-color: white;
+  padding: rem(20);
+  .applicationCityLists{
+    width: 100%;
+    height: rem(50);
+    border: 1px solid transparent;
+    .city{
+      float: left;
+      .logo{
+        float: left;
+        width: rem(30);
+        height:rem(30);
+        img{
+          width: 100%;
+        }
+      }
+    }
+    .yuSuan{
+      float: right;
+    }
+  }
+  .applicationTimeShow{
+    margin-top: rem(20);
+    width: 100%;
+    background-color: white;
+    height: rem(50);
+    border: 1px solid transparent;
+  }
+  .applicationTimeShow{
+    margin-top: rem(20);
+    width: 100%;
+    background-color: white;
+    height: rem(50);
+    border: 1px solid transparent;
+  }
+  .applicationPlane{
+    margin-top: rem(20);
+    width: 100%;
+    background-color: white;
+    height: rem(50);
+    border: 1px solid transparent;
+  }
+}
+.applicationTravelPlanFooter{
+  width: 100%;
+  position: fixed;
+  bottom: rem(0);
+  height:rem(80);
+  border: 1px solid transparent;
+  button{
+    width: 100%;
+    height: 100%;
+    font-size: rem(32);
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,72 @@
+<div class="orderFilter">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class="iconfont icon-icon07" @click="goback"></a>
+		<h1 class="mui-title">订单筛选</h1>
+		<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" @click="toCancleFilter">回复默认</button>
+	</header>
+	<div class="mui-content">
+		<div class="orderFilterContent">
+			<ul>
+				<li class="tripLi">
+					<div class="orderLeft ">
+						出差类型
+					</div>
+					<div class="orderRight">
+						<div class="chooseOrderItem" v-for="(item,index) in applyType" :class="item['isChoose']?'activechooseOrderItem':''" @click="applyDanXuan(item,index)">
+							{{item.name}}
+						</div>
+					</div>
+				</li>
+				<li class="tripLi tripTypeLi">
+					<div class="orderLeft">
+						行程类型
+					</div>
+					<div class="orderRight">
+						<div class="chooseOrderItem" v-for="(item,index) in passTrip" :class="item['isChoose']?'activechooseOrderItem':''" @click="passTripDanXuan(item,index)">
+							{{item.name}}
+						</div>
+					</div>
+				</li>
+				<li class="dateTypeLi dateTypeLi">
+					<div class="orderLeft">
+						日期类型
+					</div>
+					<div class="orderRight">
+						<div class="chooseOrderItem datediv" v-for="(dataItem,index) in dateTypeArr" :class="dataItem['isChoose']?'activechooseOrderItem':''" @click="dateTypeDanXuan(dataItem,index)">
+							{{dataItem.name}}
+						</div>
+					</div>
+				</li>
+				<li class="inputLi">
+					<div class="orderLeft">
+						日期始
+					</div>
+					<div class="orderRight">
+						<input type="text" class="inputPass" v-model="dateStartInput">
+						<i class="iconfont icon-rili" @click="getDate(1)"></i>
+					</div>
+				</li>
+				<li class="inputLi"> 
+					<div class="orderLeft">
+						日期止
+					</div>
+					<div class="orderRight">
+						<input type="text" class="inputPass" v-model="dataEndInput">
+						<i class="iconfont icon-rili" @click="getDate(2)"></i>
+					</div>
+				</li>
+				<li class="inputLi manLi">
+					<div class="orderLeft">
+						出行人
+					</div>
+					<div class="orderRight">
+						<input type="text" class="inputPass" placeholder="请输入出行人">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="confirmFilterButton" @click="toConfirmFilter">
+		搜索
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<div id="Colleague">
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">选择同行人</h1>
+        <button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" v-on:click="complete()">完成</button>
+    </header>
+    <div class="mui-content mui-row mui-fullscreen">
+        <div class="mui-col-xs-3">
+            <div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+                <a class="mui-control-item mui-active" href="#content1">同事</a>
+                <!--<a class="mui-control-item" href="#content2" v-show="outerSize">外来人员</a>-->
+            </div>
+        </div>
+        <div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+            <div id="content1" class="mui-control-content mui-active">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell" v-for="info in colleague">
+                        <div class="mui-input-row mui-checkbox mui-row">
+                            <label class="mui-row">
+                                <span class="mui-col-xs-3">{{info.empNo}}</span>
+                                <span class="mui-col-xs-4">{{info.empName}}</span>
+                                <span class="mui-col-xs-5">{{info.deptName}}</span>
+                            </label>
+                            <input name="checkbox1" value="" type="checkbox" v-model="info.checked" v-on:click="selectCxr(info.checked,info.empId);" >
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="content2" class="mui-control-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell" v-for="info in linker">
+                        <div class="mui-input-row mui-checkbox mui-row">
+                            <label class="mui-row">
+                                <span class="mui-col-xs-4">{{info.chName}}</span>
+                                <span class="mui-col-xs-8">{{info.phoneNumber}}</span>
+                            </label>
+                            <input name="checkbox1" value="" type="checkbox" checked >
+                        </div>
+                    </li>
+                </ul>
+                <nav class="mui-bar mui-bar-tab">
+                    <a class="mui-tab-item" href="#delete">
+                        <span class=""></span>
+                    </a>
+                    <a class="mui-tab-item" href="" v-on:click="addLinker()">
+                        <i class="icon iconfont icon-jia"></i> 添加
+                    </a>
+                    <a class="mui-tab-item" href="#forward">
+                        <span class=""></span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

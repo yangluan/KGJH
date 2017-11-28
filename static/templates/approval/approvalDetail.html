@@ -1,0 +1,17 @@
+<div class="approval-detail">
+	<header class="mui-bar mui-bar-nav ">
+		<i class=" iconfont icon-icon07 mui-pull-left" @click.once="goback"></i>
+		<h1 class="mui-title">审批详情</h1>
+	</header>
+	<!-- 审批内容-->
+	<div id="approval-content">
+		<tk-order-details v-if="orderType == 11001"></tk-order-details>
+		<alter-ticket-detail v-if="orderType == 11003"></alter-ticket-detail>
+		<refund-ticket-detail v-if="orderType == 11002"></refund-ticket-detail>
+		<application-detail v-if="orderType == 11099"></application-detail>
+	</div>
+	<!-- 审批操作-->
+
+	<div class="approvalButton"><span @click="approvalResult('1')" class="agree">同意</span><span @click="approvalResult('0')" class="refuse">拒绝</span></div>
+
+</div>

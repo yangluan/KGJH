@@ -1,0 +1,106 @@
+<div id="userCenter">
+	<div class="usersInfo">
+		<!--<img src="/obt-app/static/image/home/2.jpg" class="blur" alt="" />-->
+		<router-link to="/userInfo">
+			<div class="userImg" >
+				<i class="iconfont icon-geren2-copy"></i>
+			</div>
+		</router-link>
+		<div class="userleft">
+			<h4>{{empInfo.empNo}} {{empInfo.empName}}</h4>
+			<p>{{empInfo.deptName}}</p>
+			<div class="iconImg">	
+				<i class="iconfont mian" v-show="empInfo.appBook==1">免</i>
+				<i class="iconfont wai" v-show="empInfo.bookOutside==1">外</i>
+				<i class="iconfont  quan" v-show="empInfo.bookRange!=0">全</i>	
+			</div>
+		</div>
+
+	</div>
+	<!--全部订单-->
+
+	<div class="userCenterList">
+		<ul class="mui-table-view ul orderUl">
+			<router-link tag="li" class="mui-table-view-cell orderlist" to="/allorder?findType=1">
+				<div class="orderlist1">
+					<i class="iconfont icon-dingdan colorBlue"></i><span>全部订单 </span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>
+
+		</ul>
+	</div>
+
+	<div class="mui-content orderList">
+		<ul class="mui-table-view mui-grid-view mui-grid-9 orderUl fenUl">
+			<li class="mui-table-view-cell mui-media mui-col-xs-4">
+				<router-link to="/allorder?findType=2">
+					<i class="iconfont icon-gouwuche colorBlue"></i>
+					<div class="mui-media-body">待支付</div>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+				<router-link to="/allorder?findType=3">
+					<i class="iconfont icon-dengdai colorBlue"></i>
+					<div class="mui-media-body">待出行</div>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+				<router-link to="/allorder?findType=4">
+					<i class="iconfont icon-tixian colorBlue"></i>
+					<div class="mui-media-body">退/改签</div>
+				</router-link>
+			</li>
+		</ul>
+	</div>
+
+	<div class="userCenterList">
+		<ul class="mui-table-view ul  commonUl shenUl">
+			<router-link tag="li" class="mui-table-view-cell orderlist" to="/needApprovalList">
+				<div class="orderlist1">
+					<i class="iconfont icon-wodeshenpi colorBlue"></i><span>需要我审批</span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>
+
+			<!--<router-link tag="li" class="mui-table-view-cell orderlist" to="/">
+				<div class="orderlist1">
+					<span><i class="iconfont icon-dingdan"></i>国际需求单</span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>-->
+
+			<router-link tag="li" class="mui-table-view-cell orderlist" to="/applicationList">
+				<div class="orderlist1">
+					<i class="iconfont icon-shenqing colorZi"></i><span>出差申请单</span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>
+			<!--<router-link tag="li" class="mui-table-view-cell orderlist" to="/">
+				<div class="orderlist1">
+					<span><i class="iconfont icon-shenpibaoxiao"></i>我的报销</span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>-->
+			<router-link tag="li" class="mui-table-view-cell orderlist" to="/commonInfo">
+				<div class="orderlist1">
+					<i class="iconfont icon-xinxi colorHuang"></i><span>常用信息</span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>
+		</ul>
+	</div>
+
+	<div class="userCenterList">
+		<ul class="mui-table-view ul commonUl">
+			
+			<!--<router-link tag="li" class="mui-table-view-cell orderlist" to="/">
+				<div class="orderlist1">
+					<span><i class="iconfont icon-iconfont0080"></i>分享给好友</span>
+				</div>
+				<i class="iconfont icon-jiantou"></i>
+			</router-link>-->
+		</ul>
+	</div>
+	<home-footer></home-footer>
+</div>

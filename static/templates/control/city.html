@@ -1,0 +1,92 @@
+<div id="city">
+
+
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+
+    <div class="mui-indexed-list-search mui-input-row mui-search search_title">
+        <input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="北京/beijing/bj/bjs/中国"
+               style="border-radius: 6px"  v-model="ss">
+    </div>
+
+</header>
+	<!--
+<div class="mui-content">
+    <div id="slider" class="mui-slider">
+        <div id="sliderSegmentedControl"
+             class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" style="background-color: #fff">
+            <a class="mui-control-item" href="#item1mobile">
+                国内
+            </a>
+            <a class="mui-control-item" href="#item2mobile" id="national">
+                国际
+            </a>
+        </div>
+-->
+
+
+
+
+<div class="mui-content">
+
+
+			<div id="list" class="mui-indexed-list" >
+				<div class="mui-indexed-list-search mui-input-row mui-search">
+					<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="" data-input-clear="1" data-input-search="1">
+					<!--<span class="mui-icon mui-icon-clear mui-hidden"></span>-->
+					<!--<span class="mui-placeholder">-->
+					<!--<span class="mui-icon mui-icon-search"></span>
+					<span>搜索机场</span>-->
+					</span>
+				</div>
+				<div class="mui-indexed-list-bar" >
+					<a >A</a>
+					<a >B</a>
+					<a >C</a>
+					<a >D</a>
+					<a >E</a>
+					<a >F</a>
+					<a >G</a>
+					<a >H</a>
+					<a >I</a>
+					<a >J</a>
+					<a >K</a>
+					<a >L</a>
+					<a >M</a>
+					<a >N</a>
+					<a >O</a>
+					<a >P</a>
+					<a >Q</a>
+					<a >R</a>
+					<a >S</a>
+					<a >T</a>
+					<a >U</a>
+					<a >V</a>
+					<a >W</a>
+					<a >X</a>
+					<a >Y</a>
+					<a >Z</a>
+				</div>
+				<div class="mui-indexed-list-alert"></div>
+				<div class="mui-indexed-list-inner" >
+					<div class="mui-indexed-list-empty-alert">没有数据</div>
+					<ul class="mui-table-view">
+                        
+                        <li v-for="hot in hotcity">
+                        	<p class="hot_class 3" v-for="h in hot" v-on:click="getszm(h.cityName,h.threeCode)">{{h.cityName}}</p>
+                        </li>
+                        
+						<div v-for="(value, key) in city">
+                            <p :data-group="key" class="mui-table-view-divider mui-indexed-list-group">{{key}}</p>
+                            <li v-for="cname in value" v-on:click="getszm(cname.cityName,cname.threeCode)" 
+                            				:data-value=cname.threeCode :data-tags=cname.fullspell
+                            				 class="mui-table-view-cell mui-indexed-list-item" ref="bb">{{cname.cityName}}
+                            </li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+</div>
+

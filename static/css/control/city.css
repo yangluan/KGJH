@@ -1,0 +1,206 @@
+* 城市选择样式
+ * varstion 1.0.0
+ * by Liuerna
+
+body {
+    font: 12px/1.5 "Microsoft Yahei", SimSun, arial, sans-serif;
+    color: #666;
+    line-height: 100%;
+}
+.mui-bar {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#done.mui-disabled{
+    color: gray;
+}
+.search_title{
+    position: absolute; left: 40px;
+    border-bottom: none;
+    width: 82%;
+}
+.city_historyChose,.city_hot{
+   padding-left: 15px;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.26rem;
+}
+
+.line{
+    position: absolute;
+    width: 100%;
+    height:1px;
+    background-color: #b5b5b6;
+    top: 50%;
+}
+.historyList{
+    padding-left: 15px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.historyList span{
+    float: left;
+    line-height: 0.4rem;
+    padding:5px 28px;
+    background-color: #fff;
+    border-radius: 6px;
+    color: #000;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 0.28rem;
+    width: 2rem;
+
+}
+.historyList li.on{
+    color: #007aff;
+}
+.listIndex{
+    position: fixed;
+    right: 0;
+    top: 106px;
+    width: 18px;
+
+    white-space: pre-wrap;
+    z-index: 1;
+    height: 100%;
+}
+.listIndex a{
+    color: #1491c5;
+    font-size: 0.28rem;
+    line-height: 0.44rem;
+    display: block;
+}
+.hot_class{
+     display: inline-block;
+    line-height: 0.4rem;
+    padding:14px 50px;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    color: #000;
+    margin: 5px ;
+    font-size: 0.28rem;
+    text-align: center;
+    list-style: none;
+}
+.on{
+    color: #007aff;
+}
+
+
+
+
+
+.mui-indexed-list {
+	position: relative;
+	border-top: solid 1px #e3e3e3;
+	border-bottom: solid 1px #e3e3e3;
+	overflow: hidden;
+	background-color: #fafafa;
+	height: 300px;
+	cursor: default;
+}
+.mui-indexed-list-inner {
+	margin: 0px;
+	padding: 0px;
+	overflow-y: auto;
+	border: none;
+}
+.mui-indexed-list-inner::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+}
+.mui-indexed-list-empty-alert,
+.mui-indexed-list-inner.empty ul {
+	display: none;
+}
+.mui-indexed-list-inner.empty .mui-indexed-list-empty-alert {
+	display: block;
+}
+.mui-indexed-list-empty-alert {
+	padding: 30px 15px;
+	text-align: center;
+	color: #ccc;
+	padding-right: 45px;
+}
+.mui-ios .mui-indexed-list-inner {
+	width: calc(100% + 10px);
+}
+.mui-indexed-list-group,
+.mui-indexed-list-item {
+	padding-right: 45px;
+}
+.mui-ios .mui-indexed-list-group,
+.mui-ios .mui-indexed-list-item,
+.mui-ios .mui-indexed-list-empty-alert {
+	padding-right: 55px;
+}
+.mui-indexed-list-group {
+	background-color: #f7f7f7;
+}
+.mui-indexed-list-group {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.mui-indexed-list-search {
+	border-bottom: solid 1px #e3e3e3;
+	z-index: 15;
+}
+.mui-indexed-list-search.mui-search:before {
+	margin-top: -10px;
+}
+.mui-indexed-list-search input {
+	border-radius: 0px;
+	margin: 0px;
+	background-color: #fafafa;
+}
+.mui-indexed-list-bar {
+	width: 23px;
+	background-color: lightgrey;
+	position: absolute;
+	height: 100%;
+	z-index: 10;
+	right: 0px;
+	-webkit-transition: .2s;
+}
+.mui-indexed-list-bar a {
+	display: block;
+	text-align: center;
+	font-size: 11px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 15px;
+	color: #aaa;
+}
+.mui-indexed-list-bar.active {
+	background-color: rgb(200,200,200);
+}
+.mui-indexed-list-bar.active a {
+	color: #333;
+}
+.mui-indexed-list-bar.active a.active {
+	color: #007aff;
+}
+.mui-indexed-list-alert {
+	position: absolute;
+	z-index: 20;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 80px;
+	height: 80px;
+	left: 50%;
+	top: 50%;
+	margin-left: -40px;
+	margin-top: -40px;
+	border-radius: 40px;
+	text-align: center;
+	line-height: 80px;
+	font-size: 35px;
+	color: #fff;
+	display: none;
+	-webkit-transition: .2s;
+}
+.mui-indexed-list-alert.active {
+	display: block;
+}

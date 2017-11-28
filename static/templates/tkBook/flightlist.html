@@ -1,0 +1,136 @@
+<div id="flightlist">
+	<header class="mui-bar mui-bar-nav">
+		    <a class=" mui-icon icon iconfont icon-icon07 mui-pull-left white" v-on:click="back()"></a>
+		    <h1 class="mui-title">{{dep}}<i class="icon iconfont icon-jiantou1-copy"></i>{{arr}}</h1>
+	</header>
+	<div class="mui-content">
+			<div class="mui-row pad10 bg-blue">
+				<div class="mui-col-xs-3 white" v-on:click="getDate1(0)">
+					<div class="mui-row">
+						<div class="mui-col-xs-3 padT07">
+							
+							<i class="icon iconfont icon-icon07 "></i>
+						</div>
+						<div class="mui-col-xs-9" style="line-height: 1;">
+							<span class="mui-h6 white">前一天</span>
+							<span class="mui-h6 orange">￥{{yesterdayPrice}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-xs-6">
+					<div class="mui-row">					
+						<input type=""  readonly="readonly" class="mui-col-xs-8 text-center pad4 border-none blue  b-ltb05 font14px" placeholder="" v-on:click="getDate1(1)" v-model="datex1" style="height: 30px;"/>
+						<input type=""  readonly="readonly" class="mui-col-xs-4 orange pad4 border-none  b-rtb05 font14px" v-model="todayPrice" style="margin-left: -7px;height: 30px;"/>
+					</div>
+				</div>
+				<div class="mui-col-xs-3 text-right white " v-on:click="getDate1(2)">
+					<div class="mui-row">
+						<div class="mui-col-xs-9" style="line-height: 1;">
+							<span class="mui-h6 white">后一天</span>
+							<span class="mui-h6 orange">￥{{TomorrowPrice}}</span>
+						</div>
+						<div class="mui-col-xs-3 padT07">
+							
+							<i class="icon iconfont icon-jiantou"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div v-if="showhc1">
+			<!--显示第一程-->
+			<div class="mui-card hblist">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner mui-row ">
+						<p >
+							<span class="qucheng" >去程</span>&nbsp;
+							<img :src="tkVoyage1.info.airlineImg" alt="" width="15"/>
+							{{tkVoyage1.info.airlineName}} | {{tkVoyage1.info.flightNo}}
+						</p>
+		                <div class="mui-table-cell mui-col-xs-4">
+		                    <h4 class="font15">{{tkVoyage1.info.departTime}}</h4>
+		                    <h5>{{tkVoyage1.info.departAirportName}}-{{tkVoyage1.info.departTerminal}}</h5>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-4 text-center">          		
+		                	<i class="icon iconfont icon-eg font26 "></i>
+		                    <p class="mui-h6 mui-ellipsis">
+		                    	<span v-show="tkVoyage1.info.hasFood==1">有餐食</span>
+		                    	<span v-show="tkVoyage1.info.hasFood==0">无餐食</span>|
+		                    	<span>机型{{tkVoyage1.info.plane}}</span>
+		                    </p>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-4 text-right">
+		                	<h4 class="font15">{{tkVoyage1.info.arriveTime}}<sup class="mui-h6" v-show="tkVoyage1.info.departDate!=tkVoyage1.info.arriveDate">+1天</sup></h4>
+		                    <h5>{{tkVoyage1.info.arriveAirportName}}{{tkVoyage1.info.arriveTerminal}}</h5>
+		                </div>
+					</div>
+					
+				</div>
+			</div>
+		</div><!--显示第一程-->
+			
+		    <ul  class="mui-table-view mui-table-view-striped mui-table-view-condensed hbullist" style="margin-bottom: 50px;">
+		        <li  v-show="info.isshow" class="mui-table-view-cell hblist" v-for="info in flightList" >
+		            <div class="mui-row" v-on:click="selectedFlight(info.flightNo)">
+		                <div class=" mui-col-xs-8">
+		                	<div class="mui-row">
+		                		
+			                    <div class="mui-col-xs-3">
+			                    	<span>
+			                    		<span  class="font20">{{info.departTime}}</span>
+			                    		<h6 >{{info.departAirportName.replace(/机场|国际机场/,"") }}{{info.departTerminal}} </h6>
+			                    	</span>
+			                    </div>
+			                    <div class="mui-col-xs-3 text-center">
+			                    	<span class=""> <i class="icon iconfont icon-eg  gray " style="font-size: 36px;"></i></span>
+			                    </div>
+			                    <div class="mui-col-xs-3">
+			                    	<span class="font20">{{info.arriveTime}}<sup class="mui-h6 black" v-show="info.departDate!=info.arriveDate">+1</sup></span>		                    	
+			                    	<h6> {{info.arriveAirportName.replace(/机场|国际机场/,"") }}{{info.arriveTerminal}}</h6>			                    	
+			                    </div>
+			                    <div class="mui-col-xs-3">
+			                    	<span class="" v-show="info.sharFlightNo!=''">共享</span>
+			                    	<span  v-for="(val,ke,index) of wbsxList" class=" right text-center" v-if="ke==info.minPriceId">
+			                    		<span v-if="val.violateItem" class="bg-red white wei">违</span>
+			                    		<span v-if="val.canBook==0">不可预订</span>
+			                    	</span>		                    
+			                    </div>
+
+		                	</div>
+		                    
+		                    <h6 class="mui-h6 mui-ellipsis">
+		                    	<img :src="info.airlineImg" alt="" width="15"/>
+		                    	{{info.airlineName}} | {{info.flightNo}} | 机型{{info.plane}}
+		                    	<!--<span> </span>--> 
+		                    	<!--<span v-show="info.hasFood==0"> </span>-->
+		                    </h6>
+		                </div>
+		                <div class=" mui-col-xs-4 text-right">
+		                	<h4 v-show="info.cabinTypeList.length<1">售罄</h4>
+		                	<span v-show="info.cabinTypeList.length>0">		                		
+		                    <div class=" orange tklistprice">￥{{info.minPrice}}</div>
+		                    <span class="mui-h6" v-if="!!info.minPriceCabin">
+		                    	<span class="mui-h6">{{ info.cabinMap[info.minPriceCabin].cabinName}}</span>
+		                    	<span class="mui-h6">{{info.minPrice/info.yPrice|zhekou}} 折</span>
+		                    </span>
+		                	</span>
+		                </div>
+		            </div>
+		        </li>
+		    </ul>
+		   
+		
+	</div>
+		<nav class="mui-bar mui-bar-tab bg-deepcor">
+			<span class="mui-tab-item "  v-on:click="footer(1)" style="line-height: 1;">
+				<i class="icon iconfont icon-dengdai white"></i><br>
+				<span class=" mui-h6 white">从早到晚</span>
+			</span>
+			<span class="mui-tab-item"  v-on:click="footer(2)" style="line-height: 1;">
+				<i class="icon iconfont icon-jiage white"></i> <br><span class="mui-h6 white">价格</span>
+			</span>
+			<span class="mui-tab-item"  v-on:click="footer(3)" style="line-height: 1;">
+				<i class="icon iconfont icon-shaixuan white"></i><br>
+				<span class="mui-h6 white">筛选</span>
+			</span>
+		</nav>
+</div>

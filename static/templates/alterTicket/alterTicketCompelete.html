@@ -1,0 +1,45 @@
+<div class="alterTicketCompelete">
+
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click.once="goback"><a class="to-home">返回首页</a></a>
+		<h1 class="mui-title">申请改签完成</h1>
+	</header>
+
+	<!--<div class="exitcompeleteContent">-->
+		<div class="exitItem" v-for="item in alterRangeArr">
+			<div class="exitItemHeader">
+				<i class="iconfont icon-chenggong"></i>
+				<div class="fuWuFeeTip">
+					<div class="huangColor">已成功提交改签申请</div>
+					<div class="grayColor fontMiddle">具体改签费用需要等待服务商确认</div>
+				</div>
+
+			</div>
+			<div class="exitTrip">
+				<div class="exitTripLeft">
+					改签后行程:
+				</div>
+				<div class="exitTripRight" v-for="rangeItem in item.rangeList">
+					<div><span>{{rangeItem.nDepartDate}}</span><span>{{rangeItem.nDepartTime}}</span></div>
+					<div><span>{{rangeItem.nFlightNo}}</span><span>{{rangeItem.nDepartCityName}}-{{rangeItem.nArriveCityName}}</span></div>
+				</div>
+			</div>
+			<div class="exitTrip">
+				<div class="exitTripLeft">
+					出行人:
+				</div>
+				<div class="exitTripRight">
+					{{item.psg}}
+				</div>
+			</div>
+			<div class="caoZuoDiv">
+				<span class="lookExitDetail" @click="lookAlterDetail(item.changeId)">查看改签详情</span>
+				<span class="sendAppply" @click="toSendApply(item.changeId)" v-show="item.showSendCkButton==1">送审</span>
+				<span class="sendAppply" @click="toPay(item.changeId)" v-show="item.showPayButton==1">支付</span>
+				<span class="cancleExitTicket" @click="toCancleAlter(item.changeId)" v-show="item.showCancelButton==1">取消改签</span>
+			</div>
+		</div>
+
+	<!--</div>-->
+
+</div>

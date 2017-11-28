@@ -1,0 +1,116 @@
+.applicationList{
+    height: 100%;
+	padding-bottom:3rem;
+}
+.applicationList .mui-content{
+	padding-top: 0.5rem;
+}
+.applicationList .applylist {
+	width: calc(100% - 1rem);
+	margin:0 0.5rem;
+	display:flex;
+	flex-direction:column;
+	margin-top:0.5rem;
+	padding:0.5rem 1rem 0.5rem 1rem;
+	background-color:white;
+	box-sizing:border-box;
+	border-radius: 6px;
+}
+
+.applicationList a{
+	color:#646464;
+}
+/*头部样式*/
+.applicationList .mui-bar a{
+	display: inline-block;
+	color :white;
+	font-size: 2rem;
+	margin-top: -0.1rem;
+}
+.applicationList .mui-bar{
+	padding-left: 0.3rem !important;
+}
+
+
+/*--------内容------*/
+.applicationList .applylist .content{
+	display:flex;
+justify-content: space-between;
+}
+.applicationList .applylist .content .left{
+	font-size:0.8rem;
+}
+.applicationList .applylist .content .left .destination{
+	font-size:1.2rem;
+	width: 8rem;
+	color: #323232;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.applicationList .applylist .content .middle{
+	margin-left: -3rem;
+	display:flex;
+	flex-direction:column;
+	font-size:0.9rem;
+	/*padding:0 3rem 0 2rem;*/
+	box-sizing:border-box;
+}
+.applicationList .applylist .content .middle a {
+	color: #f5a436;
+}
+.applicationList .applylist .content .right{
+	display: flex;
+	flex-direction: column;
+	/*justify-content: flex-end;*/
+	/*align-content: flex-end ;*/
+	align-items: flex-end;
+ font-size:0.8rem;
+ color:#646464;
+}
+.applicationList .applylist .content .right .status{
+	color: green;
+}
+.applicationList .applylist .content .right span a{
+	color: #F5A237;
+}
+.applicationList .applylist .bottom{
+	font-size: 0.5rem;
+	display: flex;
+	justify-content:flex-end;
+}
+.applicationList .applylist .bottom span{
+    text-align: center;
+   padding:0.1rem 0.6rem;
+	font-size: 0.5rem;
+	border: 1px solid #d7d7d7;
+	margin-left: 0.6rem;
+}
+.research{
+	width: 10rem;
+	overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+
+#applyList{
+	overflow: auto;
+}
+
+
+
+/**/
+
+.newApply{
+	height: 2.8rem;
+	width: 100%;
+	line-height: 2.8rem;
+	font-size: 1.1rem;
+	text-align: center;
+	background:#F5A436;
+	color: white;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}

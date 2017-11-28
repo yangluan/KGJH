@@ -1,0 +1,142 @@
+<div id="home">
+	<header id="header" class="mui-bar mui-bar-transparent" style="background-color: rgba(247, 247, 247, 0);">
+		<h1 class="mui-title">壹嘉商旅</h1>
+	</header>
+	<!--mint-ui中的轮播图-->
+
+	<div class="mui-content">
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a><img src="/obt-app/static/image/home/3.jpg" /></a>
+				</div>
+
+				<div class="mui-slider-item ">
+					<a><img src="/obt-app/static/image/home/1.jpg" /></a>
+				</div>
+				<div class="mui-slider-item ">
+					<a><img src="/obt-app/static/image/home/2.jpg" /></a>
+				</div>
+				<div class="mui-slider-item ">
+					<a><img src="/obt-app/static/image/home/3.jpg" /></a>
+				</div>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a><img src="/obt-app/static/image/home/1.jpg" /></a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator mui-text-right">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+
+		<!--mui中的九宫格-->
+
+		<ul class="mui-table-view mui-grid-view mui-grid-9  shenUl">
+			<li class="dotLi leftLi topLi"></li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4">
+				<router-link to="/allorder?findType=3">
+					<i class="iconfont icon-stroke"></i>
+					<div class="mui-media-body">我的行程</div>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4">
+				<router-link to="/applicationList" v-show="bookStyle==2">
+					<i class="iconfont icon-shenqing"></i>
+					<div class="mui-media-body">出差申请</div>
+				</router-link>
+
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+					<router-link to="/needApprovalList">
+						<i class="iconfont icon-shenpi"></i>
+						<div class="mui-media-body">审批</div>
+					</router-link>
+				</li>
+
+				<li class="dotLi rightLi topLi"></li>
+		</ul>
+
+		<!--mui中的九宫格-->
+
+		<ul class="mui-table-view mui-grid-view mui-grid-9 businessUl">
+
+			<li class="dotLi leftLi bottomLi"></li>
+			<li class="dotLi rightLi bottomLi"></li>
+			<li class="lineLi leftLine"></li>
+			<li class="lineLi rightLine"></li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 one">
+				<router-link to="/tkQuery">
+					<span class="relativeSpan businessSpan1"><i class="iconfont icon-feiji"></i></span>
+					<div class="mui-media-body">国内机票</div>
+				</router-link>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+
+				<a>
+					<span class="relativeSpan businessSpan2" style="position: relative" @click="willLine">
+							<i class="iconfont icon-guojijipiao"></i>
+					</span>
+
+					<div class="mui-media-body">国际机票</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+				<a>
+					<span class="relativeSpan businessSpan3" style="position: relative" @click="willLine">
+						<i class="iconfont icon-jiudian"></i>				
+					</span>
+					<div class="mui-media-body">国内酒店</div>
+				</a>
+
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+
+				<a>
+					<span class="relativeSpan businessSpan4" style="position: relative" @click="willLine">
+						<i class="iconfont icon-fanchuan"></i>
+					
+					</span>
+					<div class="mui-media-body">海外酒店</div>
+				</a>
+
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+
+				<a>
+					<span class="relativeSpan businessSpan5 " style="position: relative" @click="willLine">
+						<i class="iconfont icon-huoche"></i>
+			
+					</span>
+					<div class="mui-media-body">火车票</div>
+				</a>
+
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 ">
+
+				<a>
+					<span class="relativeSpan businessSpan6" style="position: relative" @click="willLine">
+						<i class="iconfont icon-yongcheshenqing" ></i>
+					</span>
+					<div class="mui-media-body">用车</div>
+				</a>
+
+			</li>
+		</ul>
+
+		<!--提供优质服务-->
+		<div class="quality-service ">
+			<span class="spanLineHome quality-service-left"></span>
+			<span>&nbsp;提供优质服务&nbsp;</span>
+			<span class="spanLineHome quality-service-right "></span>
+		</div>
+		<div class="added-service">
+			<div class="add-common" @click="willLine"><i class="iconfont icon-jiejifuwu"></i><span>接送机</span></div>
+			<div class="add-common" @click="willLine"><i class="iconfont icon-daikeboche"></i><span>代泊车</span></div>
+			<div class="add-common" @click="willLine"><i class="iconfont icon-VIP"></i><span>贵宾休息室</span></div>
+			<div class="add-common" @click="willLine"><i class="iconfont icon-kuaisutongdao"></i><span>快速通道</span></div>
+		</div>
+	</div>
+	<home-footer></home-footer>
+</div>

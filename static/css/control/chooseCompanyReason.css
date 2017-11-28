@@ -1,0 +1,20 @@
+.companyChoose{
+	padding-top: 0.5rem;
+}
+.companyChoose .mui-content{
+	/*padding-top:3rem ;*/
+}
+.reason-item{
+	padding: 0.5rem;
+	font-size: 1rem;
+	background-color: white;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #d7d7d7;
+}
+.reason-item .icon-chenggong{
+	color: #D7D7D7;
+	font-size: 1.5rem;
+}

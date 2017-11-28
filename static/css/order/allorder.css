@@ -1,0 +1,210 @@
+     
+.allOrder {
+    box-sizing: border-box;
+}
+/*头部*/
+.allOrder .mui-bar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.allOrder .mui-bar a{
+	display: inline-block;
+	color: white;
+	font-size: 2rem;
+	margin-left: -0.5rem;
+	margin-top: 0;
+}
+.orderTab {
+    margin-top: -0.5rem;
+}
+
+/*// ========title=========*/
+
+
+
+
+.allOrder .mui-bar h1{
+	font-size: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.allOrder .mui-bar h1 span {
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    border: 0.055rem solid #84d2f7;
+}
+
+.allOrder .mui-bar .activeTitle {
+    background: white;
+    color: #31B4F1;
+}
+
+/*// =====tab*/
+.orderTab {
+    width: 100%;
+    height: 2.2rem; 
+    box-sizing: border-box;
+}
+
+.orderTab ul {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    padding: 0 0.5rem;
+    margin-top: 0.6rem;
+    background-color: white;
+    
+}
+
+.orderTab li {
+    font-size: 1rem;
+    width: 25%;
+    height: 2.5rem;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 2.5rem;
+    padding: 0;
+}
+
+.activeTab {
+    color: #50B2ED;
+    border-bottom: 1px solid #50B2ED;
+}
+
+/*// ========content*/
+.orderContent .orderItem {
+	/*width: calc(100% - 1rem);*/
+	/*margin: 0 0.5rem;*/
+    background: white;
+    padding: 0.1rem 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+}
+
+.orderContent .orderCity {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+    /*padding-left: 1.5rem;*/
+   font-size: 1.2rem;
+}
+
+.orderContent .orderCity .icon-feiji{
+	color: #2fb4f2;
+	font-size: 1.1rem;
+}
+
+
+.orderContent .orderItem .orderTime {
+	
+	position: relative;
+    color: #A5A5A5;
+    padding: 0.1rem 0;
+    
+    padding-left: 1.5rem;
+}
+
+.orderContent .orderItem .orderTime .tripItem{
+	width: 1.3rem;
+	height: 1.2rem;
+	border-radius:50%;
+	text-align: center;
+	line-height: 1.2rem;
+	position: absolute;
+	top: 0;
+	left:-0.1rem;
+	font-size: 0.8rem;	
+	background: #fec240;
+	color:white;
+}
+.orderContent .orderPass,
+.orderContent .orderTime{
+	font-size: 0.9rem;
+}
+
+.orderPass {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    color:#818181;
+}
+
+/*// .orderTime,
+// .orderPass {
+//     padding-left: 1rem;
+// }*/
+.orderItem .progressLine {
+    width: 1rem;
+    height: 0.4rem;
+    margin: 0 0.1rem;
+    border-top: 1px solid black;
+    display: inline-block;
+}
+
+.orderContent  {
+   padding:0 0.5rem;
+}
+
+.orderItemTop {
+    /*border-bottom:1px solid #f0f0f0;*/
+    padding: 0.1rem 0.5rem;
+    position: relative;
+}
+
+.tripType {
+    position: absolute;
+    top: 0;
+    right: 30%;
+    background: #169BD5;
+    color: white;
+}
+
+.orderContent .piaoZhuangTai {
+    float: right;
+    color: black;
+    /*// margin-right:0.5rem*/ 
+}
+
+.orderItem .fontJin {
+    color: #F5A237;
+    font-size: 0.9rem;
+}
+
+.orderItem .money {
+    float: right;
+}
+
+.orderItemBottom {
+	margin-top: -0.8rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+  
+    justify-content: flex-end;
+}
+
+.orderItemBottom span {
+	display: inline-block;
+	font-size: 0.9rem;
+    padding: 0.1rem 0.7rem;
+    border: 1px solid #31b4f1;
+    margin:0 0.5rem ;
+    color: #31b4f1;
+    /*padding: 0.1rem 0.3rem;*/
+    /*float: right;*/
+    border-radius:4px ;
+}
+
+/*// -------------筛选控件-------*/
+
+/*----------*/
+.allOrder li{
+	list-style: none;
+}
+
+
+.colorGreen{
+	color: #41bd3e;
+}

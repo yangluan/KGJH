@@ -1,0 +1,36 @@
+<div class="editPassport">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class=" iconfont icon-icon07 mui-pull-left" @click="goback"></a>
+        <h1 class="mui-title">护照信息</h1>
+        
+    </header>
+    <div class="mui-input-row">
+        <div>
+            <label>护照号码</label>
+            <input type="text" v-model="passport" class="mui-input-clear"  data-input-clear="5" placeholder="请输入护照号码">
+            <span class="mui-icon mui-icon-clear mui-hidden"></span>
+        </div>
+        <div>
+            <label>护照有效期</label>
+            <input type="text" v-model="passportPeriod" class="mui-input-clear"  @click="addDate()" data-input-clear="5" placeholder="请输入护照有效期">
+            <span class="mui-icon mui-icon-clear mui-hidden"></span>
+        </div>
+   		<router-link :to="{path:'/yjIndexedList',query:{urlPath : '/editPassport',pathType :2,backTab :'qfd'}}">
+	        <div>
+	            <label>证件签发地</label>
+	            	<input type="text" v-model="placeOfIssueName" class="mui-input-clear" placeholder="请输入证件签发地">
+	        </div>
+        </router-link>
+        <router-link :to="{path:'/yjIndexedList',query:{urlPath : '/editPassport',pathType :2,backTab :'csd'}}">
+	        <div>
+	            <label>出生地</label>
+	            	<input type="text" v-model="birthPlaceName" class="mui-input-clear"  data-input-clear="5" placeholder="请输入出生地">
+	            	<span class="mui-icon mui-icon-clear mui-hidden"></span>
+	        </div>
+    	</router-link>
+    </div>
+    <div class="save" @click="toCommonInfo">
+		<span>确定</span>
+	</div>
+</div>
+</div>

@@ -1,0 +1,325 @@
+#home {
+	width: 100%;
+	/*height: 100%;*/
+	padding-bottom: 4rem;
+	background-color: #efefef;
+	box-sizing: border-box;
+}
+
+
+/*头部*/
+
+#home #header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	z-index: 1000;
+	color: white;
+	background-color: transparent;
+}
+
+
+/*轮播图*/
+
+#slider {
+	width: 100%;
+	overflow: hidden;
+}
+
+#slider img {
+	height: 11rem;
+}
+
+
+/*样式覆盖 重新命名*/
+
+#home .mui-content {
+	width: 100%;
+	padding-top: 0;
+	background-color: transparent;
+	border-radius: 0.2rem;
+}
+
+
+/*  内容 */
+
+#home ul {
+	width: calc(100% - 1rem);
+	margin: 0 auto;
+	margin-top: 0.6rem;
+	background: white;
+	border-radius: 6px;
+	box-shadow: 0px 3px 10px #c7c7c7;
+	position: relative;
+}
+
+#home .mui-content li {
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+}
+
+#home .mui-content li a {
+	padding: 0.5rem;
+}
+
+#home .shenUl li a {
+	padding-top: 0.8rem;
+}
+
+#home .shenUl .iconfont {
+	font-size: 1.8rem;
+	color: #50b4ed;
+}
+
+#home .shenUl {
+	margin-bottom: 0.rem;
+}
+
+#home .shenUl,
+#home .businessUl {
+	padding: 0 1.5rem;
+}
+#home .businessUl{
+	margin-top: 0.4rem;
+}
+#home .businessUl i {
+	font-size: 1.5rem;
+}
+#home .businessUl li span,
+#home .businessUl li div
+{
+	opacity: 0.5;
+}
+#home .businessUl li.one span,
+#home .businessUl li.one div
+{
+	opacity: 1;
+}
+#home .businessUl span {
+	display: inline-block;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 2.5rem;
+	color: white;
+}
+
+#home .mui-media-body {
+	font-size: 0.8rem;
+	color: #646464;
+	margin-top: 0.2rem;
+}
+
+#home .shenUl .mui-media-body {
+	color: #50b4ed;
+	/*margin-top: 0.3rem;*/
+}
+
+
+/*---------即将上线---------*/
+
+#home span.willLine {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0.5rem;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*border-radius: 5px;*/
+	/*text-align: center;*/
+	
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 0;
+}
+#home .willLine span{
+	font-size: 0.7rem;
+	display: block;
+	color: #0066CC;
+	padding: 0;
+	line-height: 0;
+}
+
+/*----shenqing-----*/
+
+/*#home .icon-stroke {
+	text-shadow: 3px 3px 2px #b4d434;
+}
+
+#home .icon-shenqing {
+	text-shadow: 3px 3px 2px #35d5a6;
+}
+
+#home .icon-shenpi {
+	text-shadow: 3px 3px 2px #35c5ce;
+}*/
+
+
+/*---business---*/
+
+#home .businessSpan1 {
+	background: #6999FF;
+}
+
+#home .businessSpan2 {
+	background: #FEC240;
+}
+
+#home .businessSpan3 {
+	background: #37CFB5;
+}
+
+#home .businessSpan4 {
+	background: #FEC240;
+}
+
+#home .businessSpan5 {
+	background: #37CFB5;
+}
+
+#home .businessSpan6 {
+	background: #6999FF;
+}
+
+
+/*优质服务分界线*/
+
+.quality-service {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem 0;
+	color: #4dccf6;
+	font-size: 0.8rem
+	/*margin: 0.1rem 0;*/
+}
+
+.quality-service .spanLineHome {
+	width: 6rem;
+	height: 0.1rem;
+	background: #81A4B8;
+}
+
+.quality-service .quality-service-left {
+	/*color: transparent;*/
+	background-image: -webkit-linear-gradient(0deg, #f6f6f6, #4dccf6);
+}
+
+.quality-service .quality-service-right {
+	background-image: -webkit-linear-gradient(0deg, #4dccf6, #f6f6f6);
+}
+
+
+/*增值服务*/
+
+.added-service {
+	width: 100%;
+	height: 5rem;
+	display: flex;
+	padding-top: 0.75rem;
+	background: white;
+}
+
+.added-service .add-common {
+	width: 25%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 0.8rem;
+	opacity: 0.6;
+}
+
+.added-service .add-common span {
+	color: #646464;
+	margin-top: -0.8rem;
+	background-color: transparent;
+}
+
+.added-service .add-common i {
+	color: #1ca4f1;
+	font-size: 2rem;
+}
+
+
+/*------services-----*/
+
+.added-service .add-common .icon-jiejifuwu {}
+
+.added-service .add-common .icon-daikeboche {
+	font-size: 2.5rem;
+}
+
+.added-service .add-common .icon-VIP {}
+
+.added-service .add-common .icon-kuaisutongdao {
+	font-size: 2.3rem;
+}
+
+.added-service .add-common .iconfont {
+	background: -webkit-linear-gradient(left, #59d7f8, #1ca4f1);
+	/* 背景色渐变 */
+	-webkit-background-clip: text;
+	/* 规定背景的划分区域 */
+	-webkit-text-fill-color: transparent;
+	/* 防止字体颜色覆盖 */
+}
+
+
+/*额外的把手*/
+
+#home .mui-content .dotLi {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	position: absolute;
+	background-color: #29a9f0;
+	/*z-index:100;*/
+}
+
+.leftLi {
+	left: 0.5rem;
+}
+
+.rightLi {
+	right: 0.5rem;
+}
+
+.topLi {
+	bottom: 0.5rem;
+}
+
+.bottomLi {
+	top: 0.5rem;
+}
+
+#home .mui-content .lineLi {
+	position: absolute;
+	display: inline-block;
+	width: 0.4rem;
+	height: 2.7rem;
+	background-color: #93dcfc;
+	top: -1.6rem;
+	border-radius: 4px;
+}
+
+.leftLine {
+	left: 0.8rem;
+}
+
+.rightLine {
+	right: 0.8rem;
+}

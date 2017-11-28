@@ -1,0 +1,138 @@
+<div id="tkScreen">
+	<header class="mui-bar mui-bar-nav">
+			<a class=" mui-icon icon iconfont icon-icon07 mui-pull-left white" v-on:click="back()"></a>
+			<h1 class="mui-title">航班筛选</h1>
+			<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" v-on:click="rest()">恢复默认</button>
+		</header>
+	<div class="mui-content mui-row mui-fullscreen">
+			<div class="mui-col-xs-3">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<a class="mui-control-item mui-active" href="#content1">起飞时间</a>
+					<a class="mui-control-item" href="#content2">机场</a>
+					<a class="mui-control-item" href="#content3">舱位类型</a>
+					<a class="mui-control-item" href="#content4">航空公司</a>
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9" style="border-left: 1px solid #c8c7cc;">
+				<div id="content1" class="mui-control-content mui-active">
+				
+						<div class="mui-card">
+							<div class="mui-card-header">								
+								<button type="button" class="mui-btn mui-btn-primary" v-on:click="nolimit(0)">不 限</button>
+							</div>
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<p>
+										
+									<button type="button" class="mui-btn mui-btn-outlined" v-on:click="getTerm(0,'00:00','06:00',1)" v-bind:class="{'btn-bgblue': selected1}">00:00--06:00</button><br>
+									</p>
+									<p>
+										
+									<button type="button" class="mui-btn mui-btn-outlined" v-on:click="getTerm(0,'06:00','12:00',2)" v-bind:class="{'btn-bgblue': selected2}">06:00--12:00</button><br>
+									</p>
+									<p>
+										
+									<button type="button" class="mui-btn mui-btn-outlined" v-on:click="getTerm(0,'12:00','18:00',3)" v-bind:class="{'btn-bgblue': selected3}">12:00--18:00</button><br>
+									</p>
+									<p>
+										
+									<button type="button" class="mui-btn mui-btn-outlined" v-on:click="getTerm(0,'18:00','24:00',4)" v-bind:class="{'btn-bgblue': selected4}">18:00--24:00</button>
+									</p>
+								</div>
+							</div>
+						</div>
+	
+				</div>
+				<div id="content2" class="mui-control-content">
+
+						<div class="mui-card">
+							<div class="mui-card-header">{{tkSearchInfo.dep}}起飞</div>
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+								 	<p>
+								 		
+									<button type="button" class="mui-btn mui-btn-primary" v-on:click="nolimit(1)">不限</button>
+								 	</p>
+								 	
+									<p v-for="info in depPlane">										
+									<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" v-on:click="getTerm(1,info.name,info.checked)" v-bind:class="{'btn-bgblue': info.checked}" >{{info.name}}</button>
+									</p>
+			
+								</div>
+							</div>
+						</div>
+						<div class="mui-card">
+							<div class="mui-card-header">{{tkSearchInfo.arr}}降落</div>
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<p>
+										
+									<button type="button" class="mui-btn mui-btn-primary" v-on:click="nolimit(2)">不限</button>
+									</p>
+									
+									<p v-for="info in arrPlane">
+										
+									<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" v-on:click="getTerm(2,info.name,info.checked)" v-bind:class="{'btn-bgblue': info.checked}" >{{info.name}}</button>
+									</p>
+			
+								</div>
+							</div>
+						</div>
+
+				</div>
+				<div id="content3" class="mui-control-content">
+
+						<div class="mui-card">
+							<div class="mui-card-header">
+								<p>									
+								<button type="button" class="mui-btn mui-btn-primary" v-on:click="nolimit(3)">不 限</button>
+								</p>
+								
+							</div>
+							<div class="mui-card-content">
+								<div class="mui-card-content-inner">
+									<p>
+										
+								<button type="button" class="mui-btn mui-btn-outlined" v-on:click="getTerm(3,'经济舱',5)" v-bind:class="{'btn-bgblue': selected5}" >经济舱</button>
+									</p>
+									<p>				
+								<button type="button" class="mui-btn mui-btn-outlined" v-on:click="getTerm(3,'头等舱/公务舱',6)" v-bind:class="{'btn-bgblue': selected6}" >头等/公务舱</button>
+									</p>
+								</div>
+							</div>
+						</div>
+
+				</div>
+				<div id="content4" class="mui-control-content">
+
+							<div class="mui-card">
+								<div class="mui-card-header" >
+									<button type="button" class="mui-btn mui-btn-primary" v-on:click="nolimit(4)">不 限</button>					
+								</div>
+								<div class="mui-card-content">
+									<div class="mui-card-content-inner">
+										<p v-for=" info in hkgs">
+											
+										<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined"  v-on:click="getTerm(3,info.name,info.checked)" v-bind:class="{'btn-bgblue': info.checked}" >{{info.name}}</button>
+										</p>
+				
+									</div>
+								</div>
+							</div>
+
+				</div>
+					<nav class="mui-bar mui-bar-tab">
+						<a class="mui-tab-item" href="#delete">
+							<span class=""></span>
+						</a>
+						<a class="mui-tab-item" href="" v-on:click="ensure()">
+							<i class="icon iconfont icon-jia"></i>确定
+						</a>
+						<a class="mui-tab-item" href="#forward">
+							<span class=""></span>
+						</a>
+					</nav>
+			</div>
+		</div>
+	
+</div>

@@ -1,0 +1,64 @@
+<div id="editUserInfo">
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-icon iconfont icon-icon07 mui-pull-left" @click="goUserInfo()"></a>
+		<h1 class="mui-title">{{editHomeName}}</h1>
+	</header>
+	<div class="mui-content">
+			<div v-if="editIdx == 1" class="mui-input-row">
+				<label>身份证号</label>
+				<input type="text" v-model="empInfo.idNumber"  class="mui-input-clear">
+			</div>
+			<div v-if="editIdx == 2"  class="mui-input-row">
+				<label>护照</label>
+				<input type="text" v-model="empInfo.passport" class="mui-input-clear">
+			</div>
+			<div   v-if="editIdx == 3 && empInfo.verifyPhone ==1" >
+				<div class="mui-input-row">
+					<label>解绑手机</label>
+					<input type="text" v-model="empInfo.phoneNumber" readonly="readonly" >
+				</div>
+				<div class="mui-input-row">
+					<input type="text" placeholder="请输入验证码" v-model="yzmNo" class="yzm">
+					<button type="button" data-loading-text="" class="mui-btn" data-yzmType="解绑手机">获取验证码</button>
+				</div>
+			</div class="mui-input-row">
+			<div  v-if="editIdx == 3 && empInfo.verifyPhone == 0">
+				<div class="mui-input-row">
+					<label>绑定手机</label>
+					<input type="text" v-model="empInfo.phoneNumber"  >
+				</div>
+				<div class="mui-input-row">
+					<input type="text" placeholder="请输入验证码" v-model="yzmNo" class="yzm">
+					<button type="button" data-loading-text="" class="mui-btn" data-yzmType="绑定手机">获取验证码</button>
+				</div>
+			</div>
+			<div v-if="editIdx == 4" class="mui-input-row">
+				<label>邮箱</label>
+				<input type="text" v-model="empInfo.email" class="mui-input-clear">
+			</div>
+			<div v-if="editIdx == 5" class="mui-input-row userLike">
+				<label>填写个人偏好</label>
+				<div class="mui-input-row "  style="margin: 10px 5px;">
+					<textarea id="textarea"  v-model="empInfo.preference" rows="5" placeholder="请输入您的喜好！"></textarea>
+				</div>
+			</div>
+			<div v-if="editIdx == 6" >
+				<div class="mui-input-row">
+				    <label>当前密码</label>
+       				<input type="password" class="mui-input-password" v-model="oldPwd"  placeholder="请输入当前密码">
+				</div>				
+				<div class="mui-input-row">
+				    <label>新密码</label>
+       				<input type="password" class="mui-input-password" v-model="pwd" placeholder="请输入新密码">
+				</div>
+				<div class="mui-input-row">
+				    <label>确认新密码</label>
+       				<input type="password" class="mui-input-password"  v-model="qrPwd" placeholder="请输入确认新密码">
+				</div>
+			</div>
+	</div>
+	<div class="loginIndex-btn" @click="saveUser()" v-show="editIdx != 3 && editIdx != 6">保存</div>
+	<div class="loginIndex-btn" @click="updatePhone()" v-show="editIdx == 3 ">保存</div>
+	<div class="loginIndex-btn" @click="updatePwd()" v-show="editIdx == 6 ">保存</div>
+</div>
+

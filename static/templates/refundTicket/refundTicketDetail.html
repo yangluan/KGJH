@@ -1,0 +1,144 @@
+<div id="refundTicketDetail">
+
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click.once="goback"></a>
+		<h1 class="mui-title">退票详情</h1>
+	</header>
+	<div class="exitOrderTop">
+		<div><span class="greenColor fontBig">{{exitDetailData.refundStatusRemark }}</span><span class="exitFloatRight">应退合计: <span class="huangColor">￥ <big>{{exitDetailData.cuRefundAmount }}</big></span></span>
+		</div>
+		<div v-show="">款项已退回原支付账户:</div>
+		<div>申请时间: <span>{{exitDetailData.applyDate}}</span></div>
+		<div>退票原因: <span>{{exitDetailData.refundResaonVip }}</span></div>
+		<div>原订单号: <span>{{exitDetailData.orderNo }}</span>&#x3000;
+			<router-link tag="span" :to="{path:'tkOrderDetails',query:{orderId:exitDetailData.orderId }}" class="blueColor">查看原订单</router-link>
+		</div>
+	</div>
+	<div class="exitReason noExitReason" v-show="exitDetailData.refundResaon!='' && exitDetailData.refundResaon!=undefined">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					非自愿原因 <span>{{exitDetailData.refundResaon}}</span>
+				</a>
+
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					退票证明 <span class="look">查看附件</span>
+				</a>
+
+			</li>
+		</ul>
+
+		<span class="NoExitTip">非自愿退票</span>
+	</div>
+
+	<!--退票航班详情-->
+	<div class="flight-detail-item" v-for="(flightItem,index) in exitDetailData.refundRangeList">
+		<div class="flight-detail-top">
+			<img src="" alt="" /><span>{{flightItem.airlineName}}{{flightItem.flightNo}}</span>&nbsp;&nbsp;
+			<span>{{flightItem.departDate}}({{flightItem.week}})</span>
+			<!--<i class="iconfont icon-chenggong" :class="flightItem.isChoosed?'active':''" @click="chooseFLightItem(flightItem,index)"></i>-->
+		</div>
+		<div class="flight-detail-middle">
+			<div class="flight-item-common">
+				<div class="time">{{flightItem.departTime}}</div>
+				<div class="airport">{{flightItem.departAirportName }}-{{flightItem.departTerminal }}</div>
+			</div>
+			<div class="arrow"><i class="iconfont icon-eg"></i></div>
+			<div class="flight-item-common">
+				<div class="time">{{flightItem.arriveTime}}</div>
+				<div class="airport">{{flightItem.arriveAirportName }}-{{flightItem.arriveTerminal}}</div>
+			</div>
+		</div>
+		<div class="flight-detail-bottom">
+			<span>舱位：{{flightItem.cabinName}}&nbsp;|&nbsp;</span>
+			<span>有餐饮&nbsp;|&nbsp;</span>
+			<span>机型:{{flightItem.model}}</span>
+		</div>
+		<div class="lookRefundDetail">
+			<span @click="lookRefundDetail(flightItem.refundRule)">查看退票政策</span>
+		</div>
+	</div>
+
+	<!--乘机人信息-->
+	<div class="passExitDetail">
+		<div>
+			<span>乘机人:</span><span class="grayColor">{{tkOrderPsgBean.psgName}}</span><span>({{tkOrderPsgBean.idNo}})</span>
+		</div>
+		<div>
+			<span>票号:</span><span>{{tkOrderPsgBean.tkno}}</span>
+		</div>
+	</div>
+	<!-- 操作 -->
+	<div class="caoZuoDiv">
+		<span class="sendAppply" @click="sendApply(exitDetailData.refundId)" v-show="exitDetailData.isShowApproval==1">送审</span>
+		<span class="cancleExitTicket" @click="cancleRefundTicket(exitDetailData.refundId )" v-show="exitDetailData.isShowCancleRefund==1">取消退票</span>
+	</div>
+
+	<!--退票进度-->
+	<div class="exitProgress">
+		<div>退票进度</div>
+		<div class="exitProgressRight">
+			<div class="progressImg">
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai1?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai1?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ" v-show="isShowApproval==1">
+					<span class="bigQ" :class="isShowTai2?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai3?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai4?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai4?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai5?'':'taiColorGray'"></span>
+					<span class="smallQ" :class="isShowTai5?'':'taiBgcGray'"></span>
+				</div>
+				<div class="woQ">
+					<span class="bigQ" :class="isShowTai6?'':'taiColorGray'"></span>
+					<!--<span class="smallQ" :class="zhuangTai==1?'':'taiColorGray'"></span>-->
+				</div>
+			</div>
+			<div class="progressMiao">
+				<div class="MiaoItem" :class="isShowTai1?'':'colorBianGray'">
+					<div>申请已提交</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+				<div class="MiaoItem" v-show="isShowApproval==1">
+					<div :class="isShowTai2 ||isShowTai3?'':'colorBianGray'">已送审</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+				<div class="MiaoItem" :class="isShowTai4?'':'colorBianGray'">
+					<div>办理退票</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+
+				<div class="MiaoItem" :class="isShowTai5?'':'colorBianGray'">
+					<div>退票完成</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+				<div class="MiaoItem" :class="isShowTai6?'':'colorBianGray'">
+					<div>退款(款项已退回原支付账户)</div>
+					<!--<div>2017-04-12 &nbsp;15:00</div>-->
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- 审批进度-->
+	<div class="applyProgress" v-show="exitDetailData.appId!=''">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<router-link class="mui-navigate-right" :to="'/approvalProgress?orderId=' + $route.query.refundId +'&orderType=11002'">
+					<span>审批状态</span>
+					<span>审批完成</span>
+					<span>查看进度(3/3)<i class="iconfont icon-jiantou"></i></span>
+				</router-link>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,169 @@
+<div id="application">
+<!--  页头 header出差申请头部 title -->
+<header class="mui-bar mui-bar-nav">
+    <h1 class="mui-title">新增出差申请单</h1>
+    <div class="iconParent"><i class="icon iconfont icon-icon07 goHome" id="icon-arrow" @click="ReturnSuperior"></i></div>
+</header>
+
+<section class="application-section">
+    <ul class="mui-table-view mui-table-view-chevron">
+        <li id="switch" class="mui-table-view-cell">
+            项目出差
+            <div class="mui-switch" @click="toggleSwich">
+                <div class="mui-switch-handle"></div>
+            </div>
+        </li>
+        <li class="mui-table-view-cell" @click="applicationProjectSelection" v-show="isOrXmxz">
+            <a class="mui-navigate-right">项目选择<span style="margin-left: 3rem">{{this.xzxmName}}</span></a>
+        </li>
+            <form class="mui-input-group" id="borderNone">
+                <div class="mui-input-row">
+                    <label class="label">目的地</label>
+                    <input type="text" class="mui-input-clear" placeholder="请输入您的目的地" v-model="ptText" id="ptText">
+                </div>
+            </form>
+        <li class="mui-table-view-cell" @click="businessTraveller">
+            <a class="mui-navigate-right">出差人<span style="margin-left: 4rem">{{cxrName}}</span></a>
+        </li>
+        <li class="mui-table-view-cell" @click="Colleague">
+            <a class="mui-navigate-right">同行人员<span style="margin-left: 3rem">{{sxr}}</span></a>
+        </li>
+        <li class="mui-table-view-cell" @click="costCenter">
+            <a class="mui-navigate-right">成本中心<span style="margin-left: 3rem">{{cbZxName}}</span></a>
+        </li>
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label class="label">出差事由</label>
+                <input type="text" class="mui-input-clear" placeholder="请输入出差事由" v-model="ccsy" id="ccsy">
+            </div>
+        </form>
+    </ul>
+
+
+    <!--出差日期始  出差日期止-->
+    <div class="date" id="date">
+        <div class="zhi">至</div>
+
+        <div class="data-ccxcS">
+            <input type="" readonly="readonly" class=" borderNone mui-col-xs-6" placeholder="出差日期始" @click="getDate1" v-model="date1" />
+        </div>
+        <div class="data-ccxcZ">
+            <input type="" readonly="readonly" class=" borderNone mui-col-xs-6" placeholder="出差日期止" @click="getDate2" v-model="date2" />
+        </div>
+    </div>
+
+    <!-- 行程计划-->
+    <div class="travel" id="travel">
+        <div class="cxjh-text">行程计划</div>
+        <div class="xcjh-center-text">详细填写您的行程计划，方便审批</div>
+        <!--  行程计划  -->
+        <router-link to="/applicationTravelPlan">
+            <i class="icon iconfont icon-jia right-jia jia" @click="cxRtxR"></i>
+        </router-link>
+    </div>
+
+    <!-- 行程计划数据展示  -->
+    <div class="travelBoxShow" id="travelBoxShow" v-show="isShow">
+        <div class="contentBox" v-show="arrShow" v-for="item in xcjhData">
+            <div class="removeBtnBox"><i class="icon iconfont icon-jian-copy-copy" @click="removeXcJh"></i></div>
+            <div class="dataContent">
+                <div class="fontBoldTitle">{{item.dep}}--{{item.arr}}     <span class="fontBoldTitleYuSuan">预算<span class="colorFontPrice">￥{{TrafficPrice}}</span></span></div>
+                <div class="fontBoxSpan"><span class="fontBoxFirstSpan">入</span>{{item.date1}}&nbsp;&nbsp;&nbsp;&nbsp;<span class="fontBoxFirstSpan bgc">离</span>03-23 (周四)</div>
+                <div class="fontBoxSpan"> </div>
+                <div class="fontBoxSpan"> </div>
+            </div>
+            <div class="returnBtnArrow"><i class="icon iconfont icon-jiantou right-jiantou" @click="xcJhGo"></i></div>
+        </div>
+
+        <!-- 行程计划数据展示  -->
+            <div class="contentBox" v-show="arr1Show">
+                <div class="removeBtnBox"><i class="icon iconfont icon-jian-copy-copy" @click="removeXcJh"></i></div>
+                <div class="dataContent">
+                    <div class="fontBoldTitle">{{jiPiaoData.dep}}-- {{jiPiaoData.arr}}     <span class="fontBoldTitleYuSuan">预算<span class="colorFontPrice">￥{{jiPiaoData.price}}</span></span></div>
+                    <div class="fontBoxSpan"><span class="fontBoxFirstSpan">入</span>{{jiPiaoData.arriveDate}}&nbsp;&nbsp;&nbsp;&nbsp;<span class="fontBoxFirstSpan bgc">离</span>{{jiPiaoData.arriveTime}} (周四)</div>
+                    <div class="fontBoxSpan">{{jiPiaoData.airlineName}}{{jiPiaoData.flightNo}}</div>
+                    <div class="fontBoxSpan" style="float: right;margin-top: -1.3rem">{{jiPiaoData.cangWei}}</div>
+                </div>
+                <div class="returnBtnArrow"><i class="icon iconfont icon-jiantou right-jiantou" @click="xcJhGo"></i></div>
+            </div>
+
+        <div class="weiTextBox" v-show="weiShow">
+            <div class="weiTboX">违</div>
+            <div class="wbsxs">
+                <div class="fontRed" style="margin-left: .5rem">{{jiPiaoData.wbsx}};</div>
+                <div class="yysrWbyy">
+                    <input type="text" placeholder="请输入违背原因" v-model="wbyy">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 住宿安排 -->
+    <div class="travel" id="travel">
+        <div class="cxjh-text">住宿安排</div>
+        <div class="xcjh-center-text">详细填写您的住宿安排，方便审批</div>
+        <!--  住宿安排  -->
+        <i class="icon iconfont icon-jia right-jia" @click="applicationAccommodation"></i>
+    </div>
+
+    <!--  费用预算 -->
+    <div class="cost-budget">费用预算</div>
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <label class="label">交通费:</label>
+            <input type="text" class="mui-input-clear" id="iptRight" placeholder="请输入交通预算" v-model="TrafficPrice" disabled style="color: orange">
+
+            <label class="label" id="labelRight">住宿费:</label>
+            <input type="text" class="mui-input-clear" id="iptRight1" placeholder="请输入住宿预算" v-model="HotelPrice" disabled style="color: orange">
+        </div>
+    </form>
+    <!--<form class="mui-input-group">-->
+        <!--<div class="mui-input-row">-->
+            <!--<label class="label">住宿费</label>-->
+            <!--<input type="text" class="mui-input-clear" id="iptRight" placeholder="请输入住宿预算" v-model="HotelPrice" disabled>-->
+        <!--</div>-->
+    <!--</form>-->
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <label class="label">其他费用:</label>
+            <input type="text" class="mui-input-clear" id="iptLeftQt" placeholder="请输入其他预算" v-model="otherPrice" style="color: orange">
+            <!--  总费用-->
+            <label class="label" id="labelRight">总费用:</label>
+            <span class="mui-badge mui-badge-inverted marGinRight" id="iptRight1" style="color: orange">{{TrafficPrice*1+HotelPrice*1+otherPrice*1}}</span>
+        </div>
+    </form>
+
+    <!--<form class="mui-input-group">-->
+        <!--<div class="mui-input-row">-->
+            <!--<label class="label">总费用</label>-->
+            <!--<span class="mui-badge mui-badge-inverted marGinRight">{{TrafficPrice*1+HotelPrice*1+otherPrice*1}}</span>-->
+        <!--</div>-->
+    <!--</form>-->
+
+<!--   审批规则       applicationApproval   -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell" @click="applicationApproval">
+            <a class="mui-navigate-right">审批规则<span style="margin-left: 4rem">{{gzmc}}</span></a>
+        </li>
+    </ul>
+
+
+    <form class="mui-input-group" style="margin-bottom: 3.5rem">
+        <div class="mui-input-row">
+            <label class="label">备注说明</label>
+            <input type="text" class="mui-input-clear" placeholder="请输入备注说明" v-model="Remarks">
+        </div>
+    </form>
+
+    <!--   垫子div-->
+    <div class="dianZ"></div>
+
+
+</section>
+    <!--  底座两个按钮-->
+<footer class="application-footer">
+    <button type="button" class="mui-btn mui-btn-primary" @click="subDraft">保存草稿</button>
+    <button type="button" class="mui-btn mui-btn-warning" @click="submitCensorship">提交送审</button>
+</footer>
+</div>
+

@@ -1,0 +1,27 @@
+<div id="subSuccess">
+    <!--  页头 header出差申请头部 title -->
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">提交成功</h1>
+        <div class="iconParent"><i class="icon iconfont icon-icon07 goHome" id="icon-arrow" @click="ReturnSuperior"></i></div>
+    </header>
+
+
+    <!--content-->
+    <section class="subSuccessSection">
+        <div class="centerLoading">
+            <i class="icon iconfont icon-dengdai1 soBig"></i>  <span class="fontSoBig">出差申请单已提交送审成功</span>
+            <p>等待领导审批</p>
+        </div>
+        <div class="textContent">
+                <ul>
+                    <li>出差单号： <span>{{ccsqdNo}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fontBluebot" @click="goDetailsApplications"><u>查看详情</u></span></li>
+                    <li>目的地： <span>{{mdd}}</span>(<span>{{projectName}}</span>)</li>
+                    <li>出差日期： <span>{{dateBegin}}</span>至 <span>{{dateEnd}}</span>（共<span>1</span>天）</li>
+                    <li>出行人： <span>{{ccr}}、{{sxr}}</span></li>
+                    <li>出差事由： <span>{{ccsy}}</span></li>
+                    <li>总预算： <span class="fontOrange">￥{{zys}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fontBluebot" @click="feiYongMingX"><u>费用明细</u></span></li>
+                </ul>
+        </div>
+
+    </section>
+</div>

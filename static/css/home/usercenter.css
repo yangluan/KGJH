@@ -1,0 +1,184 @@
+/*#userCenter .userCenterList{
+	margin-top: 1rem;
+}*/
+
+
+/*个人资料*/
+
+#userCenter {
+	padding-bottom: 3.2rem;
+}
+
+#userCenter .usersInfo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 10rem;
+	width: 100%;
+	background: url('/obt-app/static/image/usercenter/user-bg.jpg') no-repeat;
+	background-color: #D7D7D7;
+	background-size: 100% 100%;
+}
+
+#userCenter .usersInfo .userImg {
+	width: 4rem;
+	height: 4rem;
+	background-color: #9fdbfe;
+	/*color: ;*/
+	border-radius: 50%;
+	text-align: center;
+	line-height: 4rem;
+	margin: 0 1rem;
+}
+
+#userCenter .usersInfo .userImg .icon-geren2-copy {
+	font-size: 2rem;
+}
+/*   滤镜        */
+.blur {
+	width: 100%;
+	height: 100%;
+	filter: url(blur.svg#blur);
+	/* FireFox, Chrome, Opera */
+	-webkit-filter: blur(20px);
+	/* Chrome, Opera */
+	-moz-filter: blur(20px);
+	-ms-filter: blur(20px);
+	filter: blur(20px);
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=20, MakeShadow=false);
+	/* IE6~IE9 */
+}
+
+#userCenter .userleft h4 {
+	font-size: 1rem;
+	color: dodgerblue;
+}
+
+#userCenter .userleft p {
+	font-size: 0.8rem;
+	color: dodgerblue;
+}
+
+#userCenter .userleft .iconImg {
+	display: flex;
+}
+#userCenter .userleft .iconImg i{
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	text-align: center;
+	font-size: 1rem;
+	border-radius: 0.2rem;
+	margin-right: 0.3rem;
+}
+#userCenter .iconImg .mian{
+	background-color: #31B4F3;
+	color: white;
+}
+#userCenter .iconImg .wai{
+	background-color: #f5a436;
+	color: white;
+}
+#userCenter .iconImg .quan{
+	background-color: #37cfb5;
+	color: white;
+}
+#userCenter .userleft i {
+	
+}
+
+
+/*-----------------列表-----------------*/
+
+.userCenterList .ul .orderlist {
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 0.8rem;
+}
+
+.userCenterList .ul .orderlist .orderlist1 span i {
+	margin-right: 0.5rem;
+}
+
+.userCenterList .orderlist1 {
+	font-size: 1rem;
+}
+
+#userCenter ul {
+	padding: 0;
+	margin: 0;
+}
+
+#userCenter .orderList li {
+	padding:  0;
+}
+
+#userCenter .orderUl {
+	background-color: white;
+}
+
+#userCenter .orderUl li {
+	border: none;
+}
+
+#userCenter .commonUl {
+	margin-top: 0.6rem;
+}
+/*全部订单*/
+.colorBlue{
+		color:#31b4f3;
+}
+.colorHuang{
+	color: #FFC962;
+}
+.colorZi{
+	color: #df8ffb;
+}
+
+#userCenter .orderlist1 .icon-aiguifanfile2{
+
+}
+#userCenter .orderlist1 .icon-gouwuche{
+	
+}
+#userCenter .orderlist1{
+	display: flex;
+	align-items: center;
+}
+#userCenter ul span{
+	font-size: 1rem;
+	padding-left: 0.5rem;
+}
+#userCenter .orderUl .iconfont{
+	font-size: 1.7rem;
+}
+#userCenter .shenUl .iconfont{
+	font-size: 1.7rem
+}
+#userCenter .fenUl .iconfont{
+	font-size: 1.7rem;
+}
+#userCenter .fenUl .mui-media-body{
+	color:#31b4f3;
+	margin-top: 0;
+	font-size: 1rem;
+}
+
+#userCenter ul  .orderlist1 i.icon-xinxi{
+	font-size: 1.3rem;
+}
+
+#userCenter  ul  i.icon-jiantou{
+	font-size: 1.7rem;
+	color: #d7d7d7;
+}
+#userCenter .mui-table-view:before,
+#userCenter .mui-table-view:after{
+	height: 0;
+}
+#userCenter span{
+	/*color: #646464;*/
+}

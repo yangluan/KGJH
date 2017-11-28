@@ -1,0 +1,521 @@
+body {
+  background-color: #EFEFEF; }
+/*
+    color: #323232;
+    font-size: 1rem;
+    font-weight: 400;
+*/
+
+/*    箭头
+            font-size: 1.9rem
+ */
+#application .application-header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 3rem; }
+/*    标题 出差申请 */
+#application .mui-title{
+     font-size: 1.3rem;
+ }
+
+
+
+
+
+.applicationCantent .applicationCityLists .city {
+    float: left;
+    margin-left: 1rem;
+}
+
+
+.mui-table-view,.mui-table-view-chevron li{
+  background-color: white;
+  /*border: 1px solid #d7d7d7;*/
+}
+#application .mui-table-view-cell:after{
+    background-color: #D7D7D7;
+}
+
+/*  input边框 */
+#application .mui-input-group:before{
+  background-color: transparent;
+}
+/*  input边框 */
+#application .mui-input-group:after{
+  background-color: transparent;
+}
+/*  选择日期box*/
+#application #date{
+  height:3rem;
+}
+/*   选择日期时间input*/
+#application .data-ccxcS,.data-ccxcZ{
+  margin-top: .8rem;
+}
+
+#application #travel{
+  height: 3rem;
+}
+#application .cxjh-text{
+  padding-left: 1rem;
+  line-height: 3rem;
+    color: #323232;
+    font-size: 1rem;
+    font-weight: 400;
+}
+#application .xcjh-center-text{
+  line-height: 3rem;
+  font-size: .85rem;
+}
+/*   编辑行程的加号 */
+#application .jia{
+  color: #4FB2ED;
+}
+
+
+/*    日期的边框 */
+#application .borderNone{
+  border: none;
+    width: 10rem;
+    text-align: center;
+}
+#application .mui-switch.mui-active {
+    border-color: deepskyblue;
+    background-color: deepskyblue;
+}
+/*    返回箭头 */
+#application .goHome{
+  font-size: 1.9rem;
+  float: left;
+  line-height: 3rem;
+  color: white;
+}
+/*.mui-table-view{*/
+  /*border: 1px dashed transparent;*/
+/*}*/
+/*  li的下border虚线*/
+/*.mui-table-view-cell{*/
+  /*border-bottom: 1px dashed #d7d7d7;*/
+/*}*/
+
+/*    黑色title字体颜色*/
+#application .mui-table-view-cell,.label{
+  color: #323232;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*  费用预算的布局*/
+#application .application-section .cost-budget {
+    padding-left: 1rem;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid transparent;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: #323232;
+}
+/*  费用预算下违背原因的布局*/
+#application .application-section .travelBoxShow .weiTextBox .wbsxs .yysrWbyy input {
+    width: 20rem;
+    height: .5rem;
+    border: none;
+    color: #323232;
+    font-size: .9rem;
+}
+
+/*      输入框住宿费向右*/
+#application #labelRight{
+    float: right;
+}
+#application .mui-input-row label{
+    width: 32%;
+}
+#application .mui-input-clear{
+    /*width: 68%;*/
+    float: left;
+    font-size: .9rem;
+    color: #323232;
+}
+#application .marGinRight{
+    color: #323232;
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+  float: right;
+    /*   0 -- 2.6rem */
+  margin-right: 1rem;
+}
+
+/*    费用预算 合成一行 交通和住宿费用 */
+
+#application #iptRight {
+    width: 3.5rem;
+    margin-left: -3rem;
+}
+#application #iptRight1{
+    float: right;
+    width: 3.5rem;
+    margin-right: -8rem;
+}
+/*    费用预算下其他费用 */
+#iptLeftQt{
+    width: 3.5rem;
+    float: left;
+    margin-left: -2rem;
+}
+/* 行程计划展示数据的title dep and arr*/
+#application .application-section .travelBoxShow .contentBox .dataContent .fontBoldTitle{
+    font-size: .8rem;
+}
+
+
+
+
+
+
+#application .application-header .iconParent {
+    position: relative; }
+#application .application-header #icon-arrow {
+    position: absolute;
+    left: 0.42667rem;
+    font-size: 0.2rem; }
+
+#application .application-section {
+  width: 100%;
+  padding-top: 3.5rem;
+    margin-bottom: 5rem;
+}
+#application .application-section .white-first-application {
+    width: 100%;
+    height: 1.83467rem;
+    line-height: 1.83467rem;
+    background-color: white;
+    border-bottom: 1px dashed #D7D7D7; }
+    #application .application-section .white-first-application .right-jiantou {
+      float: right;
+      margin-right: 0.42667rem;
+      font-size: 0.68267rem;
+      color: black; }
+    #application .application-section .white-first-application .text-left-xmcc {
+      float: left;
+      margin-right: 1.06667rem;
+      margin-left: 0.42667rem;
+      color: #323232;
+      font-weight: 600;
+      line-height: 1.83467rem;
+      font-size: 0.68267rem; }
+    #application .application-section .white-first-application .btn-right-flag {
+      float: right;
+      margin-right: 0.42667rem;
+      margin-top: 0.42667rem; }
+      #application .application-section .white-first-application .btn-right-flag .btnBox {
+        position: relative;
+        width: 1.92rem;
+        height: 1.06667rem;
+        border: 1px solid #D7D7D7;
+        border-radius: 35%; }
+       #application  .application-section .white-first-application .btn-right-flag .btnBox .btnDot {
+          position: absolute;
+          left: -0.10667rem;
+          width: 1.06667rem;
+          height: 1.06667rem;
+          border-radius: 50%;
+          background-color: white;
+          border: 1px solid #D7D7D7; }
+    #application .application-section .white-first-application .text-center-xmxz {
+      color: black;
+      display: inline-block;
+      font-size: 0.68267rem; }
+    #application .application-section .white-first-application .span-arror {
+      display: inline-block;
+      float: right;
+      margin-right: 0.42667rem;
+      color: black;
+      font-size: 0.68267rem; }
+    #application .application-section .white-first-application .mmd-center-ipt, .application-section .white-first-application .ccsy-center-ipt {
+      display: inline-block;
+      margin-left: 0.42667rem;
+      width: 8.53333rem;
+      border: none; }
+      #application .application-section .white-first-application .mmd-center-ipt input, .application-section .white-first-application .ccsy-center-ipt input {
+        border: none;
+        width: 100%;
+        height: 100%;
+        font-size: 0.68267rem;
+        outline: none; }
+    #application .application-section .white-first-application .ccsy-center-ipt {
+      margin-left: -0.21333rem; }
+   #application  .application-section .white-first-application #margin-text {
+      margin-left: 0.64rem;
+      font-size: 0.64rem; }
+  #application .application-section .date {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+    margin-top: 0.42667rem;
+    margin-bottom: 0.42667rem;
+    width: 100%;
+    height: 3rem;
+    background-color: white; }
+   #application  .application-section .date .data-ccxcS {
+      line-height: 1.83467rem;
+      font-size: 0.68267rem;
+      width: 50%;
+      height: 1.83467rem;
+      border: 1px solid transparent;
+      color: black;
+      text-align: center; }
+   #application  .application-section .date .data-ccxcZ {
+      line-height: 1.83467rem;
+      text-align: center;
+      font-size: 0.68267rem;
+      color: black;
+      width: 50%;
+      height: 3rem;
+      border: 1px solid transparent; }
+  #application .application-section .travel {
+    margin-top: 0.42667rem;
+    width: 100%;
+    height: 1.83467rem;
+    background-color: white; }
+    #application .application-section .travel .cxjh-text {
+      float: left;
+      color: #323232;}
+    #application .application-section .travel .xcjh-center-text {
+      float: left;
+      margin-left: 1rem;
+      color: #D7D7D7;
+       }
+    #application .application-section .travel .right-jia {
+      float: right;
+      margin-right: 1rem;
+      font-size: 1.6rem;
+      color: #4FB3EF;
+      line-height: 3rem; }
+  #application .application-section .travelBoxShow {
+    width: 100%;
+    height: 8.5rem;
+    background-color: white; }
+    #application .application-section .travelBoxShow .contentBox {
+      padding: 0.42667rem;
+      width: 100%;
+      height: 4.48rem;
+      border-bottom: 1px dashed #D7D7D7; }
+      #application .application-section .travelBoxShow .contentBox .removeBtnBox {
+        float: left;
+        line-height: 3.2rem;
+        color: red;
+        margin-right: 0.42667rem; }
+      #application .application-section .travelBoxShow .contentBox .dataContent {
+        float: left; }
+
+          #application .application-section .travelBoxShow .contentBox .dataContent .fontBoldTitle .fontBoldTitleYuSuan {
+            margin-left: 1.06667rem;
+            font-size: 0.59733rem;
+            color: black; }
+            #application .application-section .travelBoxShow .contentBox .dataContent .fontBoldTitle .fontBoldTitleYuSuan .colorFontPrice {
+              color: orange; }
+        #application .application-section .travelBoxShow .contentBox .dataContent .fontBoxSpan {
+          font-size: 0.59733rem;
+          color: black; }
+          #application .application-section .travelBoxShow .contentBox .dataContent .fontBoxSpan .fontBoxFirstSpan {
+            display: inline-block;
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            line-height: 0.7rem;
+            font-size: 0.46933rem;
+            font-weight: bold;
+            margin-right: 0.21333rem; }
+          #application .application-section .travelBoxShow .contentBox .dataContent .fontBoxSpan .bgc {
+            background-color: #50B3EE; }
+      #application .application-section .travelBoxShow .contentBox .returnBtnArrow {
+        float: right;
+        line-height: 3.2rem; }
+   #application  .application-section .travelBoxShow .weiTextBox {
+      padding: 0.42667rem;
+      width: 100%;
+      height: 3.5rem; }
+      #application .application-section .travelBoxShow .weiTextBox .weiTboX {
+        float: left;
+        margin-top: 0.64rem;
+        width: .9rem;
+        background-color: #FD5354;
+        text-align: center;
+        font-size: 0.42667rem;
+        font-weight: bold;
+        line-height: 0.9rem;
+        color: white;
+        margin-right: 0.64rem; }
+      #application .application-section .travelBoxShow .weiTextBox .wbsxs {
+        float: left;
+        position: relative; }
+        #application .application-section .travelBoxShow .weiTextBox .wbsxs .fontRed {
+          color: red;
+        font-size: 1rem}
+       #application  .application-section .travelBoxShow .weiTextBox .wbsxs .yysrWbyy {
+          position: absolute;
+          left: -0.59733rem; }
+
+
+  #application .application-section .costBudgetBox {
+    margin-bottom: 0.42667rem;
+    width: 100%;
+    background-color: white; }
+    #application .application-section .costBudgetBox .smbox {
+      width: 100%; }
+     #application  .application-section .costBudgetBox .smbox .transportation {
+        width: 100%;
+        height: 1.83467rem;
+        border: 1px solid transparent; }
+        #application .application-section .costBudgetBox .smbox .transportation .zhuSuF {
+          float: left;
+          font-size: 0.68267rem;
+          margin-left: 0.42667rem;
+          font-weight: 600;
+          line-height: 1.83467rem; }
+        #application .application-section .costBudgetBox .smbox .transportation .zhuSuInput {
+          float: right;
+          width: 3.2rem;
+          height: 1.792rem; }
+         #application  .application-section .costBudgetBox .smbox .transportation .zhuSuInput input {
+            outline: none;
+            border: none;
+            width: 100%;
+            height: 1.70667rem;
+            font-size: 0.68267rem; }
+    #application .application-section .costBudgetBox .bottom-box {
+      width: 100%;
+      height: 1.83467rem;
+      background-color: white;
+      border: 1px solid transparent; }
+      #application .application-section .costBudgetBox .bottom-box .allMoney {
+        float: left;
+        margin-left: 0.42667rem;
+        line-height: 1.83467rem;
+        font-weight: 600;
+        font-size: 0.68267rem; }
+      #application .application-section .costBudgetBox .bottom-box .allMoneyNum {
+        float: right;
+        margin-right: 0.42667rem;
+        width: 4.26667rem;
+        text-align: center;
+        line-height: 1.83467rem;
+        font-size: 0.68267rem;
+        color: #F7A235;
+        height: 1.83467rem;
+        border: 1px solid transparent; }
+  #application .application-section .examination, .application-section .examination1 {
+    width: 100%;
+    height: 1.83467rem;
+    background-color: white;
+    border-bottom: 1px dashed #D6D6D6; }
+   #application  .application-section .examination .spgz-title, .application-section .examination1 .spgz-title {
+      float: left;
+      font-size: 0.68267rem;
+      line-height: 1.83467rem;
+      margin-left: 0.42667rem;
+      font-weight: 600; }
+    #application .application-section .examination .spgz-name, .application-section .examination1 .spgz-name {
+      float: left;
+      margin-left: 0.85333rem;
+      font-size: 0.68267rem;
+      font-weight: 600;
+      color: black;
+      line-height: 1.83467rem; }
+    #application   .application-section .examination .spgz-name input, .application-section .examination1 .spgz-name input {
+        margin-left: -0.21333rem;
+        width: 10.66667rem;
+        height: 1.83467rem;
+        font-size: 0.64rem;
+        border: none;
+        outline: none; }
+    #application .application-section .examination #arrow-spgz, .application-section .examination1 #arrow-spgz {
+      float: right;
+      margin-right: 0.42667rem;
+      font-size: 0.68267rem;
+      line-height: 1.83467rem;
+      color: black; }
+  #application .application-section .examination1 {
+    margin-bottom: 3.94667rem; }
+
+#application .application-footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2.13333rem;
+  z-index: 2;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  /*background-color: #07467B;*/
+  background-color: white;
+  border: 1px solid #D7D7D7; }
+#application .application-footer button{
+  margin-top: .22rem;
+  height: 2.5rem;
+}
+
+
+
+
+#application .mui-table-view-cell {
+    /*padding: 11px 15px;*/
+}
+
+
+#application .mui-navigate-right:after, .mui-push-right:after {
+    right: 15px;
+    content: '\e583';
+}
+.mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after {
+    font-family: Muiicons;
+    font-size: inherit;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #bbb;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*   右箭头*/
+#application .navigate-right:after, .mui-push-right:after {
+    font-size: 1.7rem;
+}
+#application .mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after {
+     font-family: Muiicons;
+     font-size: 1.7rem;
+     line-height: 1;
+     position: absolute;
+     top: 50%;
+     display: inline-block;
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+     text-decoration: none;
+     color: #bbb;
+     -webkit-font-smoothing: antialiased;
+ }
+/*    居中的至字 */
+#application .zhi{
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    font-size: 1rem;
+}
+/*   底部的垫子 */
+#application .dianZ{
+    width: 100%;
+    height:3rem;
+    background-color: transparent;
+}
+/*# sourceMappingURL=application.css.map */

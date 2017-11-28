@@ -1,0 +1,121 @@
+
+
+
+.pay {
+    padding-top: 2.5rem;
+}
+
+/*// ----倒计时时间*/
+.payTime {
+    width: 10rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.timeshow {
+    color: #FE0000;
+    /*font-size: 0.9rem;
+    font-weight: 900;*/
+}
+
+.payOrderRight .redColor {
+    color: #F5A337;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+/*// -----订单详情*/
+.orderDetail {
+    padding: 0.6rem;
+    background: white;
+    display: flex;
+}
+
+.payOrderLeft {
+    padding-top: 1rem;
+    padding-right: 0.6rem;
+    box-sizing: border-box;
+}
+
+.payOrderLeft .iconfont{\n
+    color:#5FBBEE ;
+}
+
+.payOrderRight p {
+    font-size: 0.65rem;
+    color: #ABABAB;
+    margin:0 ;
+}
+
+.payType {
+    margin-top: 0.5rem;
+    background: white;
+}
+
+.payItemtitle {
+    border-bottom: 1px solid #ABABAB;
+}
+
+.payItemtitle,
+.payTypeItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 0.6rem;
+}
+
+.payLeft {
+    display: flex;
+    align-items: center;
+}
+
+.payTypeItem {
+    padding: 0.5rem 0.6rem;
+    border-top: 1px solid #EFEFEF;
+}
+
+.payTypeItem .paychooseImg {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    float: right;
+}
+
+
+.toPayButton {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    background: #F5A337;
+    color: white;
+}
+
+.textPay {
+    font-size: 0.55rem;
+}
+
+.tipItem {
+    width: 100%;
+    text-align: center;
+}
+
+.paytozhuan {
+    margin-top: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    background: #F5A337;
+    color: white;
+}
+.active{
+	color: green;
+}
+
+/*-------------*/
+.payAlert{
+	color: blue;
+	font-size: 1rem;
+}

@@ -1,0 +1,117 @@
+<div class="needApprovalList">
+
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class="iconfont icon-icon07   mui-pull-left" @click="goback"></a>
+		<h1 class="mui-title">
+			<span @click="switch1" :class="isOneClick?'active':''">待审批</span>
+			<span @click="switch2" :class="isTwoClick?'active':''">已审批</span>
+		</h1>
+	</header>
+
+	<div class="mui-content">
+
+		<div class="search">
+			<input type="text" placeholder="请输入出行人姓名" v-model="person" />
+			<button @click="searchBookMan">查询</button>
+		</div>
+		<!--待审批列表-->
+		<div class="approvalList" v-show="isOneClick">
+			<template v-for="item in approvalingList">
+				<!--a. 出差申请单模板-->
+				<div class="approvalItem" @click="goApprovalingDetail(item.orderId,item.workItemId,item.orderType )" v-if="item.orderType !=11003">
+					<div class="onlycity">
+						<i class="iconfont icon-feiji ding"></i>
+						<span class="startcity">{{ item.departCity }}</span>
+						<span class="centercity"></span>
+						<span endcity>{{item.arriveCity}}</span>
+						<!----{{item.endDate | DateYueOrRi}}-->
+						<span class="wei" v-show="item.wbBg ==1">违</span>
+						<span class="cost fr">{{item.departDate }}</span>
+						<span class="name">{{item.person}}</span>
+						<span>
+						{{item.ccsy}}
+					</span>
+					</div>
+					<div class="course content">
+						<span class="price">预算&nbsp;<a>￥<big>{{item.price}}</big></a></span>
+					</div>
+				</div>		
+				<!--b 正常机票模板 -->
+				<!--c. 退票单模板 -->
+				<!--d. 改签单模板-->
+				<div class="approvalItem" @click="goApprovalingDetail(item.orderId,item.workItemId,item.orderType )" v-if="item.orderType == 11003">
+					<div class="onlycity">
+						<i class="iconfont icon-feiji ding"></i>
+						<span class="startcity">{{ item.departCity }}</span>
+						<span class="centercity"></span>
+						<span endcity>{{item.arriveCity}}</span>
+						<!----{{item.endDate | DateYueOrRi}}-->
+						<span class="wei" v-show="item.wbBg ==1">违</span>
+						<span class="cost fr"><span>改签后：</span>{{item.departDate }}</span>
+						<span class="cost fr">原航班:{{item.oldDepartDate}}</span>
+						<span class="name">{{item.person}}</span>
+						<span>
+						{{item.ccsy}}
+					</span>
+					</div>
+					<div class="course content">
+						<span class="price">预算&nbsp;<a>￥<big>{{item.price}}</big></a></span>
+					</div>
+				</div>
+				
+				
+			</template>
+		</div>
+		<!--已审批列表-->
+		<div class="approvalList" v-show="isTwoClick">
+			<template v-for="item in approvaledList">
+			
+				<div class="approvalItem" @click="goApprovalingDetail(item.orderId,item.workItemId,item.orderType  )" v-if="item.orderType !=11003">
+					<div class="onlycity">
+						<span class="startcity"><i class="iconfont icon-feiji"></i>{{ item.departCity }}</span>
+						<span endcity>{{item.arriveCity}}</span>
+						<!----{{item.endDate | DateYueOrRi}}-->
+						<span class="wei" v-show="item.wbBg ==1">违</span>
+						<span class="cost fr">{{item.departDate }}</span>
+						<span class="name">{{item.person}}</span>
+						<span>
+						{{item.ccsy}}
+					</span>
+					</div>
+					<div class="course content">
+						<span class="price">预算&nbsp;<a>￥<big>{{item.price}}</big></a></span>
+						<span class="shenStatus">
+						我已审批
+					</span>
+					</div>
+				</div>
+				
+				
+					<!--d. 改签单模板-->
+				<div class="approvalItem" @click="goApprovalingDetail(item.orderId,item.workItemId,item.orderType )" v-if="item.orderType == 11003">
+					<div class="onlycity">
+						<i class="iconfont icon-feiji ding"></i>
+						<span class="startcity">{{ item.departCity }}</span>
+						<span class="centercity"></span>
+						<span endcity>{{item.arriveCity}}</span>
+						<!----{{item.endDate | DateYueOrRi}}-->
+						<span class="wei" v-show="item.wbBg ==1">违</span>
+						<span class="cost fr"><span>改签后：</span>{{item.departDate }}</span>
+						<span class="cost fr">原航班:{{item.oldDepartDate}}</span>
+						<span class="name">{{item.person}}</span>
+						<span>
+						{{item.ccsy}}
+					</span>
+					</div>
+					<div class="course content">
+						<span class="price">预算&nbsp;<a>￥<big>{{item.price}}</big></a></span>
+						<span class="shenStatus">
+						我已审批
+					</span>
+					</div>
+				</div>
+			</template>
+		</div>
+	</div>
+
+</div>

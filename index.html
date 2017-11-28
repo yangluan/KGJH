@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="shortcut   icon " href="favicon.ico">
+		<title>App</title>
+		<link rel="stylesheet" type="text/css" href="static/fonts/iconfont.css" />
+		<link rel="stylesheet" href="static/css/mui.css" />
+		<link rel="stylesheet" href="static/css/common.css" />
+		<!--日期-->
+		<link rel="stylesheet" href="static/css/mui.picker.min.css" />
+		<script>
+			function fontSize() {
+				var deviceWidth = document.documentElement.clientWidth > 768 ? 768 : document.documentElement.clientWidth;
+				document.documentElement.style.fontSize = (deviceWidth / 25) + "px";
+			};
+			fontSize();
+			window.onresize = fontSize;
+		</script>
+		<style type="text/css">
+			html,
+			body {
+				height: 100%;
+				font-size: 16px;
+				-webkit-text-size-adjust: none;
+			}
+			#app {
+				height: 100%;
+			}
+			#app * {
+				box-sizing: border-box;
+				font-family: Helvetica;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<!--导航组件-->
+			<keep-alive>
+				<router-view v-if="$route.meta.keepAlive"></router-view>
+			</keep-alive>
+			<router-view v-if="!$route.meta.keepAlive"></router-view>
+		</div>
+		<script src="static/js/plugin/sea.js"></script>
+		<script src="static/js/plugin/main.js"></script>
+		<script src="static/js/plugin/mui.js"></script>
+		<!--日期-->
+		<script src="static/js/plugin/mui.picker.min.js"></script>
+		<script src="static/js/plugin/mui.indexedlist.js"></script>
+		<script src="static/js/plugin/vue.js"></script>
+		<script src="static/js/plugin/vue-router.js"></script>
+		<script>
+			mui.init();
+			seajs.use(["js/plugin/app"], function(mod) {
+				Vue.router.goPath("/");
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,50 @@
+<div class="approvalProgress">
+	<header class="mui-bar mui-bar-nav ">
+		<i class=" iconfont icon-icon07 mui-pull-left" @click.once="goback"></i>
+		<h1 class="mui-title">审批进度</h1>
+	</header>
+
+	<div class="approval-content" v-show="approvalData!=undefined&&approvalData!=''">
+		<h4><span>审批进度&nbsp;:&nbsp;</span><span>{{approvalData.spjd}}</span></h4>
+		<div class="progressInfo">
+			<!--预订人-->
+			<div class="apply-content-item">
+				<div class="apply-item-left">
+						<span class="bigQ"></span>
+					<span class="bigLine"></span>
+				</div>
+				<div class="apply-item-right">
+					<div class="flex-item">
+						<span>提交申请</span>
+						<span>{{approvalData.sentTime }}</span>
+					</div>
+					<div class="flex-item">
+						<span v-html="approvalData.sentEmpName">(预订人)</span>
+					</div>
+				</div>
+			</div>
+			<!--审批人-->
+			<div class="apply-content-item" v-for="item in approvalData.spjdInfoList">
+				<div class="apply-item-left">
+					<span class="bigQ"></span>
+					<span class="bigLine"></span>
+				</div>
+				<div class="apply-item-right">
+					<div class="flex-item">
+						<span> {{item.flowState | filterApprovalStatus}}</span>
+						<span>{{item.completeTime }}</span>
+					</div>
+					<div class="flex-item">
+						<span v-html="item.approveEmpName"></span>
+						<span>{{item.completeWay | filterApprovalWay }}回复</span>
+					</div>
+					<div class="flex-item">
+						<span>{{item.sendUsageStats}}</span><span></span></div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>

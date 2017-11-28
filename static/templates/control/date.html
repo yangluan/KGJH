@@ -1,0 +1,44 @@
+<div id="calendar">
+	<header class="mui-bar mui-bar-nav">
+		<a class=" mui-icon icon iconfont icon-icon07 mui-pull-left white" v-on:click="back()"></a>
+		<h1 class="mui-title">选择日期</h1>
+	</header>
+	<div class="mui-content mui-fullscreen " >
+			<!-- 星期 -->
+			<ul class="weekdays">
+				<li class="blue">日</li>
+				<li>一</li>
+				<li>二</li>
+				<li>三</li>
+				<li>四</li>
+				<li>五</li>
+				<li class="blue">六</li>
+			</ul>
+		<div class="padB2" v-for=" day in alldays">
+			<!-- 年份 月份 -->
+			<div class="month ">
+				<ul class="">
+					<li class="text-center black bg-white padT5">
+						<span  class="fon16">{{day.year}}年</span>
+						<span class="fon16">{{day.mon}}月</span>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 日期 -->
+			<ul class="days" >
+				<li @click="pick(da)" v-for="da in day.dateday">
+					<!--本月-->
+					<span v-if="da.getMonth()+1 != day.mon||da.getFullYear() == new Date().getFullYear() && da.getMonth() == new Date().getMonth() && da.getDate() < new Date().getDate()" class="other-month">{{da.getDate()}}</span>
+					<span v-else>
+ 					 <!--今天 {{ da.getDate() }} class="active"-->
+  						<span v-if="da.getFullYear() == new Date().getFullYear() && da.getMonth() == new Date().getMonth() && da.getDate() == new Date().getDate()" class="blue">今天</span>
+  						<span v-else-if="da.getFullYear() == y && da.getMonth()+1 == m&& da.getDate() == d" class="active">{{ da.getDate()}}</span>
+						<span v-else>{{ da.getDate()}}</span>
+					</span>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>

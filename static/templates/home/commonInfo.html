@@ -1,0 +1,65 @@
+<div class="commonInfo">
+	<header id="header" class="mui-bar mui-bar-nav">
+		<a class="mui-pull-left iconfont icon-icon07" @click="toUserCenter()"></a>
+		<h1 class="mui-title">常用信息</h1>
+	</header>
+	<div class="mui-content">
+		<div id="" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+			<a  class="mui-control-item " v-bind:class="{'mui-active' : active==1}" href="#item2">
+				常用地址
+			</a>
+			<a class="mui-control-item" v-bind:class="{'mui-active' : active==0}" href="#item3">
+				常用联系人
+			</a>
+		</div>
+		<div id="item2" class="mui-control-content  commonAddr" v-bind:class="{'mui-active' : active==1}">
+			<ul class="mui-table-view">
+				<router-link tag="li" class="mui-table-view-cell " v-for="(addrItem,index) in addrList" :to="{path:'/addCommonAddress',query:addrItem}">
+					<div class="item " >
+						<div class="left">
+							<span class="name"><b class="xingming">{{addrItem.recipient}}</b><i class="tel">{{addrItem.phoneNumber}}</i></span>
+							<span class="address">{{addrItem.addr }}</span>
+							<span class="postcode">{{addrItem.post}}</span>
+						</div>
+						<div class="right">
+							<i class="iconfont icon-jiantou"></i>
+						    <span class="del"  @click="delCommonAddr(addrItem.empAddrId )">删除</span>
+						</div>
+						
+					</div>
+					<!--<div class="text-right" >
+						<span class="del"  @click="delCommonAddr(addrItem.empAddrId )">删除</span>
+					</div>-->
+				</router-link>
+			</ul>
+			<router-link to="/addCommonAddress" class="addAddress">
+				<i class="iconfont icon-jia"></i><span>新增常用地址</span>
+			</router-link>
+		</div>
+		
+		
+		<div id="item3" class="mui-control-content commonAddr" v-bind:class="{'mui-active' : active==0}">
+			<ul class="mui-table-view">
+				<router-link tag="li"  class="mui-table-view-cell" v-for="(contactItem,index) in contactList" :to="{path:'addCommonContacts',query:contactItem}">
+					<div class="item">
+						<div class="left">
+							<span class="name"><b class="xingming">{{contactItem.chName}}</b><i class="tel">{{contactItem.phoneNumber}}</i></span>
+							<span class="postcode">{{contactItem.idNumber}}</span>
+						</div>
+						<div class="right">
+							<i class="iconfont icon-jiantou"></i>
+						    <span class="del"  @click="delCommonCon(contactItem.contactsId)">删除</span>
+						</div>
+						
+					</div>
+					<!--<div class="text-right">
+						<span class="del"  @click="delCommonCon(contactItem.contactsId)">删除</span>
+					</div>-->
+				</router-link>
+			</ul>
+			<div class="addAddress" @click="addCommonCont()">
+				<i class="iconfont icon-jia"></i><span>新增常用联系人</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="pay">
+	<header class="mui-bar mui-bar-nav ">
+		<i class=" mui-action-back mui-icon mui-icon-left-nav mui-pull-left" @click.once="goback"></i>
+		<h1 class="mui-title">支付</h1>
+	</header>
+	<!--pay 内容-->
+	<div class="pay-content">
+
+		<div class="payTime">
+			<div>支付剩余时间</div>
+			<h3 class="timeshow">{{time }}</h3>
+		</div>
+		<div class="orderDetail">
+			<div class="payOrderLeft">
+				<i class="iconfont icon-feiji"></i>
+			</div>
+			<div class="payOrderRight">
+				<P class="redColor">￥{{orderDetail.totalPrice }}</P>
+				<template v-for="item in orderDetail.orderRangeBeanList">
+					<P>{{item.departDate |DateYueOrRi}}&nbsp;{{item.departTime}}&nbsp;出发&nbsp;{{item.voyageZh}}</P>
+					<p> {{item.departAirportName}}-{{item.arriveAirportName}}</p>
+					<P>({{item.flightNo}}/{{item.cabinName}})</P>
+				</template>
+
+			</div>
+		</div>
+		<div class="payType">
+			<div class="payTypeItem">
+				支付方式
+			</div>
+			<template v-for="(payItem,index) in payList">
+
+				<div class="payTypeItem" @click="toChoosePayType(payItem,index)">
+					<div class="payLeft">
+						<img src="" alt=""> <span>{{payItem.subjectName}}</span>
+					</div>
+					<span class="iconfont icon-renzhengtongguo" :class="payItem['isChoose']?'active':''"></span>
+				</div>
+			</template>
+		</div>
+	</div>
+	<div v-html="reMsg" id="payAli" ref="mybox" class="payAlert">
+		<!--<form name="punchout_form" method="post" action="https://openapi.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.…08-18+22%3A38%3A16&alipay_sdk=alipay-sdk-java-dynamicVersionNo&format=json">
+			<input type="hidden" name="biz_content" value="{&quot;body&quot;:&quot;&quot;,&quot;out_trade_no&quot;:&quot;e0d127d396284c16ab7969661381c5ab&quot;,&quot;product_code&quot;:&quot;QUICK_WAP_PAY&quot;,&quot;subject&quot;:&quot;&quot;,&quot;timeout_express&quot;:&quot;2m&quot;,&quot;total_amount&quot;:&quot;3050.0&quot;}">
+			<input type="submit" value="立即支付" style="display:none">
+		</form>-->
+		
+	</div>
+	<!-- 支付按钮  -->
+	<div class="toPayButton" @click="toPayCompelete">
+		<span class="textPay">确认支付</span>&nbsp;<span>￥{{orderDetail.totalPrice}}</span>
+	</div>
+
+</div>

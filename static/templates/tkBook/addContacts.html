@@ -1,0 +1,52 @@
+<div id="addContacts">
+	<header class="mui-bar mui-bar-nav">
+			<a class=" mui-icon icon iconfont icon-icon07 mui-pull-left" v-on:click="back()"></a>
+			<h1 class="mui-title">{{addxjr}}</h1>
+		</header>
+	<div class="mui-content ">
+		<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>姓名</label>
+						<input type="text" class="mui-input-clear" v-model="name" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+					</div>
+					<div class="mui-input-row">
+						<label>乘客类型</label>
+						<div class="inline-block" style="line-height: 2;">
+							
+						<span class="tkxcDsted" v-on:click="selcted(1)"  v-bind:class="{ 'tkxcsted': crselected, 'tktkxcJsted': xcJSel}">
+						成人						
+						</span>
+						<span class="tkxcDsted" v-on:click="selcted(2)"  v-bind:class="{ 'tkxcsted': rtselected, 'tktkxcJsted': xcJSel}">
+						儿童 					
+						</span>
+
+						</div>
+					</div>					
+					<div class="mui-input-row">
+						<label style="padding: 0;">			
+							<select class="text-center" style="padding-left: 16px;"  v-model="idCard"> 
+								<option value="1">身份证</option>
+								<option value="2">护照</option>
+							</select>
+						</label>
+						<input type="" style="height: initial;padding: 10px 15px 10px 0;" v-model="idNumber"/>
+					</div>					
+					<div class="mui-input-row">
+						<label>联系方式</label>
+						<input type="text" class="mui-input-clear" v-model="tel" placeholder="" data-input-clear="5"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+					</div>
+		</form>
+	</div>
+					<nav class="mui-bar mui-bar-tab">
+						<a class="mui-tab-item" href="javascript:;">
+							<span class=""></span>
+						</a>
+						<a class="mui-tab-item" href="" v-on:click="addLinker()">
+							<i class="icon iconfont icon-jia"></i>保存
+						</a>
+						<a class="mui-tab-item" href="javascript:;">
+							<span class=""></span>
+						</a>
+					</nav>
+	
+</div>

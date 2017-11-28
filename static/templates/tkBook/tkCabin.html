@@ -1,0 +1,87 @@
+<div id="tkCabin">
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon icon iconfont icon-icon07 mui-pull-left white"></a>
+			<h1 class="mui-title">{{dep}}<i class="icon iconfont icon-jiantou1-copy"></i>{{arr}}</h1>
+		</header>
+	<div class="mui-content">
+			<div class="mui-card hblist">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner mui-row">
+						<p >
+							<!--<span class="qucheng" >去程</span>&nbsp;-->
+							<img :src="info.airlineImg" alt="" width="15"/>
+							{{info.airlineName}} | {{info.flightNo}} | 机型{{info.plane}}   
+							<span class="right"> {{info.departDate}}</span>
+						</p>
+		                <div class="mui-table-cell mui-col-xs-4 text-right">
+		                    <h4 class="font25">{{info.departTime}}</h4>
+		                    <h5>{{info.departAirportName}}-{{info.departTerminal}}</h5>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-4 text-center">          		
+		                	<!--<i class="icon iconfont icon-eg font26 "></i>-->
+		                	<span class="mui-h6">{{info.flyTimeStr.replace(/钟/,'')}}</span><br>
+		                	 <i class="icon iconfont icon-eg  gray " style="font-size: 36px;"></i>
+		                    <p class="mui-h6 mui-ellipsis">
+		                    	<span v-show="info.hasFood==1">有餐食</span>
+		                    	<span v-show="info.hasFood==0">无餐食</span>
+		                    </p>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-4 text-left">
+
+		                	<h4 class="font25">{{info.arriveTime}}<sup class="mui-h6" v-show="info.departDate!=info.arriveDate">+1天</sup></h4>
+		                    <h5>{{info.arriveAirportName}}{{info.arriveTerminal}}</h5>
+		                </div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="mui-card">	
+				<ul class="mui-table-view mui-table-view-chevron">
+
+					<li class="mui-table-view-cell mui-collapse" v-for="(cbInfo,index) in cabinTypeList" :class="{'mui-active':index==0}">
+						<a class="mui-navigate-right" href="#">{{cbInfo.cabinTypeName}}
+							
+							<a href="" class="right ding" >订</a>
+						</a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell " v-for="cbty in cbInfo.cabinList" >
+								<a class="mui-navigate-right mui-row" href="javascript:;" >
+									<span class="mui-col-xs-3">								
+										<span class="mui-h6">{{priceMap[cabinMap[cbty].priceList[0]].salePrice/info.yPrice|zhekou=10?全价:}}折</span>
+										<span class="mui-h6" v-if="">{{priceMap[cabinMap[cbty].priceList[0]].salePrice/info.yPrice|zhekou=10?}}折</span>
+										<span class="mui-h6" >{{priceMap[cabinMap[cbty].priceList[0]].salePrice/info.yPrice|zhekou}}折</span>
+										
+										<br>
+										<span class="undeline blue" v-on:click="refundTips(priceMap[cabinMap[cbty].priceList[0]].refundRule,priceMap[cabinMap[cbty].priceList[0]].changeRule)">退改签</span>
+									</span>
+									<span class="mui-col-xs-3 l-h-3" v-if="tkSearchInfo.tripType==1||tkSearchInfo.zcGnjp==1">
+										<span  v-for="(inf,ke) in wbsxList[info.minPriceId]" class="right">
+		                    				<span v-if="ke=='violateItem'" class="bg-red white wei">违</span>
+		                    			</span>
+									</span>
+									<span class="mui-col-xs-3 ">
+										<div class="orange font15 right l-h-2">										
+											￥{{priceMap[cabinMap[cbty].priceList[0]].salePrice}}	
+										</div>
+									</span>
+									<span class="mui-col-xs-3 text-right padT10" style="line-height: 1;">
+											<span v-on:click="bookTkOrder(cabinMap[cbty].priceList[0],cabinMap[cbty].cabin)" class="ding">订</span></br>
+											<span class="mui-h6 yu text-center" v-show="cabinMap[cbty].seatCount!='A'" >{{cabinMap[cbty].seatCount}}张</span>											
+											<span class="mui-h6 yu" v-show="cabinMap[cbty].seatCount=='A'" >充足</span>											
+									</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+
+			
+			
+	
+			
+
+		</div>
+</div>

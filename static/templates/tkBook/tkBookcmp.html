@@ -1,0 +1,60 @@
+<div id="tkBookcmp">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">预订完成</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-table-view">
+				<div class="mui-card-content-inner">
+					
+
+				<div class=" mui-row mui-card-content ">
+						<div class="mui-col-xs-2 text-center" style="line-height: 3;">
+							<i class="icon iconfont icon-chenggong"></i>
+						</div>
+						<div  class="mui-col-xs-10" >
+							<h4>订单已成功提交</h4>
+							<h4>出票情况以收到短信为准</h4>
+						</div>
+				</div>
+				<div class="mui-card-content padT15" v-for="info in orderlist">
+					<p>						
+						<span>订单号:</span><span>{{info.orderNo}}</span>     <a href="" class="undeline blue" v-on:click="toDetail(info.id)">查看订单</a>	
+					</p>
+					<p>						
+						<span v-for="hc in info.orderRangeBeanList">航程:						
+							<span>{{hc.departDate}}</span>
+							<span>{{hc.departTime }}</span>
+							<span>{{hc.departCityName }}</span>
+							<i class="icon iconfont icon-eg"></i>
+							<span>{{hc.arriveCityName }}</span>
+							<span>{{hc.flightNo }}</span>
+							(<span v-for="cjr in info.OrderPsgBean">
+								{{cjr.psgName}}
+							</span>)
+						</span>
+					</p>
+					<p>						
+						<span>价格合计:</span><span></span><a href="#mx" class="undeline blue">费用明细</a>	
+					</p>
+					<div class="text-right">			
+						<button type="button" class="mui-btn mui-btn-warning" v-show="info.isShowPay">支付</button>
+						<button type="button" class="mui-btn mui-btn-warning" v-show="info.isShowApproval">送审</button>
+						<button type="button" class="mui-btn mui-btn-primary" v-on:click="toBook()">继续预订</button>
+					</div>
+				</div>
+				<div id="mx" class="box mui-popover mui-popover-action mui-popover-bottom">
+					<div style="height: 200px;background-color: #FFFFFF;margin-bottom: 50px;">
+						<div  class="mui-card-content-inner">	
+							<p class="clear"><span class="left">成人</span><span class="orange right">￥{{salePrice+airportFee+tax}}X{{cxrlength}}人</span></p>
+							<p class="clear"><span class="left">机票价</span><span class="orange right">￥{{salePrice}}/人</span></p>
+							<p class="clear"><span class="left">民航基金</span><span class="orange right">￥{{airportFee}}/人</span></p>
+							<p class="clear"><span class="left">燃油税</span><span class="orange right">￥{{tax}}/人</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		</div>
+</div>

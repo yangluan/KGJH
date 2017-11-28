@@ -1,0 +1,118 @@
+
+.alterFlightList{
+	padding-top: 2.5rem;
+}
+
+
+/*------航班列表----*/
+.flight_list_item{
+  margin: 0 0.4rem;
+  margin-top: 0.6rem;
+  padding:0.6rem 0.4rem;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px 2px #d7d7d7;
+}
+.item_top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item_time{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.price_item,
+.flight_left,
+.flight_right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+.price_item{
+  text-align: right;
+}
+.da_font{
+  font-size: 1rem;
+}
+.small_font{
+  font-size: 0.6rem;
+  color: #808080;
+}
+.right_time{
+  position: relative;
+
+}
+.sup{
+  position: absolute;
+  top: 0;
+  right: -1.4rem;
+}
+.wei{
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  height: 1rem;
+  border-radius: 2px ;
+  font-size: 0.8rem;
+  background-color: #ff0000;
+  color: white;
+  box-sizing: border-box;
+  margin-bottom: -1rem;
+}
+.item_bottom img{
+  width: 0.7rem;
+  display: inline-block;
+}
+.flight_middle i{
+  width: 2rem;
+  margin: 0 0.3rem;
+  margin-top: -0.5rem;
+}
+
+.filter_bottom{
+  width:100%;
+  height: 2.2rem;
+  background-color: #3E6A8F;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.filter_bottom div{
+  width: calc(100%/3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0;
+}
+.ilter_bottom div i{
+  font-size: 1.5rem;
+}
+.filter_bottom .active{
+  color: #f5a337;
+}
+.filter_bottom div span{
+  font-size: 0.6rem;
+}
+
+
+/* 航班列表详情*/
+.cang-item{
+	padding: 0.8rem;
+	
+	display: flex;
+	background: white;
+	align-items: center;
+	justify-content: space-between;
+	margin:0.4rem ;
+	margin-left: 1rem;
+	box-sizing: border-box;
+	border-radius: 6px;
+	box-shadow: 0 2px 4px 2px #d7d7d7;
+}

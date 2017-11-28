@@ -1,0 +1,185 @@
+
+ul,li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.font12{
+	font-size: 12px;
+}
+.font14{
+	font-size: 14px;
+}
+
+.height40{
+	height: 40px;
+	line-height: 40px;
+}
+
+.light-gray{
+	color: #AAAAAA;
+}
+.normalCor{
+	color: #555555;
+}
+
+.marginTB20{
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.mui-btn-block{
+	padding: 0;
+}
+
+.tkQinput{
+	height: 40px;
+    /*line-height: 80px;*/
+    font-size: 16px;
+    /*color: #aaa;*/
+	outline:none;
+	border: 0px;
+	border-bottom:1px solid #DDDDDD;
+}
+.tkQbtn{
+	border: none;
+}
+input[type='button']:enabled:active, input[type='button'].mui-active:enabled, input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled, input[type='reset']:enabled:active, input[type='reset'].mui-active:enabled, button:enabled:active, button.mui-active:enabled, .mui-btn:enabled:active, .mui-btn.mui-active:enabled{
+	color: #555;
+	background-color: #FFFFFF;	
+}
+
+.mui-segmented {
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    table-layout: fixed;
+    border: 0px solid #31B4F1; 
+    border-radius: 3px;
+    background-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+.mui-segmented {
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    table-layout: fixed;
+    border: 0px solid #007aff; 
+
+    border-radius: 3px;
+    background-color: transparent;
+    -webkit-touch-callout: none;
+}
+.tkbg-white{
+	color: #f6f6f6;
+}
+.border-blue{
+	border: 1px solid #31b4f3;
+	border-top: 1px solid transparent;
+}
+.border-tblue{
+	border-top: 1px solid #31b4f3;
+	
+}
+.border-radius10{
+	border-radius: 10px;
+}
+.border-radius10r{
+	border-top-right-radius: 10px;
+	
+}
+.border-radius10l{
+	border-top-left-radius: 10px;
+	
+}
+/*标签*/
+.mui-segmented .mui-item {
+    line-height: 46px;
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    -webkit-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #31B4F1;
+    border-color: #31B4F1;
+    border-left: 0px solid #31B4F1;
+}
+.mui-card {
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    /*border-radius: 2px;*/
+    background-color: white;
+    background-clip: padding-box;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+.mui-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 44px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin: 0 -10px;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+
+}
+.mui-bar .mui-icon {
+    font-size: 32px;
+    position: relative;
+    z-index: 20;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: inherit;
+}
+.mui-segmented .mui-item.mui-active {
+    color: #fff;
+    background-color: #D7D7D7;
+}
+.fon18{
+	font-size: 18px;
+}
+.fon16{
+	font-size: 16px;
+}
+.mui-content > .mui-card:first-child {
+     margin-top: 10px; 
+}
+.padT5{
+	padding-top: 10px;
+}
+.cor-a{
+	color: #AAAAAA;
+}
+.blue{
+	color: #31b4f3;	
+}
+.rightjt{
+	position: absolute;
+	right: -4px;
+	top: 10px;
+	color: #AAAAAA;
+}
+.pad6-2{
+	padding: 6px 2px;
+}
+
+.relative{
+	position: relative;
+}
+.marginT10{
+	margin-top: 10px;
+}

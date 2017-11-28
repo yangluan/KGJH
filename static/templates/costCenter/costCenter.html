@@ -1,0 +1,78 @@
+<div id="costCenter">
+        <!--<header class="application-header mui-bar mui-bar-nav">-->
+            <!--<h1 class="mui-title">成本中心</h1>-->
+            <!--<div class="iconParent"><i class="icon iconfont icon-icon07 goHome" @click="ReturnSuperior"></i></div>-->
+        <!--</header>-->
+    <!--<section class="costCenterSection">-->
+        <!--<div class="mui-input-row mui-search" style="padding-left: .5rem;padding-right: .5rem;margin-top: 3.5rem;">-->
+            <!--<input type="search" class="mui-input-clear" placeholder="请输入成本中心编号或名称" id="searchIpt">-->
+        <!--</div>-->
+
+        <!--<div class="costCenterListBox">-->
+            <!--<div class="costCenterList" style="margin-top: -1.5rem">-->
+            <!--<ul id="firstUl">-->
+                <!--<li class="centerList" v-for="(i,index) in this.cbzxData">-->
+                    <!--<div class="employeeNumber" v-html="i.costCenterCode"></div>-->
+                    <!--<label for="firstInp" v-html="i.costCenterName" id="costCenterName"></label>-->
+                    <!--<div class="radioList">-->
+                        <!--<input type="radio" id="firstInp" name="contentSub" @click="radioClick(i,index)">-->
+                    <!--</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+    <!--项目选择的-->
+    <!--<header class=" mui-bar mui-bar-nav">-->
+        <!--<h1 class="mui-title">成本中心</h1>-->
+        <!--<div class="iconParent"><i class="icon iconfont icon-icon07 goHome" id="icon-arrow" @click="ReturnSuperior"></i></div>-->
+    <!--</header>-->
+    <header class="mui-bar mui-bar-nav">
+        <div class="mui-row">
+            <div class="mui-col-xs-2">
+                <a class=" mui-icon icon iconfont icon-icon07 mui-pull-left white" @click="ReturnSuperior" style="margin-top: 0rem"></a>
+            </div>
+            <div class="mui-col-xs-8 pad5">
+                <span class="icon iconfont icon-sousuo " style="font-size: 15px;position: absolute;left: 15px;top: 12px;color: #aaa;"></span>
+                <input type="search" placeholder="编号/名称" class=" searchinput" style="background-color: #FFFFFF;padding-left: 2.3rem" v-model="searchXm" >
+            </div>
+            <!--<div class="mui-col-xs-2">-->
+            <!--<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right white" v-on:click="complete()">完成</button>-->
+            <!--</div>-->
+        </div>
+    </header>
+
+
+    <section class="costCenterSection" style="margin-top: 4rem">
+        <!--<div class="mui-input-row mui-search" style="padding-left: .5rem;padding-right: .5rem;margin-top: 3.5rem;">-->
+            <!--<input type="search" class="mui-input-clear" placeholder="请输入成本中心编号或名称" id="searchIpt" v-model="searchXm">-->
+        <!--</div>-->
+        <div class="costCenterListBox" v-show="isShow">
+            <div class="costCenterList">
+                <ul id="firstUl">
+                    <li class="centerList borderRadio" v-for="(i,index) in this.cbzxData">
+                        <div class="employeeNumber" v-html="i.costCenterCode"></div>
+                        <label for="firstInp" v-html="i.costCenterName" id="costCenterName"></label>
+                        <div class="radioList">
+                            <input type="radio" id="firstInp" name="contentSub" @click="radioClick(i,index)">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="costCenterListBox" v-show="!isShow">
+            <div class="costCenterList">
+                <ul id="firstUl">
+                    <li class="centerList borderRadio" v-for="item in arr">
+                        <div class="employeeNumber" v-html="item.costCenterCode"></div>
+                        <label for="firstInp" v-html="item.costCenterName" id="costCenterName"></label>
+                        <div class="radioList">
+                            <input type="radio" id="firstInp" name="contentSub" @click="radioClick(i,index)">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

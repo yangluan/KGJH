@@ -1,0 +1,148 @@
+<div id="DetailsApplications">
+    <!--  页头 header出差申请头部 title -->
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">出差申请单详情</h1>
+        <div class="iconParent"><i class="icon iconfont icon-icon07 goHome" id="icon-arrow" @click="ReturnSuperior"></i></div>
+    </header>
+
+
+    <section class="detailsSection">
+
+        <div class="bgdh">
+            <div class="bgd">
+                <span class="firstBgdh">出差申请单号:</span>
+                <span class="bgDh">{{allData.ccsqdNo}}</span>
+                <span class="spjj">{{allData.status}}</span>
+                <!--<span class="yusuan">预算</span>-->
+                <!--<span class="yusuanPrice">￥{{allData.jtys}}</span>-->
+            </div>
+            <div class="ccsqd">
+                <span class="yusuanJg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{newDate}}</span>
+
+                <span class="ccsqdh">申请人：</span>
+
+                <span class="ccsqdSize">{{allData.ccr}}</span>
+                <!--<span class="sptg">{{status}}</span>-->
+
+
+            </div>
+        </div>
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">出差类型<span style="margin-left: 3rem">项目出差（{{allData.projectName}}）</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">目的地<span style="margin-left: 4rem">{{allData.mdd}}</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">出差人<span style="margin-left: 4rem">{{allData.ccr}}</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">同行人员<span style="margin-left: 3rem">{{allData.sxr}}</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">成本中心<span style="margin-left: 3rem">{{allData.costCenterName}}</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">出差事由<span style="margin-left: 3rem">{{allData.ccsy}}</span></a>
+            </li>
+        </ul>
+
+
+        <div class="date">
+            <div class="data-ccxcS">
+                <input type="" readonly="readonly" class="noBorDer mui-col-xs-6" placeholder="出差日期始" @click="getDate1" v-model="dateBegin" />
+            </div>
+            <div class="data-ccxcZ">
+                <input type="" readonly="readonly" class="noBorDer mui-col-xs-6" placeholder="出差日期止" @click="getDate2" v-model="dateEnd" />
+            </div>
+        </div>
+
+        <!-- 行程计划-->
+        <div class="travel">
+            <div class="cxjh-text">行程计划</div>
+        </div>
+
+        <!-- 行程计划数据展示  -->
+        <div class="travelBoxShow" id="travelBoxShow">
+            <div class="contentBox">
+                <div class="removeBtnBox"></div>
+                <template v-for="items in allRouteList">
+                <div class="dataContent" v-for="i in items">
+                    <div class="fontBoldTitle">{{dep}}→{{arr}}     <span class="fontBoldTitleYuSuan">预算<span class="colorFontPrice">￥{{allData.jtys}}</span></span></div>
+                    <div class="fontBoxSpan"><span class="fontBoxFirstSpan">入</span>{{i.arriveDate}}     {{i.arriveTime}}  出发&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div class="fontBoxSpan">{{cabin}}</div>
+                    <!--<div class="fontBoxSpan">万斯 万斯 万斯 万斯</div>-->
+                </div>
+                </template>
+                <div class="returnBtnArrow"></div>
+            </div>
+            <!--<div class="weiTextBox">-->
+                <!--<div class="weiTboX">违</div>-->
+                <!--<div class="wbsxs">-->
+                    <!--<div class="fontRed">违背事项1;违背事项2</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!-- 住宿安排-->
+        <!--<div class="travel">-->
+            <!--<div class="cxjh-text">住宿安排</div>-->
+        <!--</div>-->
+
+
+        <!--  费用预算 -->
+        <div class="cost-budget">费用预算</div>
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label class="moneys">交通费</label>
+                <input type="text" class="mui-input-clear" id="iptRight" placeholder="请输入交通预算" v-model="jtys" style="color: orange">
+
+                <label class="label moneys" id="labelRight1">住宿费</label>
+                <input type="text" class="mui-input-clear" id="iptRight1" placeholder="请输入住宿预算" v-model="zsys" style="color: orange">
+            </div>
+        </form>
+
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label class="moneys">其他费用</label>
+                <input type="text" class="mui-input-clear" id="iptLeftQt" placeholder="请输入其他预算" v-model="qtys" style="color: orange">
+
+                <label class="label moneys" id="labelRight" >总费用</label>
+                <span class="mui-badge mui-badge-inverted marGinRight" id="iptRight1" style="color: orange">￥{{jtys*1+zsys*1+qtys*1}}</span>
+            </div>
+        </form>
+
+
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">备注<span style="margin-left: 5rem">{{allData.remark}}</span></a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">审批进度<span style="margin-left: 3rem">{{allData.gzmc}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{allData.spjd}}</span></a>
+            </li>
+        </ul>
+        
+
+
+        <!--变更记录-->
+        <!--<div class="bgjl">变更记录</div>-->
+        <!--&lt;!&ndash; 变更记录展示  &ndash;&gt;-->
+        <!--<div class="bgjlShow">-->
+            <!--<div class="numlogo">1</div>-->
+            <!--<div class="yuanyin">-->
+                <!--<span>原因：会议时间延迟</span>-->
+                <!--<p>2017-04-06   11：26   1001    张三/行政部  提交</p>-->
+            <!--</div>-->
+            <!--<div class="shenpiZhong">审批中</div>-->
+            <!--<div class="rightArr">-->
+                <!--<i class="icon iconfont icon-jiantou" id="arrow-spgz"></i>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+
+
+    </section>
+
+</div>

@@ -1,0 +1,91 @@
+body {
+  background-color: #EFEFEF; }
+
+.application-header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 3rem; }
+
+/* li的高度  行高*/
+#applicationApproval .costCenterSection .costCenterListBox .costCenterList .centerList{
+  height:3rem;
+  line-height: 3rem;
+}
+/*  li的第一个文字左对齐*/
+.employeeNumber{
+  margin-left: -2rem;
+  position: absolute;
+  left: 5rem;
+}
+/*  li的第2个文字左对齐*/
+#costCenterName{
+  position: absolute;
+  left: 10rem;
+}
+/*  li的第3个input-radio右对齐*/
+#applicationApproval .radioList{
+  position: absolute;
+  right: 1.5rem;
+  float: right;
+}
+
+
+
+
+
+.goHome{
+  font-size: 1rem;
+  color: #D7D7D7;
+  float: left;
+  line-height: 2.7rem;
+}
+.costCenterHeader {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1.83467rem;
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: 0.768rem;
+  line-height: 1.83467rem; }
+  .costCenterHeader .iconParent {
+    position: relative; }
+  .costCenterHeader #icon-arrow {
+    position: absolute;
+    left: 0.42667rem;
+    font-size: 0.768rem; }
+
+.costCenterSection {
+  width: 100%; }
+  .costCenterSection .search {
+    padding: 2.26133rem 0.42667rem 0rem 0.42667rem; }
+  .costCenterSection .costCenterListBox {
+    margin-top: -0.64rem;
+    width: 100%;
+    padding: 0rem 0.42667rem 0rem 0.42667rem;
+    overflow: hidden; }
+    .costCenterSection .costCenterListBox .costCenterList {
+      height: 12.8rem;
+      background-color: white;
+      border-radius: 0.64rem; }
+      .costCenterSection .costCenterListBox .costCenterList .centerList {
+        float: left;
+        display: flex;
+        justify-content: space-around;
+        margin-left: -0.85333rem;
+        line-height: 2.13333rem;
+        width: 100%;
+        height: 2.13333rem;
+        border: 1px solid transparent;
+        border-bottom: 1px solid #D7D7D7;
+        list-style: none; }
+        .costCenterSection .costCenterListBox .costCenterList .centerList div {
+          display: inline-block; }
+
+/*# sourceMappingURL=applicationApproval.css.map */

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,6CAA4C;EAC1C,MAAM,EAAE,IAAI;;AAEd;oBACqB;EACnB,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,IAAI;;AAEd,wCAAyC;EACvC,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,IAAI;;AAEb,kFAAmF;EACjF,gBAAgB,EAAE,IAAI",
+"sources": ["Colleague.scss"],
+"names": [],
+"file": "Colleague.css"
+}

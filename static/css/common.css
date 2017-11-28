@@ -1,0 +1,244 @@
+
+/* 
+ * wangleilei  whiteBy   2017-8-24   
+ */
+
+
+/*标签页*/
+.mui-segmented-control .mui-control-item.mui-active {
+	color: #fff;
+    background-color: #31B4F1;
+}
+.mui-segmented-control .mui-control-item {
+    line-height: 38px;
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    -webkit-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #31B4F1;
+    border-color: #31B4F1;
+    border-left: 1px solid #31B4F1;
+}
+.mui-segmented-control {
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    display: table;
+    overflow: hidden;
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid #31B4F1;
+    border-radius: 3px;
+    background-color: transparent;
+    -webkit-touch-callout: none;
+}
+/*导航条 右侧*/
+.mui-bar .mui-btn-link {
+    font-size: 16px;
+    line-height: 44px;
+    top: 0;
+    padding: 0;
+    color: #FFFFFF;
+    border: 0;
+}
+
+.mui-bar-nav {
+    top: 0;
+     /*-webkit-box-shadow: 0 1px 6px #ccc; 
+     box-shadow: 0 1px 6px #ccc; */
+     -webkit-box-shadow: 0 0px 0px #ccc; 
+     box-shadow: 0 0px 0px #ccc; 
+}
+
+.mui-bar {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    height: 44px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 0;
+    background-color: #f7f7f7;
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, .85); 
+    box-shadow: 0 0 0px rgba(0, 0, 0, .85); 
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+/*行内块*/
+.inline-block{
+	display: inline-block;
+}
+/*字体剧中*/
+.text-center{
+	text-align: center;
+}
+/*字体靠左*/
+.text-left{
+	text-align: left;
+}
+/*字体靠右*/
+.text-right{
+	text-align: right;
+}
+/*灰色边框*/
+.borderBt-gray{
+	border-bottom:1px solid #DDDDDD;
+}
+/*清除浮动*/
+.clear:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+/*左浮动*/
+.left{
+	float: left;
+}
+/*右浮动*/
+.right{
+	float: right;
+}
+/*橘色*/
+.orange{
+	color: #FEC240;
+}
+/*蓝色*/
+.blue{
+	/*color: #007aff;*/
+	color: #31B4F1;
+}
+/*红色*/
+.red{
+	color:#fc5353;
+}
+/*白色*/
+.white{
+	color: #FFFFFF;
+}
+.gray{
+	color: #AAAAAA;
+}
+/*背景蓝色*/
+.bg-blue{
+	background-color: #31B4F1;
+}
+/*背景白色*/
+.bg-white{
+	background-color: #FFFFFF;
+}
+/*按钮蓝色背景 白色字体*/
+.btn-bgblue{
+	background-color: #31B4F1;
+	color: #FFFFFF !important;
+}
+
+.bg-orange{
+	background-color:#FEC240;
+}
+.bg-red{
+	background-color: #FC5353;
+}
+.font26{
+	font-size: 26px;
+}
+/*下划线*/
+.undeline{
+	text-decoration: underline;
+}
+/*字体加粗*/
+.font-bold{
+	font-weight: bold;
+}
+/*内边距 10*/
+.pad10{
+	padding: 10px;
+}
+.pad5{
+	padding: 2px;
+}
+/*蓝色背景 白色字体*/
+/*白色背景 蓝色字体*/
+.tkxcsted,.tkxcDsted,.tktkxcJsted{	
+	padding: 4px 12px;
+	margin-right: 5px;
+	border-radius:2px ;
+}
+.tkxcDsted{
+    background-color: #FFFFFF;
+    color: #31B4F1;
+    border: 1px solid #31B4F1;
+}
+.tktkxcJsted{
+    background-color: #ccc;
+    color: #FFFFFF;
+}
+.tkxcsted{
+    background-color: #31B4F1;
+    color: #fff;
+}
+/*上内边距 15*/
+.padT15{
+	padding-top: 15px;
+}
+
+/*热门城市*/
+.hot_class{
+	text-align: center;
+    padding: 5px 0;
+}
+.hot_class span{
+	font-size: 16px;
+    color: #323232;
+    background-color: #FFFFFF;
+    display: inline-block;
+    width: 72%;
+    border-radius: 6px;
+        padding: 4px 0;
+        border:1px solid #DDDDDD;
+}
+
+/* 
+ * gaohaoran  whiteBy 2017-8-24
+ */
+/*
+ * 头部导航
+ */
+.mui-bar.mui-bar-nav{
+   background-color: #31B4F1 ;	
+	color: #FFFFFF ;
+}
+.mui-title{
+	color: #FFFFFF ;
+	font-weight: 550;
+}
+.mui-bar a{
+	background-color: transparent;
+	color: #FFFFFF;
+	border: none;
+	font-size: 2rem;
+	margin-top: 0.8rem;
+	margin-left: -0.5rem;
+}
+/*深色背景*/
+.bg-deepcor{
+	background-color: rgba(90,106,131,0.95);
+}
+/*航班列表价格*/
+.tklistprice{
+	font-size: 20px;
+    font-weight: 500;
+}
+/**/
+.font20{
+	font-size: 20px;
+}
+.font25{
+	font-size: 25px;
+}

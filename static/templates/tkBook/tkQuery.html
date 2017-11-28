@@ -1,0 +1,107 @@
+<div id="tkQuery" >
+		<header id="header" class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">国内机票查询</h1>
+			<button class=" mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left white font15">
+				<router-link  to="/home" class="white">
+					<span class="mui-icon icon iconfont icon-icon07 "></span>
+				</router-link>
+			</button>
+		</header>
+	<div class="mui-content ">
+			<div class="mui-card  border-radius10">
+				
+			
+			<div class="">
+				<div id="" class="mui-segmented mui-segmented-primary">
+				<a class="mui-item fon18 font-bold"    v-on:click="onlyWay()" :class="{'mui-active':!dc}">
+					<i class="icon iconfont icon-eg"></i>单程
+				</a>
+				<a class="mui-item fon18 font-bold "  v-on:click="wf()" :class="{'mui-active':dc}">
+					<i class="icon iconfont icon-iconfonteg"></i>往返
+				</a>
+				</div>
+			</div>
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div class="" style="margin-bottom: 35px;padding: 2px 40px;">
+						<div class="clear  padT5  mui-row cor-a">
+								<div class=" mui-col-xs-3 blue ">
+									<button class="tkQbtn fon16 cor-a pad6-2"   v-on:click="yg()" :class="{blue:ygcor}" v-bind:disabled="isyg">
+										<i class="icon iconfont icon-gongwenbao"></i> 因公
+									</button>
+								</div>
+								<div class=" mui-col-xs-3">
+									<button class="tkQbtn fon16 cor-a pad6-2"  v-on:click="ys()" :class="{blue:yscor}">
+										<i class="icon iconfont icon-lvyou"></i>因私
+									</button>
+								</div>
+								<div class=" mui-col-xs-6 text-right" v-show="outerSize">
+									<button  class="tkQbtn cor-a pad6-2" :class="{blue:wlcor}" v-on:click="tkoutRange()">
+										<i class="icon iconfont icon-renzhengtongguo"></i>为外来人员预订
+									</button>
+								</div>
+	
+						</div>
+						<ul class="mui-table-view">
+							<li class="mui-row relative marginT10" v-if="showccsqd ">
+								<input type="" readonly="readonly" class="tkQinput mui-col-xs-12" v-model="ccsqd" v-on:click="choseCcsqd()" placeholder="请选择出差申请单"/>
+								<span class="mui-icon mui-icon-arrowright rightjt"></span>
+							</li>
+							<li v-if="showXc" class="mui-row clear marginT10" style="height: 40px;position: relative;">
+								<div class="mui-scroll-wrapper" style="height: 40px;line-height: 40px;">
+									<div class="mui-scroll">
+										<div class="tkQinput">
+											<span class="tkxcDsted" v-on:click="selcted(xc.routeId)" v-for="xc in ccsqdInfo.routeBookList"  v-bind:class="{ 'tkxcsted': xc.selected, 'tktkxcJsted': xcJSel}">
+												{{xc.departCityName}}--{{xc.arriveCityName}}
+											</span>
+										</div>
+									</div>
+								</div>
+
+							</li>
+
+							<li  class="mui-row marginT10 relative" v-show="showcxr">
+								<input type="" readonly="readonly" class="tkQinput mui-col-xs-12" v-model="cxr" placeholder="请选择出行人" v-on:click="chossesCxr()"/>
+							<span class="mui-icon mui-icon-arrowright rightjt"></span>
+							</li>
+
+							<li class="marginT10">
+								<div class="clear mui-row" >
+									<input type="" readonly="readonly" class="  tkQinput mui-col-xs-5" placeholder="出发城市" v-on:click="getCity()" v-model="dep" />
+									<div class="  text-center mui-col-xs-2 height40" v-on:click="deparr()">
+										<i class="icon iconfont icon-wangfan  font26 blue" ></i>
+									</div>
+									<input type="" readonly="readonly" class=" text-right tkQinput 	mui-col-xs-5" placeholder="到达城市" v-on:click="getCity2()" v-model="arr" />
+								</div>
+							</li>
+							<!--单程-->
+							<li v-if="dc"  class="mui-row marginT10">
+								<input type="" readonly="readonly" class="  tkQinput mui-col-xs-12" placeholder="出发日期" v-on:click="getDate1()" v-model="datex1" />
+							</li>
+							<!--往返-->
+							<li v-if="!dc" class="mui-row marginT10">
+								<input type="" readonly="readonly" class=" tkQinput mui-col-xs-6" placeholder="出发日期" v-on:click="getDate1()" v-model="datex1" />
+								<input type="" readonly="readonly" class="  tkQinput mui-col-xs-6" placeholder="返程日期" v-on:click="getDate2()" v-model="datex2" />
+							</li>
+							<li class="mui-row relative marginT10">
+								<input type="" readonly="readonly"  class=" tkQinput mui-col-xs-12" placeholder="不限舱位" v-on:click="cabin()" v-model="cw" />
+							<span class="mui-icon mui-icon-arrowright rightjt"></span>
+							</li>
+							<li v-show="showclbz">
+								<div class="padT15" >
+									<p class="font-bold">本次预定使用<span class="orange">{{useNameclbz}}</span>的差旅标准</p>
+									<p>{{useclbz}}</p>
+								</div>
+							</li>
+							<li class="">
+								<button type="button" class="mui-btn mui-btn-warning mui-btn-block marginTB20" style="padding: 6px 12px;border-radius:6px ;" v-on:click="search()">查    &nbsp; 询</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+	</div><!--content-->
+</div>

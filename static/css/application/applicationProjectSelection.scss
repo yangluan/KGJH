@@ -1,0 +1,72 @@
+@function rem($px) {
+  @return $px / 46.875 + rem;
+}
+body{
+  background-color: #EFEFEF;
+}
+.costCenterHeader{
+  position: fixed;
+  top:0;
+  z-index: 3;
+  width: 100%;
+  height: rem(86);
+  background-color: #07467B;
+  text-align: center;
+  color: white;
+  font-size: rem(36);
+  line-height: rem(86);
+  .iconParent{
+    position: relative;
+  }
+  #icon-arrow{
+    //margin-left: rem(20);
+    position: absolute;
+    left: rem(20);
+    font-size: rem(36);
+  }
+}
+.costCenterSection{
+  width: 100%;
+  .search{
+    padding: rem(106) rem(20) rem(0) rem(20);
+  }
+  .costCenterListBox{
+    margin-top: rem(-30);
+    width: 100%;
+    padding: rem(0) rem(20) rem(0) rem(20);
+    overflow: hidden;
+    //#firstUl:after{
+    //  clear: both;
+    //  display: block;
+    //  content: '';
+    //  font-size: 0;
+    //  visibility: hidden;
+    //  width: 0;
+    //  height:0;
+    //}
+    .costCenterList{
+      height:rem(600);
+      background-color: white;
+      border-radius: rem(30);
+
+      .centerList{
+        float: left;
+        display: flex;
+        justify-content: space-around;
+        margin-left: rem(-40);
+        line-height: rem(100);
+        width: 100%;
+        height: rem(100);
+        border: 1px solid transparent;
+        border-bottom: 1px solid #D7D7D7;
+        list-style: none;
+
+        div{
+          display: inline-block;
+        }
+
+      }
+    }
+  }
+
+}

@@ -1,0 +1,20 @@
+<div class="approvalSend">
+	<header class="mui-bar mui-bar-nav ">
+		<a class="  mui-pull-left iconfont icon-icon07" @click.once="goback"></a>
+		<h1 class="mui-title">送审</h1>
+	</header>
+	<div class="approval-content">
+		<div class="send-tip">订单由以下人审批</div>
+		<div class="send-item send-title">
+			<div class="send-item-left title-left">审批级别</div><div class="send-item-right">审批人</div>
+		</div>
+		<div class="send-item" v-for="items in spDetail.gznr">
+			<div class="send-item-left"><span>{{items.level}}</span></div>
+			<div class="send-item-right" v-for="item in items.empList">
+				<div>{{item.empNo}}&nbsp;{{item.empName}} ({{item.vipdeptName}})</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="bottom-send" @click="toSend(orderId)">送&nbsp;审</div>
+</div>

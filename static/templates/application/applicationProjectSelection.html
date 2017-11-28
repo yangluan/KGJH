@@ -1,0 +1,59 @@
+<div id="applicationProjectSelection">
+    <!--<header class=" mui-bar mui-bar-nav">-->
+        <!--<h1 class="mui-title">选择项目</h1>-->
+        <!--<div class="iconParent"><i class="icon iconfont icon-icon07 goHome" id="icon-arrow" @click="ReturnSuperior"></i></div>-->
+    <!--</header>-->
+
+
+    <header class="mui-bar mui-bar-nav">
+        <div class="mui-row">
+            <div class="mui-col-xs-2">
+                <a class=" mui-icon icon iconfont icon-icon07 mui-pull-left white" @click="ReturnSuperior" style="margin-top: 0rem"></a>
+            </div>
+            <div class="mui-col-xs-8 pad5">
+					<span class="icon iconfont icon-sousuo" style="font-size: 15px;position: absolute;left: 15px;top: 12px;color: #aaa;"></span>
+                <input type="search" placeholder="编号/名称" class=" searchinput" style="background-color: #FFFFFF;padding-left: 2.3rem" v-model="searchXm" >
+            </div>
+            <!--<div class="mui-col-xs-2">-->
+                <!--<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right white" v-on:click="complete()">完成</button>-->
+            <!--</div>-->
+        </div>
+    </header>
+
+
+    <section class="costCenterSection" style="margin-top: 3rem">
+        <!--<div class="mui-input-row mui-search" style="padding-left: .5rem;padding-right: .5rem;margin-top: 3.5rem;">-->
+            <!--<input type="search" class="mui-input-clear" placeholder="请输入项目编号或名称" id="searchIpt" v-model="searchXm">-->
+        <!--</div>-->
+
+        <div class="costCenterListBox" style="margin-top: 1rem">
+            <div class="costCenterList" v-show="isShow">
+                <ul id="firstUl">
+                    <li class="centerList borderRadio" v-for="(i,index) in this.choiceProject">
+                        <div class="employeeNumber" v-html="i.projectCode"></div>
+                        <label for="firstInp" v-html="i.projectName" id="costCenterName"></label>
+                        <div class="radioList">
+                            <input type="radio" id="firstInp" name="contentSub" @click="goSuperior(i,index)">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+            <div class="costCenterListBox" style="margin-top: .01rem">
+                <div class="costCenterList" v-show="!isShow">
+                    <ul id="firstUl">
+                        <li class="centerList borderRadio" v-for="item in arr">
+                            <div class="employeeNumber" v-html="item.projectCode"></div>
+                            <label for="firstInp" v-html="item.projectName" id="costCenterName"></label>
+                            <div class="radioList">
+                                <input type="radio" id="firstInp" name="contentSub" @click="goSuperior(i,index)">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+        </div>
+    </section>
+</div>
